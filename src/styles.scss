@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    /*[data-theme="default"] {*/
+        //Neutral
+        --neutral-0: #ffffff;
+        --neutral-50: #F4F4F4;
+        --neutral-100: #E9EAEA;
+        --neutral-200: #D4D5D5;
+        --neutral-300: #BFC1C1;
+        --neutral-400: #ABADAD;
+        --neutral-500: #979999;
+        --neutral-600: #6F7070;
+        --neutral-700: #494A4A;
+        --neutral-800: #262727;
+        --neutral-900: #080808;
+        --neutral-950: #010101;
+
+        //Carmin
+        --carmin-500: #960018;
+        --carmin-600: #6E000F;
+        --carmin-700: #490007;
+
+        //Semantic
+        --negative: #CD1107;
+        --positive: #16810D;
+        --info: #3866C1;
+        --warning: #FF7900;
+    /*}
+    [data-theme="dark"] {}*/
+}
+
+* {
+    font-family: "Raleway", Helvetica, Arial,sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--neutral-950);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--neutral-100);
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--carmin-500);
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--carmin-500);
+    margin: 0 0 8px 0;
+}
+
+p {
+    margin: 8px 0;
+    max-width: 720px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    //background-color: var(--neutral-0);
+    border: solid 4px var(--carmin-500);
+    border-radius: 32px;
+    color: var(--carmin-500);
+    &:hover {
+        border: solid 4px var(--carmin-600);
+        color: var(--carmin-600);
+    }
+    &.primary {
+        background-color: var(--carmin-500);
+        border: solid 4px var(--carmin-500);
+        color: var(--neutral-0);
+        &:hover {
+            background-color: var(--carmin-600);
+            border: solid 4px var(--carmin-600);
+        }
+    }
+}

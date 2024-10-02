@@ -1,0 +1,47 @@
+header {
+    text-align: center;
+    background-color: var(--neutral-0);
+    position: sticky;
+    top: 0px;
+}
+
+#lisere {
+    background-color: var(--carmin-500);
+    height: 16px;
+}
+
+nav {
+    margin: 0 auto 0 auto;
+    padding: 8px 0;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    img {
+        height: 64px;
+    }
+}
+
+#menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    flex-grow: 1;
+    a {
+        color: var(--neutral-600);
+        font-weight: 700;
+        text-decoration: none;
+        &:hover {
+            color: var(--neutral-950);
+        }
+    }
+    .active {
+        color: var(--carmin-500);
+        &:hover {
+            color: var(--carmin-500);
+        }
+    }
+}
+
