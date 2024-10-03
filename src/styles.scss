@@ -24,6 +24,9 @@
         --positive: #16810D;
         --info: #3866C1;
         --warning: #FF7900;
+
+        //Brand
+        --linkedIn: #0288d1;
     /*}
     [data-theme="dark"] {}*/
 }
@@ -54,10 +57,18 @@ h1 {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
     color: var(--carmin-500);
+    margin: 0 0 40px 0;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--neutral-900);
     margin: 0 0 8px 0;
 }
 
@@ -66,15 +77,16 @@ p {
     max-width: 720px;
 }
 
-button {
-    padding: 8px 16px;
-    font-size: 20px;
+.button {
+    padding: 12px 20px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
     //background-color: var(--neutral-0);
     border: solid 4px var(--carmin-500);
     border-radius: 32px;
     color: var(--carmin-500);
+    text-decoration: none;
     &:hover {
         border: solid 4px var(--carmin-600);
         color: var(--carmin-600);
@@ -88,4 +100,9 @@ button {
             border: solid 4px var(--carmin-600);
         }
     }
+}
+
+.content {
+    margin: 0 auto 0 auto;
+    max-width: 1280px;
 }

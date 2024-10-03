@@ -1,0 +1,12 @@
+#projets {
+    background-color: var(--neutral-100);
+    padding: 96px 0;
+}
+
+#listProjets {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 40px;
+}

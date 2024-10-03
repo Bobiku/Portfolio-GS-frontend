@@ -1,48 +1,69 @@
 #presentation {
     background-color: var(--neutral-100);
-    padding: 96px 0;
+    padding: 256px 0;
     img {
         height: 256px;
         border-radius: 100%;
         //outline: 8px solid var(--carmin-500);
     }
     p {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
+        margin: 16px 0;
     }
     span {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
     }
     #contentPresentation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        
+    }
+    #contentPresentationText {
         flex-grow: 1;
+    }
+    .groupButton {
+        margin-top: 24px;
+        display: flex;
+        .button{
+            margin-right: 16px;
+            vertical-align: baseline;
+            display: flex;
+            align-items: center;
+        }
+        img {
+            height: 32px;
+            margin-right: 8px;
+        }
+        .linkedIn {
+            border: solid 4px var(--linkedIn);
+            background-color: var(--linkedIn);
+            color: white;
+        }
     }
 }
 
 #competences {
     background-color: var(--neutral-50);
     padding: 96px 0;
+    img {
+        height: 32px;
+        margin-bottom: 16px;
+    }
 }
 
-#projets {
-    background-color: var(--neutral-100);
-    padding: 96px 0;
-}
-
-#contact {
-    background-color: var(--neutral-50);
-    padding: 96px 0;
-}
-
-.content {
-    margin: 0 auto 0 auto;
-    max-width: 1280px;
+#layoutCompetences {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    gap: 24px;
 }
 
-.groupButton button{
-    margin: 16px 16px 0 0;
+.blockCompetence {
+    flex-grow: 1;
+    border: solid 1px var(--neutral-700);
+    padding: 96px 32px 40px 32px;
+    border-radius: 8px;
 }

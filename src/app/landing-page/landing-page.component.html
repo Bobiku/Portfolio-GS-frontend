@@ -1,12 +1,14 @@
 <div id="presentation">
     <div class="content">
-        <img src="/pp-pro-retouche.jpg" alt="Photo de profil">
         <div id="contentPresentation">
-            <h1>Guillaume Savary</h1>
-            <p>Bonjour! Je suis <span>UX Designer</span> et je vous aide à concevoir de <span>meilleures expériences digitales</span> pour vos utilisateurs.</p>
-            <div class="groupButton">
-                <button class="primary">Me contacter</button>
-                <button>Voir mon CV</button>
+            <img src="/pp-pro-retouche.jpg" alt="Photo de profil">
+            <div id="contentPresentationText">
+                <h1>Guillaume Savary</h1>
+                <p>Bonjour! Je suis <span>UX Designer</span> et je vous aide à concevoir de <span>meilleures expériences digitales</span> pour vos utilisateurs.</p>
+                <div class="groupButton">
+                    <a class="button linkedIn" href="https://linkedin.com/in/savaryguillaume" target="_blank">Voir mon LinkedIn</a>
+                    <a class="button" routerLink="contact">Me contacter</a>
+                </div>
             </div>
         </div>
     </div>
@@ -14,15 +16,24 @@
 <div id="competences">
     <div class="content">
         <h2>Mes Compétences</h2>
+        <div id="layoutCompetences">
+            <div class="blockCompetence">
+                <img src="icons8-loupe-50.png" alt="Loupe logo">
+                <h3>Ux Research</h3>
+                <p>Évaluer l’existant, modéliser les profils, les tâches, les parcours, les émotions, comprendre les usages, identifier des opportunités</p>
+            </div>
+            <div class="blockCompetence">
+                <img src="icons8-design-50.png" alt="Design logo">
+                <h3>Ux Design</h3>
+                <p>Créer de l'utilisabilité, améliorer l'ergonomie et en simplifier l'usage, définir ou transformer un rendu graphique</p>
+            </div>
+            <div class="blockCompetence">
+                <img src="icons8-code-50.png" alt="Code logo">
+                <h3>Développement</h3>
+                <p>Concevoir des interfaces, développer des applications mobiles et desktops, gérer des bases de données</p>
+            </div>
+        </div>
     </div>
 </div>
-<div id="projets">
-    <div class="content">
-        <h2>Mes Projets</h2>
-    </div>
-</div>
-<div id="contact">
-    <div class="content">
-        <h2>Contact</h2>
-    </div>
-</div>
+<app-projets-list />
+<app-contact />
