@@ -1,7 +1,9 @@
 <div class="projet">
-    <div><img src="etat+de+paie+banner.png" alt=""></div>
-    <div><span>États de paie</span></div>
-    <div><p>Refonte ergonomique et graphique de la fonctionnalité des États de paie pour Sage Business Cloud Paie.</p></div>
+    <a [routerLink]="this.projetDetailUrl">
+        <div><img [src]="projet.imageUrl" [alt]="projet.imageAlt"></div>
+        <div><span class="title">{{ projet.title }}</span><span class="label">{{ projet.label }}</span></div>
+        <div><p>{{ projet.description }}</p></div>
+    </a>
 </div>
 
 <!--

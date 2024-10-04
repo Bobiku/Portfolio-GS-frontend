@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "deserta";
+    src: url(/deserta.otf);
+}
+
 :root {
     /*[data-theme="default"] {*/
         //Neutral
@@ -48,6 +53,7 @@ body {
 }
 
 h1 {
+    font-family: "deserta";
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
@@ -57,11 +63,12 @@ h1 {
 }
 
 h2 {
+    font-family: "deserta";
     font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--carmin-500);
-    margin: 0 0 40px 0;
+    color: var(--neutral-700);
+    margin: 0 0 24px 0;
 }
 
 h3 {

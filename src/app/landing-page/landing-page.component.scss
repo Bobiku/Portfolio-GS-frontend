@@ -53,17 +53,16 @@
         height: 32px;
         margin-bottom: 16px;
     }
-}
-
-#layoutCompetences {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-}
-
-.blockCompetence {
-    flex-grow: 1;
-    border: solid 1px var(--neutral-700);
-    padding: 96px 32px 40px 32px;
-    border-radius: 8px;
+    #layoutCompetences {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+    }
+    
+    .blockCompetence {
+        flex-grow: 1;
+        border: solid 1px var(--neutral-300);
+        padding: 96px 32px 40px 32px;
+        border-radius: 8px;
+    }
 }

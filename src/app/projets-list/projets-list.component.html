@@ -2,10 +2,9 @@
     <div class="content">
         <h2>Mes Projets</h2>
         <div id="listProjets">
-            <app-projet-card />
-            <app-projet-card />
-            <app-projet-card />
-            <app-projet-card />
+            @for (projetItem of projets; track projetItem.title) {
+                <app-projet-card [projet]="projetItem" />
+            }
         </div>
     </div>
 </div>
