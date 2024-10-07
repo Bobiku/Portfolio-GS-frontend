@@ -2,7 +2,8 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    max-width: calc((1280px - 64px) / 2);
+    max-width: calc((var(--screen) - 64px) / 2);
+    flex-grow: 1;
 }
 
 a {

@@ -3,6 +3,7 @@ header {
     background-color: var(--neutral-0);
     position: sticky;
     top: 0px;
+    border-bottom: 1px solid var(--neutral-100);
 }
 
 #lisere {
@@ -12,13 +13,16 @@ header {
 
 nav {
     margin: 0 auto 0 auto;
+    max-width: var(--screen);
     padding: 8px 0;
-    max-width: 1280px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    column-gap: 16px;
     img {
+        height: 64px;
+    }
+    #linkLogo {
         height: 64px;
     }
 }
@@ -27,8 +31,9 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 16px;
+    column-gap: 16px;
     flex-grow: 1;
+    margin-right: 16px;
     a {
         color: var(--neutral-600);
         font-weight: 700;

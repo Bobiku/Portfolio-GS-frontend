@@ -1,1 +1,11 @@
-<p>projet-detail works!</p>
+<div class="container" id="projet">
+    <div class="content">
+        <div id="headerProjetDetail">
+            <p id="labels">{{ projet.label }}</p>
+            <h1>{{ projet.title }}</h1>
+            <p id="description">{{ projet.description }}</p>
+        </div>
+        <img class="banner" [src]="projet.imageBannerUrl" [alt]="projet.imageBannerAlt">
+        <div [innerHTML]="this.htmlContent"></div>
+    </div>
+</div>

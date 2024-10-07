@@ -1,10 +1,14 @@
 #presentation {
+    min-height: calc(80vh - 86.5px - 66px);
+    display: flex;
+    align-items: center;
     background-color: var(--neutral-100);
-    padding: 256px 0;
     img {
         height: 256px;
         border-radius: 100%;
-        //outline: 8px solid var(--carmin-500);
+    }
+    h2 {
+        margin-top: 0px;
     }
     p {
         font-size: 18px;
@@ -42,13 +46,15 @@
             border: solid 4px var(--linkedIn);
             background-color: var(--linkedIn);
             color: white;
+            &:hover {
+                border: solid 4px var(--linkedInDark);
+                background-color: var(--linkedInDark);
+            }
         }
     }
 }
 
 #competences {
-    background-color: var(--neutral-50);
-    padding: 96px 0;
     img {
         height: 32px;
         margin-bottom: 16px;

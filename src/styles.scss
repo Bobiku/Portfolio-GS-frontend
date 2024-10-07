@@ -1,10 +1,6 @@
-@font-face {
-    font-family: "deserta";
-    src: url(/deserta.otf);
-}
-
 :root {
     /*[data-theme="default"] {*/
+        // colours
         //Neutral
         --neutral-0: #ffffff;
         --neutral-50: #F4F4F4;
@@ -32,24 +28,45 @@
 
         //Brand
         --linkedIn: #0288d1;
+        --linkedInDark: #004183;
+
+        //font
+        @font-face {
+            font-family: "deserta";
+            src: url(/deserta.otf);
+        }
+
+        //spacing
+        //resolution
+        @media only screen and (min-width: 430px) {
+            --screen: 430px;
+        } 
+
+        @media only screen and (min-width: 768px) {
+            --screen: 768px;
+        }
+
+        @media only screen and (min-width: 1280px) {
+            --screen: 1280px;
+        }
     /*}
     [data-theme="dark"] {}*/
 }
 
 * {
-    font-family: "Raleway", Helvetica, Arial,sans-serif;
+    font-family: "Roboto Flex", Helvetica, Arial,sans-serif;
     font-optical-sizing: auto;
+    font-size: 16px;
     font-weight: 400;
+    line-height: 1.5;
     font-style: normal;
     color: var(--neutral-950);
-    font-size: 16px;
-    line-height: 1.5;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--neutral-100);
+    background-color: var(--neutral-50);
 }
 
 h1 {
@@ -68,7 +85,7 @@ h2 {
     font-weight: 700;
     line-height: 1.2;
     color: var(--neutral-700);
-    margin: 0 0 24px 0;
+    margin: 56px 0 24px 0;
 }
 
 h3 {
@@ -89,14 +106,15 @@ p {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
-    //background-color: var(--neutral-0);
+    background-color: var(--neutral-0);
     border: solid 4px var(--carmin-500);
     border-radius: 32px;
     color: var(--carmin-500);
     text-decoration: none;
     &:hover {
+        background-color: var(--carmin-600);
         border: solid 4px var(--carmin-600);
-        color: var(--carmin-600);
+        color: var(--neutral-0);
     }
     &.primary {
         background-color: var(--carmin-500);
@@ -109,7 +127,70 @@ p {
     }
 }
 
+.mainContainer {
+    min-height: calc(100vh - 97px - 66px);
+    background-color: var(--neutral-0);
+}
+
+.container {
+    padding: 96px 0;
+}
+
 .content {
     margin: 0 auto 0 auto;
-    max-width: 1280px;
+    max-width: var(--screen);
+}
+
+
+//Projet Detail Component injection
+#projet {
+    h1 {
+        margin-bottom: 24px;
+    }
+    a {
+        color: var(--carmin-500);
+        &:hover {
+            color: var(--carmin-700);
+        }
+    }
+    p {
+        margin: 24px 0 24px 0;
+    }
+    .contentProjetDetail {
+        max-width: 720px;
+        margin: 0 auto 0 auto;
+    }
+    .banner {
+        margin-bottom: 16px;
+        object-fit: cover;
+        object-position: center;
+        image-rendering: auto;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .lien {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+    .lienImage {
+        margin-right: 8px;
+    }
+    .gallery {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        column-gap: 16px;
+    }
+    #labels {
+        color: var(--neutral-700);
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 8px 0;
+    }
+    #description {
+        margin-bottom: 56px;
+        font-size: 20px;
+        font-weight: 500;
+    }
 }

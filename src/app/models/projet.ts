@@ -1,13 +1,14 @@
 export class Projet {
     
-    imageAlt: string;
+    imageBannerAlt: string;
 
 
-    constructor(public title: string,
-        public label: string,
+    constructor(public id: string,
+        public title: string,
+        public label: string[],
         public description: string,
-        public imageUrl: string,
-        public id: string) {
-            this.imageAlt = this.title+' image';
+        public imageBannerUrl: string,
+        public content: string) {
+            this.imageBannerAlt = this.title+' image';
         }
 }

@@ -1,12 +1,13 @@
-#projets {
-    background-color: var(--neutral-100);
-    padding: 96px 0;
-}
-
 #listProjets {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 40px 64px;
+}
+
+#sousTitre {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
 }
