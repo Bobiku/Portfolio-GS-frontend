@@ -1,5 +1,5 @@
 # Step 1: We build the angular app using the production config
-FROM node:20-alpine as build
+FROM --platform=linux/arm64 node:20-alpine as build
 # Set the working directory
 WORKDIR /app
 # Copy the package.json and package-lock.json files
@@ -14,10 +14,10 @@ COPY . .
 RUN npm run build --configuration=production
 
 # Step 2: We use the nginx image to serve the application
-FROM nginx:latest
+FROM --platform=linux/arm64 nginx:latest
 
 # Copy the build output to replace the default nginx contents
-COPY ./nginx.conf /ect/ngix/conf.d/default.conf
+COPY ./nginx.conf /etc/ngix/conf.d/default.conf
 # Copy the build output to replace the default nginx contents
 COPY --from=build /app/dist/portfolio-gs/browser /usr/share/nginx/html
 
@@ -26,3 +26,4 @@ EXPOSE 80
 
 # Build: docker build -t portfolio-gs .
 # Run: docker run -d -p 8080:80 portfolio-gs
+# Registry: docker push registry.local.savaryguillaume.fr/portfolio-gs
