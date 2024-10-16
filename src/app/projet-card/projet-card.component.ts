@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Projet } from '../models/projet';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-projet-card',
@@ -14,9 +14,9 @@ export class ProjetCardComponent implements OnInit{
 
   projetDetailUrl!: string;
   
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
       this.projetDetailUrl = '/projets/'+this.projet.id;
   }
-}
+} 

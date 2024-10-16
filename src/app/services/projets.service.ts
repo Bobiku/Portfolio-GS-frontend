@@ -186,7 +186,122 @@ export class ProjetsService {
             ["UX/UI Design"],
             "Création d’une application, en partenariat avec la ville de Meudon, pour aider des familles à réduire leur consommation de déchet.",
             'Eiko+banner.png',
-            ``
+            `<div class="contentProjetDetail">
+                <h2>Résumé du projet</h2>
+                <p>Eiko est une association ayant pour but de développer des outils numériques innovants pour encourager une démocratie active et une participation citoyenne engagée. Elle met en avant les initiatives locales et en valorisant chaque engagement individuel, nous visons à transformer les petits pas en grandes avancées pour notre planète.</p>
+                <p>Eiko s’est associée avec la ville de Meudon (92) pour lancer une application pour renforcer la conscience écologique et encourager les pratiques durables : le “Défi Famille Zéro Déchet”. Cette collaboration incite les familles de Meudon à réduire de manière significative leurs déchets ménagers.</p>
+                <h2>Quel était le problème ?</h2>
+                <p>Meudon a lancé son initiative il y a deux ans. Elle demande aux familles de peser les déchets qu’elles produisent et de renvoyer les données par email. C’est chronophage pour la mairie et peu pratique pour les participants.</p>
+                <h2>Quelle est la solution retenue ?</h2>
+                <p>Dans un premier temps, le périmètre d’un MVP est décidé. L’objectif est de créer une application permettant aux participants du défi :</p>
+                <ul>
+                    <li>Enregistrer les pesées selon le type de déchet</li>
+                    <li>Suivre l’évolution de la production de déchets par mois</li>
+                    <li>Consulter l’historique de saisie</li>
+                </ul>
+                <p>Les objectifs pour la ville de Meudon sont de supprimer l’envoi des pesées par email et créer une base de données. Pour Eiko, le but est de créer une application qu’elle pourra proposer à d’autres collectivités.</p>
+                <h2>Quel était mon rôle dans l’équipe ?</h2>
+                <ul>
+                    <li>5 UX Designer (dont moi)</li>
+                    <li>3 Développeurs</li>
+                    <li>Le président de l’association</li>
+                    <li>1 Scrum master</li>
+                    <li>2 testeurs</li>
+                </ul>
+                <h2>UX Research</h2>
+                <p>Les UX Designers sont arrivés chez Eiko très récemment. Afin de mieux comprendre le contexte du projet et les futurs utilisateurs de l’application, nous avons mené des entretiens utilisateurs afin de construire le persona de l’utilisateur de l’application.</p>
+                <h3>Recrutement</h3>
+                <p>Nous avons demandé à 5 familles participant au programme de nous accorder un entretien de 30 minutes à 1 heure.</p>
+                <h3>Les entretiens</h3>
+                <p>Nous avons créé un guide d’entretien nous permettant de répondre à la question suivante :</p>
+                <p><i>Nous cherchons à répertorier les différents profils de familles sensibles à l’écologie participant, par le passé ou à présent, au programme "Défis Famille Zéro Déchet" de la ville de Meudon. Le but est de créer les personas de la future application Eiko permettant aux participants du programme de les soutenir dans leur démarche.</i></p>
+                <p>Nous avons posé des questions autour des thématiques suivantes :</p>
+                <ul>
+                    <li>Questions sociologiques</li>
+                    <li>Questions sur les habitudes de la gestion des déchets
+                        <ul>
+                            <li>Le programme "Défis Famille Zéro Déchet"</li>
+                            <li>Expérience de la pesée des déchets</li>
+                        </ul>
+                    </li>
+                    <li>Questions sur les besoins de la future application Eiko</li>
+                </ul>
+                <p>Les 5 entretiens se sont passés à distance avec la personne ou le couple interrogés, avec un animateur, un secrétaire et parfois un observateur passif.</p>
+                <h3>Persona</h3>
+                <p>Les informations récoltées étaient très homogènes d’un entretien à l’autre. Nous avons créé un seul persona de l’utilisateur. Ce persona nous servira à construire les expériences de la future application.</p>
+                <img class="banner" src="eiko+persona.jpg" alt="Persona Eiko">
+                <h2>Prototype</h2>
+                <p>Le prototype a été développé avec Figma. Différents user stories ont été incluses pour ce MVP :</p>
+                <ul>
+                    <li>Création de compte, connexion et récupération de mot de passe,</li>
+                    <li>OnBoarding, avec enregistrement du nom de la famille,</li>
+                    <li>Comparer notre production de déchet en fonction des mois précédents,</li>
+                    <li>Consulter l’historique des saisies des pesées de déchet,</li>
+                    <li>Ajouter une pesée en sélectionnant le poids, la date et le type de déchet,</li>
+                    <li>Modifier et supprimer une saisie,</li>
+                    <li>Consulter une page paramètre pour modifier le nom de la famille, changer le mot de passe, consulter les informations légales et supprimer son compte.</li>
+                </ul>
+                <div class="lien">
+                    <img class="lienImage" src="icons8-figma-48.png" alt="Figma Logo">
+                    <a href="https://www.figma.com/proto/xS7DJxGo0xdCZsPRwH6Hp8/Guillaume-Savary-stuff?page-id=649%3A4&type=design&node-id=663-59677&viewport=7538%2C-13588%2C0.48&t=4qfAGq9C276B67kf-1&scaling=min-zoom&starting-point-node-id=663%3A59677&show-proto-sidebar=1&mode=design" target="_blank">Le prototype final</a>
+                </div>
+                <p>Le prototype Figma a ensuite été transmis aux développeurs. L’application est développé avec React, comme une Single Page Application.</p>
+                <h2>Atelier de sensibilisation</h2>
+                <p>3 mois après la début du projet, les développeurs ont réussi à développer le MVP de l’application. En amont, un atelier de sensibilisation a été organisé par Eiko et la ville de Meudon. Le but est de  faire participer les familles au développement de l’application, en leur permettant de suggérer des propositions nouvelles grâce à un atelier d’idéation et de leur faire tester le MVP de l’application. Divers opportunités ont pu être détecter lors de cette atelier.</p>
+                <p>L’atelier a duré 2 heures et il a été organisé en 3 parties :</p>
+                <ul>
+                    <li>Un atelier de sensibilisation ludique autour de la thématique du zéro déchet</li>
+                    <li>Une session de tests utilisateurs du MVP et de l’application</li>
+                    <li>Un tri de carte en focus group pour identifier des améliorations pour l’application et mieux comprendre les participants au programme.</li>
+                </ul>
+                <h3>Opportunités pour Eiko</h3>
+                <ul>
+                    <li>Idées en vrac
+                        <ul>
+                            <li>Mutualiser des courses en vrac avec des personnes → Pouvoir voir ses voisins qui utilisent l’app Eiko</li>
+                            <li>Proposer de faire un bilan carbone</li>
+                            <li>Proposer une adaptation de la gestion de ses déchets en vacances / travail / autre lieu</li>
+                        </ul>
+                    </li>
+                    <li>Ajouter des déchets sur l’app
+                        <ul>
+                            <li>Avoir une pop up pour ajouter un déchet + pop in de validation</li>
+                            <li>Avoir une IA qui prend en photo son sac pour en connaitre le volume</li>
+                            <li>Rentrer la marque et contenant de son sac</li>
+                        </ul>
+                    </li>
+                    <li>Défis sur l’app
+                        <ul>
+                            <li>Avoir des défis perso (vs comparaison / compétition)</li>
+                            <li>Avoir des astuces concrètes sous les défis mêmes (vs sur un forum) par d’autres utilisateurs (vs Eiko)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Photos de l’atelier</h3>
+            </div>
+            <div class="gallery">
+                <img class="banner" src="eiko+atelier+1.jpg" alt="Atelier de sensibilisation - photo 1">
+                <img class="banner" src="eiko+atelier+2.jpg" alt="Atelier de sensibilisation - photo 2">
+                <img class="banner" src="eiko+atelier+3.jpg" alt="Atelier de sensibilisation - photo 3">
+                <img class="banner" src="eiko+atelier+4.jpg" alt="Atelier de sensibilisation - photo 4">
+            </div>
+            <div class="contentProjetDetail">
+                <h2>Prochaines fonctionnalités</h2>
+                <h3>Cartographie</h3>
+                <p>En repartant d’un ancien projet développé par Eiko, nous souhaitons développer une cartographie des lieux d’intérêt pour aider les familles dans la réalisation du programme.</p>
+                <p>Cette fonctionnalité permettra de mettre en avant des magasins faisant du vrac et de l’anti-gaspi, des lieux d’intérêt comme des composteurs ou des déchéteries, ou encore des évènements organisés par la ville autour de la thématique du Zéro déchets. Les utilisateurs pourront consulter ces éléments sous forme de listes ou sous forme d’une carte intéractive inspirée par Google Map.</p>
+                <p>Le projet est en cours de conception.</p>
+                <h3>Ludification</h3>
+                <p>Durant la recherche utilisateurs, nous avons détecté que certains utilisateurs étaient demandeurs de fonctionnalités sociales et ludiques.</p>
+                <p>Nous allons lancer un projet pour ludifier l’application. Pour cela, nous allons nous entourer d’experts en ludification afin de construire un système permettant de :</p>
+                <ul>
+                    <li>Motiver l’adoption de nouveaux comportements vertueux,</li>
+                    <li>Augmenter la participation et l’engagement</li>
+                    <li>Atténuer l’abandon d’apprentissage</li>
+                    <li>Augmenter la rétention des utilisateurs et assurer leur fidélité sur le long terme grâce aux récompenses</li>
+                </ul>
+                <p>Le projet est en cours de conception.</p>
+            </div>`
         )
     ];
 
