@@ -133,7 +133,52 @@ export class ProjetsService {
             ["UX/UI Design"],
             "Création d’un nouveau module de gestion automatisée des transactions bancaires pour Sage Business Cloud Comptabilité.",
             'module+bancaire+banner.png',
-            ''
+            `<div class="contentProjetDetail">
+            <h2>Résumé du projet</h2>
+            <p>Grâce aux nouvelles possibilités offertes par les produits sur le web, les products managers de Sage Business Cloud Comptabilité ont décidé d’améliorer les expériences de plusieurs fonctions clé. Une d’elles est l’expérience de traitement des écritures issues des relevés bancaires.</p>
+            <p>Pendant plusieurs mois, nous avons travaillé à la conception et au déploiement d’une fonctionnalité innovante afin d’automatiser la récupération, le traitement et l’enregistrement d’écritures comptables dans le journal de trésorerie.</p>
+            <h2>Quel était le problème ?</h2>
+            <p>Les utilisateurs de Sage sont plutôt frileux concernant l’automatisation du traitement de leurs tâches. Il y a plusieurs essais sur différentes tâches, mais cela n’a jamais convaincu les utilisateurs. Il nous fallait créer un parcours fluide, sécurisé, et réversible concernant les actions effectuées par les systèmes d’automatisation. Cette nouvelle fonctionnalité sera un des piliers du tout nouveau produit de comptabilité SaaS de la société.</p>
+            <p>Enfin, Sage devait travailler un acteur tiers pour récupérer les données bancaires, ce qui en fait un sujet de sécurité sensible pour les utilisateurs.</p>
+            <h2>Quelle est la solution retenue ?</h2>
+            <p>La solution est découpée en plusieurs parties. Lors de l’onBoarding, l’utilisateur est accueilli par une FAQ lui expliquant la valeur de la fonctionnalité et on le rassure quant à la sécurité de ses données et la réversibilité de ces actions. Pour des raisons techniques, une partie de la connexion est complètement déportée chez notre partenaire Bankin’. Plusieurs sessions de tests utilisateurs et de retour sur notre site de feedback user ont permis de constamment détecter les problèmes de compréhension et les solutionner avec des mises à jour.</p>
+            <p>La solution est sortie en même temps que le nouveau produit SaaS Sage Business Cloud Comptabilité</p>
+            <h2>Quel était mon rôle dans l’équipe ?</h2>
+            <ul>
+                <li>1 UX Designer (moi)</li>
+                <li>1 UX Researcher</li>
+                <li>1 Business Analyst</li>
+                <li>1 Product Owner</li>
+                <li>1 Product Manager</li>
+            </ul>
+            <h2>Première itération</h2>
+            <p>La collaboration entre le business analyst, l’UX researcher et moi-même a permis de créer un premier parcours. Il a fallu déterminer le cadre du MVP (Minimum Viable Product) pour ne pas dépasser la deadline décidée. Ce parcours a été testé, mais il n’a pas convaincu les utilisateurs. Les utilisateurs ne comprenaient pas la page de traitement des opérations bancaires. Ils ne comprenaient ni ce qu’ils voyaient, ni ce qu’ils devaient faire.</p>
+            <p>Ces entretiens utilisateurs sont une belle démonstration qu’il faut toujours tester nos designs avant de se lancer le développement. Il est toujours moins cher de corriger un prototype qu’un produit fini.</p>
+        </div>
+        <div class="gallery">
+            <img class="banner" src="module+bancaire+onboarding.png" alt="Module bancaire - OnBoarding">
+        </div>
+        <div class="contentProjetDetail">
+            <h2>Deuxième itération</h2>
+            <p>Suite à ces tests, nous avons corrigé notre copie avec les retours des utilisateurs. Une seconde version du prototype a été conçue. Une seconde session de tests utilisateurs a été organisée et les résultats étaient bien supérieurs au premier. Les problèmes ont été en bonne partie comblés.</p>
+            <p>Après finalisation du prototype, le projet a été transmis aux développeurs et le module était présent lors de la sortie du produit Sage Business Cloud Comptabilité.</p>
+            <h2>Version 2 et refonte de l’interface</h2>
+            <p>Quelques mois après la sortie du produit, le PM a souhaité développer une partie des fonctionnalités non implémentées dans le MVP. Nous avons également pris en compte les retours des utilisateurs envoyés sur notre site de suggestion d’améliorations. Enfin, une harmonisation de l’interface du module bancaire a été décidée pour garder une cohérence avec les autres pages de l’application. De nombreuses modifications d’interface ont été faites depuis la sortie du produit.</p>
+            <p>Le prototype a été mis à jour et il a été envoyé à l’équipe de développement.</p>
+            <div class="lien">
+                <img class="lienImage" src="icons8-figma-48.png" alt="Figma Logo">
+                <a href="https://www.figma.com/proto/TAErtxl5EX0xDfmArwrvre/Exp%C3%A9rience-bancaire?page-id=0%3A1&type=design&node-id=201-4869&viewport=351%2C548%2C0.07&t=uPesJckghSDW3NZO-1&scaling=min-zoom&starting-point-node-id=201%3A4869&mode=design" target="_blank">Le prototype final</a>
+            </div>
+        </div>
+        <img class="banner" src="module+bancaire+homepage.png" alt="Aide en ligne - HomePage">
+        <div class="contentProjetDetail">
+            <h2>Fin du projet</h2>
+            <p>Ma collaboration sur ce projet s’est achevée peu avant mon départ de Sage. J’ai terminé de finaliser le prototype de la refonte de l’interface pour la version 2.</p>
+            <h2>Ce que j’ai appris</h2>
+            <p>Ce projet m’a permis de concevoir et de suivre l’évolution d’une fonctionnalité sur plusieurs années, de sa genèse à sa livraison. De plus, les nombreuses contraintes techniques du projet nous ont obligés à réfléchir et à adapter nos parcours et nos interfaces afin de convaincre les utilisateurs de la proposition de valeur de ce module bancaire.</p>
+            <p>Enfin, ce projet était l’occasion de convaincre des bienfaits de la démarche UX à des collaborateurs qui n’avaient jamais travaillé dans ces conditions.</p>
+        </div>
+        <img class="banner" src="module+bancaire+ope+bancaire.png" alt="Aide en ligne - Traitement des opérations bancaires">`
         ),
         new Projet(
             "defi-famille-zero-dechet",
@@ -141,7 +186,7 @@ export class ProjetsService {
             ["UX/UI Design"],
             "Création d’une application, en partenariat avec la ville de Meudon, pour aider des familles à réduire leur consommation de déchet.",
             'Eiko+banner.png',
-            ''
+            ``
         )
     ];
 
