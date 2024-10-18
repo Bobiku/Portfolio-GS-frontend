@@ -1,47 +1,44 @@
 #presentation {
-    min-height: calc(80vh - 86.5px - 66px);
+    min-height: calc(95vh);
+    padding: 0;
     display: flex;
     align-items: center;
-    background-color: var(--neutral-100);
+    justify-content: center;
+    background-image: url("/pp-pro-retouche.jpg");
+    background-color: #000;
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-clip: border-box;
     img {
         height: 256px;
         border-radius: 100%;
     }
-    h2 {
+    .displaySmall {
         margin-top: 0px;
+        color: var(--neutral-50);
     }
     p {
-        font-size: 18px;
-        font-weight: 400;
-        margin: 16px 0;
+        color: var(--neutral-50);
     }
-    span {
-        font-size: 18px;
+    span.bodyLarge {
         font-weight: 700;
-    }
-    #contentPresentation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 40px;
-        
-    }
-    #contentPresentationText {
-        flex-grow: 1;
+        color: var(--neutral-50);
     }
     .groupButton {
-        margin-top: 24px;
+        margin-top: 1.5rem;
         display: flex;
         .button{
-            margin-right: 16px;
+            margin-right: 1.5rem;
             vertical-align: baseline;
             display: flex;
             align-items: center;
         }
-        img {
+        /*img {
             height: 32px;
             margin-right: 8px;
-        }
+        }*/
         .linkedIn {
             border: solid 4px var(--linkedIn);
             background-color: var(--linkedIn);
@@ -57,18 +54,21 @@
 #competences {
     img {
         height: 32px;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
     }
     #layoutCompetences {
         display: flex;
-        justify-content: space-between;
-        gap: 24px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 1.5rem;
     }
     
     .blockCompetence {
         flex-grow: 1;
+        min-width: 300px;
+        max-width: 360px;
         border: solid 1px var(--neutral-300);
-        padding: 96px 32px 40px 32px;
-        border-radius: 8px;
+        padding: 72px 24px 32px 24px;
+        border-radius: var(--borderRadius);
     }
 }
