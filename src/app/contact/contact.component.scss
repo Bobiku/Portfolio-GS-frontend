@@ -1,13 +1,17 @@
 #contactBlock {
-    margin-top: 40px;
+    margin-top: 2.5rem;
+}
+
+.content {
+    padding-block: var(--padding-v);
 }
 
 .contactLine {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
     column-gap: 1.5rem;
-    margin-bottom: 32px;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 .contactLine span {

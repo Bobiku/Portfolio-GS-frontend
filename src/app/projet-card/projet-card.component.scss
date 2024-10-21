@@ -2,7 +2,6 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
-    max-width: calc((var(--screen) - 64px) / 2);
     flex-grow: 1;
 }
 
@@ -11,7 +10,7 @@ a {
 }
 
 img {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     object-fit: cover;
     object-position: left;
     image-rendering: auto;
@@ -20,16 +19,13 @@ img {
 }
 
 span.title {
-    font-size: 20px;
     font-weight: 700;
     color: var(--neutral-700);
-    vertical-align: baseline;
-    margin-right: 8px;
+    margin-right: 0.5rem;
 }
 
 span.label {
-    font-size: 18px;
     font-weight: 500;
-    color: var(--neutral-500);
-    vertical-align: baseline;
+    color: var(--neutral-600);
+    font-style: oblique 5deg;
 }

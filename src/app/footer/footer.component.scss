@@ -1,8 +1,7 @@
 footer {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 24px 16px;
+    padding-block: 1.5rem;
+    padding-inline: var(--padding-h);
     background-color: var(--neutral-900);
     span {
         color: var(--neutral-0);

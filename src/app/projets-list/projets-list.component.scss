@@ -1,13 +1,8 @@
-#listProjets {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 40px 64px;
+#sousTitre {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
 }
 
-#sousTitre {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 24px;
+.content {
+    padding-block: var(--padding-v);
 }

@@ -1,13 +1,18 @@
-<header>
+<header class="container">
     <div id="lisere"></div>
-    <nav>
-        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" id="linkLogo">
-            <img src="/Logo Transparent Carmin.png" alt="GS logo">
-        </a>
-        <div id="menu">
-            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
-            <a routerLink="projetsList" routerLinkActive="active">Projets</a>
-            <a routerLink="contact" routerLinkActive="active">Contact</a>
+    <nav class="container">
+        <div class="content" id="contentNav">
+            <button (click)="toggleMenu()" id="buttonMenu">
+                <img src="/icons8-hamburger-50.png" alt="Menu">
+            </button>
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" id="linkLogo">
+                <img src="/Logo Transparent Carmin.png" alt="GS logo">
+            </a>
+            <div id="menu">
+                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+                <a routerLink="projetsList" routerLinkActive="active">Projets</a>
+                <a routerLink="contact" routerLinkActive="active">Contact</a>
+            </div>
         </div>
     </nav>
 </header>

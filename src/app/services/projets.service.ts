@@ -101,7 +101,7 @@ export class ProjetsService {
             <p>L’atelier a duré 3 jours durant lesquels nous avons traité ces trois sujets lors de sessions de brainstorming, de maquettage et de conception d’user flows.</p>
             <p>À la fin de l’atelier, un consensus a déterminé que le sujet à traiter en priorité, afin d’apporter le plus de valeur ajoutée aux utilisateurs, était le sujet de l’aide en ligne. C’est celui que je vais continuer de traiter dans ce cas d’étude.</p>
         </div>
-        <div class="gallery">
+        <div class="grid">
             <img class="banner" src="get+help+whiteboard.png" alt="Aide en ligne - whiteboard">
             <img class="banner" src="get+help+workshop.png" alt="États de paie - workshop">
         </div>
@@ -155,7 +155,7 @@ export class ProjetsService {
             <p>La collaboration entre le business analyst, l’UX researcher et moi-même a permis de créer un premier parcours. Il a fallu déterminer le cadre du MVP (Minimum Viable Product) pour ne pas dépasser la deadline décidée. Ce parcours a été testé, mais il n’a pas convaincu les utilisateurs. Les utilisateurs ne comprenaient pas la page de traitement des opérations bancaires. Ils ne comprenaient ni ce qu’ils voyaient, ni ce qu’ils devaient faire.</p>
             <p>Ces entretiens utilisateurs sont une belle démonstration qu’il faut toujours tester nos designs avant de se lancer le développement. Il est toujours moins cher de corriger un prototype qu’un produit fini.</p>
         </div>
-        <div class="gallery">
+        <div class="grid">
             <img class="banner" src="module+bancaire+onboarding.png" alt="Module bancaire - OnBoarding">
         </div>
         <div class="contentProjetDetail">
@@ -279,7 +279,7 @@ export class ProjetsService {
                 </ul>
                 <h3>Photos de l’atelier</h3>
             </div>
-            <div class="gallery">
+            <div class="grid">
                 <img class="banner" src="eiko+atelier+1.jpg" alt="Atelier de sensibilisation - photo 1">
                 <img class="banner" src="eiko+atelier+2.jpg" alt="Atelier de sensibilisation - photo 2">
                 <img class="banner" src="eiko+atelier+3.jpg" alt="Atelier de sensibilisation - photo 3">

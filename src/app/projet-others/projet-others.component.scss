@@ -1,21 +1,13 @@
 .content {
     border-top: 1px solid var(--neutral-300);
-}
-
-#listProjets {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 40px 64px;
-}
-
-#sousTitre {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 24px;
+    padding-block: 7rem;
 }
 
 h2 {
     margin-top: 128px;
+}
+
+#sousTitre {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
 }

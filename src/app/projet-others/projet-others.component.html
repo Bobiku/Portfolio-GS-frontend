@@ -1,8 +1,8 @@
 <div class="container" id="projets">
     <div class="content">
         <h2>Découvrer mes autres projets</h2>
-        <p id="sousTitre">Sélection de quelques études de cas de projets UX.</p>
-        <div id="listProjets">
+        <p class="bodyLarge" id="sousTitre">Sélection de quelques études de cas de projets UX.</p>
+        <div id="grid">
             @for (projetItem of othersProjets; track projetItem.title) {
                 @if (projetItem.id !== projet.id) {
                     <app-projet-card [projet]="projetItem" />

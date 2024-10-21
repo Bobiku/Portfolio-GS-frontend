@@ -10,4 +10,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class HeaderComponent {
 
+  toggleMenu():void {
+    const buttonMenu = document.getElementById("buttonMenu");
+    console.log("Bouton "+buttonMenu+" activé !")
+  }
+  
 }

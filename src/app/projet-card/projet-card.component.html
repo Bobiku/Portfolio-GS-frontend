@@ -1,7 +1,7 @@
 <div class="projet">
     <a [routerLink]="this.projetDetailUrl">
         <div><img [src]="projet.imageBannerUrl" [alt]="projet.imageBannerAlt"></div>
-        <div><span class="title">{{ projet.title }}</span><span class="label">{{ projet.label }}</span></div>
-        <div><p>{{ projet.description }}</p></div>
+        <div><span class="bodyLarge title">{{ projet.title }}</span><span class="bodyLarge label">{{ projet.label }}</span></div>
+        <div><p class="bodyMedium">{{ projet.description }}</p></div>
     </a>
 </div>

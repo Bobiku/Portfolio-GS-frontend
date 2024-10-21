@@ -56,6 +56,8 @@
             line-height: 1.5em;
             font-style: normal;
             color: var(--neutral-950);
+            margin: 0;
+            padding: 0;
         }
 
         h1.displayLarge, span.displayLarge {
@@ -98,32 +100,32 @@
             font-size: 2.5rem;
             font-weight: 600;
             line-height: 1.2em;
-            color: var(--neutral-950);
-            margin: 2.5rem 0 0.5rem 0;
+            color: var(--neutral-700);
+            margin: 1.5rem 0 1rem 0;
         }
         
         h4 {
             font-size: 2rem;
             font-weight: 600;
             line-height: 1.2em;
-            color: var(--neutral-950);
-            margin: 2.5rem 0 0.5rem 0;
+            color: var(--neutral-700);
+            margin: 1rem 0 0.5rem 0;
         }
         
         h5 {
             font-size: 1.5rem;
             font-weight: 600;
             line-height: 1.2em;
-            color: var(--neutral-950);
-            margin: 2.5rem 0 0.5rem 0;
+            color: var(--neutral-700);
+            margin: 1rem 0 0.5rem 0;
         }
         
         h6 {
             font-size: 1.25rem;
             font-weight: 600;
             line-height: 1.2em;
-            color: var(--neutral-950);
-            margin: 2.5rem 0 0.5rem 0;
+            color: var(--neutral-700);
+            margin: 1rem 0 0.5rem 0;
         }
         
         p {
@@ -159,6 +161,10 @@
             }
         }
 
+        ul {
+            margin-left: 1rem;
+        }
+
 
         //Containers
         body {
@@ -173,26 +179,30 @@
         }
         
         .container {
-            margin: 0 auto 0 auto;
-            padding: 96px 0;
             display: flex;
             justify-content: center;
         }
         
         .content {
-            margin: 0 40px 0 40px;
-            width: 100%;
             max-width: var(--screen);
+            flex-grow: 1;
+            padding-inline: var(--padding-h);
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         }
         
 
         //Components
         .button {
             padding: 0.75em 1.25em;
-            font-size: 1rem;
+            font-size: 1.125rem;
             font-weight: 700;
             line-height: 1.2em;
-            background-color: var(--neutral-0);
+            background-color: var(--carmin-50);
             border: solid 0.25rem var(--carmin-700);
             border-radius: var(--borderRadius);
             color: var(--carmin-700);
@@ -220,14 +230,20 @@
         //resolution
         @media only screen and (min-width: 1280px) {
             --screen: 1280px;
+            --padding-h: 2.5rem;
+            --padding-v: 7rem;
         }
 
         @media only screen and (max-width: 1280px) {
             --screen: 1280px;
+            --padding-h: 2.5rem;
+            --padding-v: 7rem;
         }
 
         @media only screen and (max-width: 768px) {
             --screen: 768px;
+            --padding-h: 1rem;
+            --padding-v: 3.5rem;
             h1.displayLarge, span.displayLarge {
                 font-size: 3.75rem;
             }
@@ -263,14 +279,14 @@
                 min-height: calc(100vh - 72px - 66px);
                 background-color: var(--carmin-50);
             }
-            .content {
-                margin: 0 16px 0 16px;
-            }
         }
 
         @media only screen and (max-width: 480px) {
-            .content {
-                margin: 0 8px 0 8px;
+            --padding-h: 0.5rem;
+            --padding-v: 2rem;
+            .button {
+                font-size: 1rem;
+                padding: 0.75em 1em;
             }
         }
 
@@ -280,53 +296,41 @@
 
 //Projet Detail Component injection
 #projet {
-    h1 {
-        margin-bottom: 24px;
+    .content {
+        padding-block: var(--padding-v);
     }
-    a {
-        color: var(--carmin-700);
-        &:hover {
-            color: var(--carmin-700);
-        }
+    #labels {
+        color: var(--neutral-600);
+        font-weight: 500;
+        font-style: oblique 5deg;
+        margin: 0 0 8px 0;
     }
-    p {
-        margin: 24px 0 24px 0;
-    }
-    .contentProjetDetail {
-        max-width: 720px;
-        margin: 0 auto 0 auto;
-    }
+    #description {
+        margin-bottom: 2.5rem;
+        font-weight: 500;
+    }  
     .banner {
-        margin-bottom: 16px;
         object-fit: cover;
         object-position: center;
         image-rendering: auto;
         width: 100%;
         border-radius: 8px;
+        margin: 1rem 0;
+    }
+    .grid .banner {
+        margin: 0;
+    }
+    .contentProjetDetail {
+        max-width: 768px;
+        margin: 0 auto 0 auto;
     }
     .lien {
         display: flex;
         align-items: center;
-        margin-bottom: 16px;
+        margin: 1rem 0;
     }
     .lienImage {
         margin-right: 8px;
     }
-    .gallery {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        column-gap: 16px;
-    }
-    #labels {
-        color: var(--neutral-700);
-        font-size: 20px;
-        font-weight: 600;
-        margin: 0 0 8px 0;
-    }
-    #description {
-        margin-bottom: 56px;
-        font-size: 20px;
-        font-weight: 500;
-    }
+    
 }

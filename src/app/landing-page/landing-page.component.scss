@@ -1,5 +1,5 @@
 #presentation {
-    min-height: calc(95vh);
+    min-height: calc(95vh - 96px - 66px);
     padding: 0;
     display: flex;
     align-items: center;
@@ -11,27 +11,21 @@
     background-repeat: no-repeat;
     background-origin: border-box;
     background-clip: border-box;
-    img {
-        height: 256px;
-        border-radius: 100%;
-    }
     .displaySmall {
-        margin-top: 0px;
-        color: var(--neutral-50);
+        color: var(--carmin-50);
     }
     p {
-        color: var(--neutral-50);
+        color: var(--carmin-50);
     }
     span.bodyLarge {
         font-weight: 700;
-        color: var(--neutral-50);
+        color: var(--carmin-50);
     }
     .groupButton {
         margin-top: 1.5rem;
         display: flex;
         .button{
-            margin-right: 1.5rem;
-            vertical-align: baseline;
+            margin-right: 1.25rem;
             display: flex;
             align-items: center;
         }
@@ -51,24 +45,20 @@
     }
 }
 
+
+
 #competences {
+    .content {
+        padding-block: var(--padding-v);
+    }
     img {
         height: 32px;
-        margin-bottom: 1rem;
-    }
-    #layoutCompetences {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        gap: 1.5rem;
     }
     
     .blockCompetence {
-        flex-grow: 1;
-        min-width: 300px;
-        max-width: 360px;
+        padding: 4.5rem 1.5rem 2rem 1.5rem;
         border: solid 1px var(--neutral-300);
-        padding: 72px 24px 32px 24px;
         border-radius: var(--borderRadius);
+        
     }
 }
