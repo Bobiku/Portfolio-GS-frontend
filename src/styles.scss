@@ -62,9 +62,9 @@
 
         h1.displayLarge, span.displayLarge {
             font-family: "deserta";
-            font-size: 6rem;
+            font-size: 5rem;
             font-weight: 700;
-            line-height: 1.2em;
+            line-height: 1.1em;
             color: var(--carmin-700);
             margin: 0 0 0.5rem 0;
         }
@@ -73,7 +73,7 @@
             font-family: "deserta";
             font-size: 3rem;
             font-weight: 700;
-            line-height: 1.2em;
+            line-height: 1.1em;
             color: var(--neutral-700);
             margin: 0 0 0.5rem 0;
         }
@@ -84,7 +84,7 @@
             font-weight: 700;
             line-height: 1.2em;
             color: var(--carmin-700);
-            margin: 0 0 0.5rem 0;
+            margin: 3.5rem 0 0.5rem 0;
         }
         
         h2 {
@@ -170,12 +170,12 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--carmin-50);
+            background-color: var(--neutral-0);
         }
 
         .mainContainer {
-            min-height: calc(100vh - 96px - 66px);
-            background-color: var(--carmin-50);
+            min-height: calc(100vh - 85px);
+            background-color: var(--neutral-0);
         }
         
         .container {
@@ -202,7 +202,7 @@
             font-size: 1.125rem;
             font-weight: 700;
             line-height: 1.2em;
-            background-color: var(--carmin-50);
+            background-color: transparent;
             border: solid 0.25rem var(--carmin-700);
             border-radius: var(--borderRadius);
             color: var(--carmin-700);
@@ -243,13 +243,13 @@
         @media only screen and (max-width: 768px) {
             --screen: 768px;
             --padding-h: 1rem;
-            --padding-v: 3.5rem;
+            --padding-v: 4.25rem;
             h1.displayLarge, span.displayLarge {
-                font-size: 3.75rem;
+                font-size: 2.5rem;
             }
     
             h1.displaySmall, h2.displaySmall, span.displaySmall {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
     
             h1 {
@@ -276,14 +276,13 @@
                 font-size: 1.125rem;
             }
             .mainContainer {
-                min-height: calc(100vh - 72px - 66px);
-                background-color: var(--carmin-50);
+                min-height: calc(100vh - 85px - 64px);
             }
         }
 
         @media only screen and (max-width: 480px) {
             --padding-h: 0.5rem;
-            --padding-v: 2rem;
+            --padding-v: 4.25rem;
             .button {
                 font-size: 1rem;
                 padding: 0.75em 1em;
@@ -332,5 +331,4 @@
     .lienImage {
         margin-right: 8px;
     }
-    
 }

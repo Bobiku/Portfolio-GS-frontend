@@ -1,33 +1,37 @@
 #presentation {
-    min-height: calc(95vh - 96px - 66px);
-    padding: 0;
+    min-height: calc(95vh - 96px);
+    padding-top: 96px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: radial-gradient(circle, #f0dbde 0%, #f2e4ea, #f5edf3, #f9f6fa, #ffffff 40%);
+    /*
     background-image: url("/pp-pro-retouche.jpg");
-    background-color: #000;
-    background-position: right;
-    background-size: contain;
+    background-color: #ffffff;
+    background-position: top center;
+    background-size: cover;
     background-repeat: no-repeat;
     background-origin: border-box;
     background-clip: border-box;
+    */
     .displaySmall {
-        color: var(--carmin-50);
+        color: var(--neutral-800);
     }
     p {
-        color: var(--carmin-50);
+        color: var(--neutral-950);
     }
     span.bodyLarge {
         font-weight: 700;
-        color: var(--carmin-50);
+        color: var(--neutral-950);
     }
     .groupButton {
         margin-top: 1.5rem;
+        gap: 1.25rem;
         display: flex;
         .button{
-            margin-right: 1.25rem;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         /*img {
             height: 32px;
@@ -45,20 +49,50 @@
     }
 }
 
+@media screen and (max-width: 480px) {
+    #presentation {
+        .groupButton {
+            flex-direction: column;
+        }
+    }
+}
 
 
-#competences {
+
+#services {
     .content {
         padding-block: var(--padding-v);
     }
-    img {
-        height: 32px;
+    svg {
+        width: 48px;
+        height: 48px;
+        fill: var(--carmin-700);
     }
-    
-    .blockCompetence {
-        padding: 4.5rem 1.5rem 2rem 1.5rem;
-        border: solid 1px var(--neutral-300);
+    .grid {
+        gap: 2rem
+    }
+    .blockServices {
+        padding: 2rem 0 1.5rem 0;
         border-radius: var(--borderRadius);
         
+    }
+    .outils {
+        color: var(--neutral-700);
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #services {
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+        .grid {
+            gap: 1rem
+        }
+        .blockServices {
+            padding: 1rem 0 1.5rem 0;
+        }
     }
 }

@@ -1,7 +1,7 @@
 header {
     backdrop-filter: blur(8px);
-    background-color: #F8EDEFdd;
-    position: sticky;
+    background-color: transparent;
+    position: fixed;
     top: 0px;
     width: 100vw;
     display: flex;
@@ -45,7 +45,6 @@ nav.container {
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
-    align-content: center;
     flex-grow: 1;
     a {
         display: flex;
@@ -67,6 +66,47 @@ nav.container {
     }
 }
 
+#bottomNav {
+    display: none;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    //height: 48px;
+    background-color: var(--carmin-700);
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        border-top: 2px solid var(--carmin-700);
+        flex-grow: 1;
+        padding: 0.5rem 0.5rem;
+    }
+    img {
+        width: 24px;
+        height: 24px;
+
+    }
+    span {
+        color: var(--carmin-300);
+        font-weight: 700;
+    }
+    svg {
+        fill: var(--carmin-300);
+    }
+    .active {
+        border-top: 2px solid var(--neutral-0);
+        span {
+            color: var(--neutral-0);
+        }
+        svg {
+            fill: var(--neutral-0)
+        }
+    }
+}
+
 //spacing
 //resolution
 @media only screen and (max-width: 768px) {
@@ -74,7 +114,7 @@ nav.container {
         height: 8px;
     }
     #contentNav {
-        justify-content: flex-start;
+        justify-content: center;
         img {
             height: 48px;
         }
@@ -91,5 +131,8 @@ nav.container {
     }
     #menu {
         display: none;
+    }
+    #bottomNav {
+        display: flex;
     }
 }

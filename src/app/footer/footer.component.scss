@@ -3,7 +3,15 @@ footer {
     padding-block: 1.5rem;
     padding-inline: var(--padding-h);
     background-color: var(--neutral-900);
-    span {
+    p, a {
         color: var(--neutral-0);
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+@media only screen and (max-width: 768px) {
+    footer {
+        margin-bottom: 64px;
     }
 }
