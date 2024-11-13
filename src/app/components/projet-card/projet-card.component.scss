@@ -1,0 +1,73 @@
+.projet {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    flex-grow: 1;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-container);
+    position: relative;
+    a {
+        color: var(--on-surface);
+        text-decoration: none;
+    }
+    .imgContainer {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--border-radius) var(--border-radius) 0  0;
+    }
+    img {
+        object-fit: cover;
+        object-position: center;
+        image-rendering: auto;
+        width: 100%;
+        transition: transform 300ms;
+    }
+    .textContainer {
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .title {
+        font-weight: 700;
+        margin-right: 0.5rem;
+    }
+    .label {
+        font-style: oblique 5deg;
+        color: var(--on-surface-variant);
+    }
+    &:hover {
+        a {
+            text-decoration: none;
+        }
+        img {
+            transform: scale(1.15);
+        }
+    }   
+}
+.projet::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    border-radius: var(--border-radius);
+    z-index: -1;
+    transform: translate(0, 0);
+    transition: transform 300ms;
+}
+.projet:hover::before {
+    transform: translate(16px, 16px);
+}
+
+
+
+
+
+
+

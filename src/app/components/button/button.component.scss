@@ -1,0 +1,33 @@
+button {
+    padding: 1em 1.5em;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    position: relative;
+    background-color: var(--primary);
+    color: var(--on-surface-invert);
+    cursor: pointer; 
+    border-radius: var(--border-radius);
+}
+
+button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    z-index: -1;
+    transform: translate(0, 0);
+    transition: transform 300ms;
+    border-radius: var(--border-radius);
+}
+
+button:hover::before {
+    transform: translate(16px, 16px); /* Effet de décalage au survol */
+}

@@ -1,0 +1,130 @@
+header {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.75);
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#lisere {
+    background-color: var(--primary);
+    height: 16px;
+}
+
+nav.container {
+    width: 100vw;
+}
+
+#contentNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    img {
+        height: 64px;
+    }
+    #linkLogo {
+        height: 64px;
+        padding-block: 0.5rem;
+    }
+}
+
+#menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    flex-grow: 1;
+    a {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        color: var(--on-surface-variant);
+        font-weight: 700;
+        text-decoration: none;
+        &:hover {
+            color: var(--on-surface-invert);
+            background-color: var(--secondary);
+        }
+    }
+    .active {
+        background-color: var(--primary);
+        color: var(--on-surface-invert);
+        &:hover {
+            background-color: var(--primary);
+        }
+    }
+}
+
+#bottomNav {
+    display: none;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100vw;
+    //height: 48px;
+    background-color: var(--primary);
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        border-top: 2px solid var(--primary);
+        flex-grow: 1;
+        padding: 0.5rem 0.5rem;
+    }
+    img {
+        width: 24px;
+        height: 24px;
+
+    }
+    span {
+        color: var(--on-primary);
+        font-weight: 700;
+    }
+    svg {
+        fill: var(--on-primary);
+    }
+    .active {
+        border-top: 4px solid var(--neutral-100);
+        span {
+            color: var(--on-surface-invert);
+        }
+        svg {
+            fill: var(--on-surface-invert)
+        }
+    }
+}
+
+//spacing
+//resolution
+@media only screen and (max-width: 768px) {
+    #lisere {
+        height: 8px;
+    }
+    #contentNav {
+        justify-content: center;
+        img {
+            height: 48px;
+        }
+        #buttonMenu {
+            display: flex;
+            align-items: center;
+            img {
+                height: 24px;
+            }
+        }
+        #linkLogo {
+            height: 48px;
+        }
+    }
+    #menu {
+        display: none;
+    }
+    #bottomNav {
+        display: flex;
+    }
+}

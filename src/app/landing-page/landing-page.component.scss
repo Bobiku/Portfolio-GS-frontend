@@ -1,80 +1,39 @@
 #presentation {
-    min-height: calc(95vh - 96px);
+    min-height: calc(100vh - 96px);
     padding-top: 96px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-image: radial-gradient(circle, #f0dbde 0%, #f2e4ea, #f5edf3, #f9f6fa, #ffffff 40%);
-    /*
-    background-image: url("/pp-pro-retouche.jpg");
-    background-color: #ffffff;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    background-clip: border-box;
-    */
-    .displaySmall {
-        color: var(--neutral-800);
-    }
-    p {
-        color: var(--neutral-950);
-    }
-    span.bodyLarge {
-        font-weight: 700;
-        color: var(--neutral-950);
+    h2 {
+        margin: 0 0 0.5rem 0;
     }
     .groupButton {
         margin-top: 1.5rem;
         gap: 1.25rem;
         display: flex;
-        .button{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        /*img {
-            height: 32px;
-            margin-right: 8px;
-        }*/
-        .linkedIn {
-            border: solid 4px var(--linkedIn);
-            background-color: var(--linkedIn);
-            color: white;
-            &:hover {
-                border: solid 4px var(--linkedInDark);
-                background-color: var(--linkedInDark);
-            }
-        }
+        justify-content: center;
     }
 }
-
-@media screen and (max-width: 480px) {
-    #presentation {
-        .groupButton {
-            flex-direction: column;
-        }
-    }
-}
-
-
 
 #services {
     .content {
         padding-block: var(--padding-v);
     }
-    svg {
-        width: 48px;
-        height: 48px;
-        fill: var(--carmin-700);
+    .iconLucide {
+        color: var(--primary);
     }
     .grid {
         gap: 2rem
     }
     .blockServices {
-        padding: 2rem 0 1.5rem 0;
+        padding: 2rem 2rem;
         border-radius: var(--borderRadius);
-        
+        border: 1px solid var(--primary);
+        &:hover {
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            .iconLucide, .outils {
+                color: var(--secondary);
+            }
+        }
     }
     .outils {
         color: var(--neutral-700);
@@ -83,16 +42,28 @@
 }
 
 @media screen and (max-width: 768px) {
+    #presentation {
+        min-height: calc(100vh - 64px);
+        padding-top: 64px;
+    }
     #services {
         svg {
             width: 32px;
             height: 32px;
         }
         .grid {
-            gap: 1rem
+            gap: 2rem
         }
         .blockServices {
             padding: 1rem 0 1.5rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #presentation {
+        .groupButton {
+            flex-direction: column;
         }
     }
 }

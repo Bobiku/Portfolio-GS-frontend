@@ -1,0 +1,172 @@
+/**
+* @license
+*
+* Font Family: JetBrainsMono
+* Designed by:  Philipp Nurullin <philipp.nurullin@jetbrains.com>
+                Konstantin Bulenkov <kb@jetbrains.com>
+* URL: https://www.jetbrains.com/lp/mono/
+* © 2000-2024 JetBrains s.r.o.
+*
+* JetBrainsMono Thin 
+* JetBrainsMono ThinItalic 
+* JetBrainsMono ExtraLight 
+* JetBrainsMono ExtraLightItalic 
+* JetBrainsMono Light 
+* JetBrainsMono LightItalic 
+* JetBrainsMono Regular 
+* JetBrainsMono Italic 
+* JetBrainsMono Medium 
+* JetBrainsMono MediumItalic 
+* JetBrainsMono SemiBold 
+* JetBrainsMono SemiBoldItalic 
+* JetBrainsMono Bold 
+* JetBrainsMono BoldItalic 
+* JetBrainsMono ExtraBold 
+* JetBrainsMono ExtraBoldItalic 
+* JetBrainsMono Variable (Variable font)
+* JetBrainsMono VariableItalic (Variable font)
+
+*
+*/
+@font-face {
+    font-family: 'JetBrainsMono-Thin';
+    src: url('../fonts/JetBrainsMono-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-ThinItalic';
+    src: url('../fonts/JetBrainsMono-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-display: swap;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrainsMono-ExtraLight';
+    src: url('../fonts/JetBrainsMono-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-ExtraLightItalic';
+    src: url('../fonts/JetBrainsMono-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-display: swap;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrainsMono-Light';
+    src: url('../fonts/JetBrainsMono-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-LightItalic';
+    src: url('../fonts/JetBrainsMono-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrainsMono-Regular';
+    src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-Italic';
+    src: url('../fonts/JetBrainsMono-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrainsMono-Medium';
+    src: url('../fonts/JetBrainsMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-MediumItalic';
+    src: url('../fonts/JetBrainsMono-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrainsMono-SemiBold';
+    src: url('../fonts/JetBrainsMono-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-SemiBoldItalic';
+    src: url('../fonts/JetBrainsMono-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrainsMono-Bold';
+    src: url('../fonts/JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-BoldItalic';
+    src: url('../fonts/JetBrainsMono-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrainsMono-ExtraBold';
+    src: url('../fonts/JetBrainsMono-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JetBrainsMono-ExtraBoldItalic';
+    src: url('../fonts/JetBrainsMono-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-display: swap;
+    font-style: italic;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 300.0 to 900.0
+*/
+@font-face {
+font-family: 'JetBrainsMono-Variable';
+src: url('../fonts/JetBrainsMono-Variable.ttf') format('truetype');
+font-weight: 100 800;
+font-display: swap;
+font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 300.0 to 900.0
+*/
+@font-face {
+font-family: 'JetBrainsMono-VariableItalic';
+src: url('../fonts/JetBrainsMono-VariableItalic.ttf') format('truetype');
+font-weight: 100 800;
+font-display: swap;
+font-style: italic;
+}

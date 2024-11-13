@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProjetCardComponent } from '../projet-card/projet-card.component';
+import { ProjetCardComponent } from '../components/projet-card/projet-card.component';
 import { Projet } from '../models/projet';
 import { ProjetsService } from '../services/projets.service';
 import { ActivatedRoute } from '@angular/router';

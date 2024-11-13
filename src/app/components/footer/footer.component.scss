@@ -1,0 +1,17 @@
+footer {
+    align-items: center;
+    padding-block: 1.5rem;
+    padding-inline: var(--padding-h);
+    background-color: var(--surface-invert);
+    p, a {
+        color: var(--on-surface-invert);
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+@media only screen and (max-width: 768px) {
+    footer {
+        margin-bottom: 64px;
+    }
+}

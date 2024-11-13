@@ -1,24 +1,30 @@
-#contactBlock {
-    margin-top: 2.5rem;
+#contact {
+    background-color: var(--primary);
+    color: var(--on-surface-invert);
 }
 
 .content {
     padding-block: var(--padding-v);
 }
 
-.contactLine {
-    display: grid;
-    column-gap: 1.5rem;
-    grid-template-columns: auto 1fr auto;
+a {
+    color: var(--on-surface-invert);
+    display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    border-bottom: 1px solid transparent;
+    &:hover {
+        color: var(--on-surface-invert);
+        border-bottom: 1px solid var(--on-surface-invert);
+        text-decoration: none;
+    }
+    .iconLucide {
+        margin-right: 0.5rem;
+    }
 }
 
-.contactLine span {
-    font-weight: 600;
-}
-
-.line {
-    height: 1px;
-    background-color: var(--neutral-200);
+#contactLinks {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
 }

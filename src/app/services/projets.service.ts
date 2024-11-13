@@ -12,7 +12,7 @@ export class ProjetsService {
             "États de paie",
             ["UX/UI Design"],
             "Refonte ergonomique et graphique de la fonctionnalité des États de paie pour Sage Business Cloud Paie.",
-            'etat+de+paie+banner.png',
+            '/images/etat+de+paie+banner.png',
             `<div class="contentProjetDetail">
                 <h2>Résumé du projet</h2>
                 <p>C’est un projet pour le produit Sage Business Cloud Paie.</p>
@@ -78,7 +78,7 @@ export class ProjetsService {
             "Aide en ligne in-Product",
             ["UX/UI Design"],
             "Création d’un nouveau parcours d’assistance innovant pour les nouveaux produits Sage Business Cloud.",
-            'get+help+banner.png',
+            '/images/get+help+banner.png',
             `<div class="contentProjetDetail">
             <h2>Résumé du projet</h2>
             <p>Historiquement, les produits Sage sont des produits Desktop et l’aide en ligne est sur un site web à part. Mais le nouveau produit <a href="https://fr.wikipedia.org/wiki/Software_as_a_service" target="_blank">SaaS (Software as a service)</a> sera sur un site web. La conception de ce nouveau produit est l’occasion de refonder l’expérience d’aide en ligne afin d’améliorer son efficacité et sa fluidité pour les utilisateurs.</p>
@@ -132,7 +132,7 @@ export class ProjetsService {
             "Module bancaire",
             ["UX/UI Design"],
             "Création d’un nouveau module de gestion automatisée des transactions bancaires pour Sage Business Cloud Comptabilité.",
-            'module+bancaire+banner.png',
+            '/images/module+bancaire+banner.png',
             `<div class="contentProjetDetail">
             <h2>Résumé du projet</h2>
             <p>Grâce aux nouvelles possibilités offertes par les produits sur le web, les products managers de Sage Business Cloud Comptabilité ont décidé d’améliorer les expériences de plusieurs fonctions clé. Une d’elles est l’expérience de traitement des écritures issues des relevés bancaires.</p>
@@ -185,7 +185,7 @@ export class ProjetsService {
             "Défi Famille Zéro Déchet",
             ["UX/UI Design"],
             "Création d’une application, en partenariat avec la ville de Meudon, pour aider des familles à réduire leur consommation de déchet.",
-            'Eiko+banner.png',
+            '/images/Eiko+banner.png',
             `<div class="contentProjetDetail">
                 <h2>Résumé du projet</h2>
                 <p>Eiko est une association ayant pour but de développer des outils numériques innovants pour encourager une démocratie active et une participation citoyenne engagée. Elle met en avant les initiatives locales et en valorisant chaque engagement individuel, nous visons à transformer les petits pas en grandes avancées pour notre planète.</p>

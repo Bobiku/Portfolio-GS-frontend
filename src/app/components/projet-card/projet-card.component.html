@@ -1,0 +1,10 @@
+<div class="projet">
+    <a [routerLink]="this.projetDetailUrl">
+        <div class="imgContainer"><img [src]="projet().imageBannerUrl" [alt]="projet().imageBannerAlt"></div>
+        <div class="textContainer">
+            <span class="bodySmall label">{{ projet().label }}</span>
+            <span class="bodyLarge title">{{ projet().title }}</span>
+            <p class="bodyMedium description">{{ projet().description }}</p>
+        </div>
+    </a>
+</div>

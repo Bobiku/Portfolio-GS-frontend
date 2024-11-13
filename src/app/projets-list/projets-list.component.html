@@ -1,7 +1,7 @@
 <div class="container" id="projets">
     <div class="content">
-        <h2>Mes Projets</h2>
-        <p class="bodyLarge" id="sousTitre">Sélection de quelques études de cas de projets UX.</p>
+        <h2 class="textCenter">Mes Projets</h2>
+        <p class="bodyLarge textCenter subtitle">Sélection de quelques études de cas de projets UX.</p>
         <div class="grid">
             @for (projetItem of projets; track projetItem.title) {
                 <app-projet-card [projet]="projetItem" />
