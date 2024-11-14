@@ -66,10 +66,51 @@
         color: var(--neutral-700);
         font-weight: 600;
     }
+    a {
+        display: flex;
+        align-items: center;   
+        gap: 0.5rem;
+        border-bottom: 1px solid transparent;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        font-weight: 600;
+        .iconLucide {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+        }
+        &:hover {
+            color: var(--secondary);
+            border-bottom: 1px solid var(--secondary);
+            text-decoration: none;
+            .iconLucide {
+                color: var(--secondary);
+            }
+        }
+    }
 }
 
 #funfacts {
-
+    .funfact {
+        border: 1px solid var(--primary);
+        img {
+            max-width: 768px;
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            object-position: center;
+            image-rendering: auto;
+        }
+        .funfactText {
+            padding: 1rem 2rem;
+        }
+        &:hover {
+            border: 1px solid var(--secondary);
+            h3 {
+                color: var(--secondary);
+            }
+        }
+    }
 }
 
 #testimonials {
@@ -87,9 +128,6 @@
         align-items: flex-end;
         gap: 1rem;
         width: max-content;
-        p {
-            font-style: italic;
-        }
         img {
             width: 48px;
             height: 48px;
