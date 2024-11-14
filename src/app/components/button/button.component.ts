@@ -12,11 +12,12 @@ export class ButtonComponent {
 
   textLabel: InputSignal<String> = input.required();
   link: InputSignal<String> = input.required();
+  
 
   private router = inject(Router);
   
   Navigate(link: String) {
-    this.router.navigateByUrl('/' + link);
+    this.router.navigateByUrl('' + link);
   }
 
 }

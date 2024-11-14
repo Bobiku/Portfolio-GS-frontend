@@ -1,0 +1,118 @@
+#hero {
+    padding-block: calc(var(--padding-v) + 96px);
+    h2 {
+        margin: 0 0 0.5rem 0;
+    }
+    img {
+        max-width: 33%;
+        object-fit: cover;
+        object-position: center;
+        image-rendering: auto;
+    }
+    .contentHero {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+#citation, #expertise, #funfacts, #testimonials {
+    padding-block: var(--padding-v);
+}
+
+#citation {
+    background-color: var(--primary);
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    color: var(--on-surface-invert);
+    .citation {
+        font-style: italic;
+    }
+    .author {
+        text-align: end;
+        font-weight: 600;
+    }
+}
+
+#expertise {
+    .content {
+        padding-block: var(--padding-v);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .iconLucide {
+        color: var(--primary);
+    }
+    .grid {
+        gap: 2rem
+    }
+    .blockExpertise {
+        padding: 2rem 2rem;
+        border-radius: var(--borderRadius);
+        border: 1px solid var(--primary);
+        &:hover {
+            border: 1px solid var(--secondary);
+            .iconLucide, .title {
+                color: var(--secondary);
+            }
+        }
+    }
+    .outils {
+        color: var(--neutral-700);
+        font-weight: 600;
+    }
+}
+
+#funfacts {
+
+}
+
+#testimonials {
+    .content {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .testimonial {
+        border: 1px solid var(--primary);
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+        width: max-content;
+        p {
+            font-style: italic;
+        }
+        img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 500;
+        }
+        &:hover {
+            border: 1px solid var(--secondary);
+            img {
+                border: 2px solid var(--secondary);
+            }
+            .author {
+                color: var(--secondary);
+            }
+        }
+    }
+    .testimonial:nth-child(odd) {
+        align-self: flex-end;
+    }
+}

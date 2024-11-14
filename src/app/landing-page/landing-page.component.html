@@ -1,50 +1,50 @@
 <div class="container" id="presentation">
     <div class="content">
             <h2 class="textCenter">Bonjour. Je m'appelle Guillaume. Et je suis</h2>
-            <h1 class="displayLarge textCenter">Un développeur créatif</h1>
+            <h1 class="displayLarge textCenter">Un développeur créatif.</h1>
             <p class="bodyLarge textCenter subtitle">Je suis un passioné de design d'interfaces qui sont engageante, accessible et centré-utilisateur.</p>
             <div class="groupButton">
-                <app-button link="projets" textLabel="Voir les projets"></app-button>
+                <app-button link="/#projets" textLabel="Voir mes projets"></app-button>
             </div>
     </div>
 </div>
+<app-projets-list />
 <div class="container" id="services">
     <div class="content">
         <h2 class="textCenter">Mes Compétences</h2>
         <div class="grid">
             <div class="blockServices">
                 <lucide-icon [img]="Microscope" [size]="48" class="iconLucide"></lucide-icon>
-                <h3>Ux Research</h3>
-                <p class="bodyMedium">Évaluer l’existant, modéliser les profils, les tâches, les parcours, les émotions, comprendre les usages utilisateurs, identifier des opportunités business</p>
+                <h3 class="title">Ux Research</h3>
+                <p class="bodyMedium description">Évaluer l’existant, modéliser les profils, les tâches, les parcours, les émotions, comprendre les usages utilisateurs, identifier des opportunités business</p>
                 <p class="bodyMedium outils">Outils : Entretiens utilisateurs, Carte d’expérience, User stories, Persona</p>
             </div>
             <div class="blockServices">
                 <lucide-icon [img]="DraftingCompass" [size]="48" class="iconLucide"></lucide-icon>
-                <h3>Ux Design</h3>
-                <p class="bodyMedium">Créer de l'utilisabilité, améliorer l'ergonomie et en simplifier l'usage, concevoir des parcours utilisateus simples et élégants</p>
+                <h3 class="title">Ux Design</h3>
+                <p class="bodyMedium description">Créer de l'utilisabilité, améliorer l'ergonomie et en simplifier l'usage, concevoir des parcours utilisateus simples et élégants</p>
                 <p class="bodyMedium outils">Outils : Design thinking, Wireframing, Prototypage, Figma, Miro, Klaxoon</p>
             </div>
             <div class="blockServices">
                 <lucide-icon [img]="Brush" [size]="48" class="iconLucide"></lucide-icon>
                 
-                <h3>UI Design</h3>
-                <p class="bodyMedium">Définir ou transformer un rendu graphique, créer et gérer les assets et les composants d'un Design System</p>
+                <h3 class="title">UI Design</h3>
+                <p class="bodyMedium description">Définir ou transformer un rendu graphique, créer et gérer les assets et les composants d'un Design System</p>
                 <p class="bodyMedium outils">Outils : Interaction Design, Visual Design, Prototypage, Design System, Figma, Adobe Creative Suite</p>
             </div>
             <div class="blockServices">
                 <lucide-icon [img]="Code" [size]="48" class="iconLucide"></lucide-icon>
-                <h3>Développement</h3>
+                <h3 class="title">Développement</h3>
                 <p class="bodyMedium">Concevoir des interfaces, développer des applications mobiles et desktops, en NoCode ou en Code, gérer des bases de données</p>
                 <p class="bodyMedium outils">Outils : HTML5, CSS3, Angular, NoCode Framer, Java, C#/Unity, SQL/PHP, Unity</p>
             </div>
             <div class="blockServices">
                 <lucide-icon [img]="CalendarRange" [size]="48" class="iconLucide"></lucide-icon>
-                <h3>Gestion de projets</h3>
-                <p class="bodyMedium">Travailler en équipe, gérer le développement d'un projet, s'assurer des besoins du client</p>
+                <h3 class="title">Gestion de projets</h3>
+                <p class="bodyMedium description">Travailler en équipe, gérer le développement d'un projet, s'assurer des besoins du client</p>
                 <p class="bodyMedium outils">Outils : Méthodologie Agile, Jira, Confluence, Notion</p>
             </div>
         </div>
     </div>
 </div>
-<app-projets-list />
 <app-contact /> 

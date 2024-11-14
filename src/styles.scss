@@ -64,6 +64,10 @@
         //Radius
         --border-radius: 0px;
 
+        --screen: 1280px;
+        --padding-h: 2.5rem;
+        --padding-v: 7rem;
+
 
         // System
         // Surface
@@ -94,187 +98,10 @@
         --secondary-invert: var(--paolo-veronese-green-200);
         --on-secondary-invert: var(--paolo-veronese-green-900);
 
-
         // Fonts
-        body {
-            font-family: "Satoshi-Variable", "Satoshi-Regular", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-optical-sizing: auto;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            font-style: normal;
-            color: var(--on-surface);
-            margin: 0;
-            padding: 0;
-        }
-
-        .textCenter {
-            min-width: 100%;
-            text-align: center;
-        }
-
-        .subtitle {
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        // Headings
-        h1 {
-            font-family: "ClashDisplay-Variable";
-            font-size: 3.75rem;
-            font-weight: 400;
-            line-height: 1.2;
-            color: var(--primary);
-            margin: 3.5rem 0 0.5rem 0;
-        }
-        
-        h2 {
-            font-family: "ClashDisplay-Variable";
-            font-size: 3rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 3.5rem 0 2rem 0;
-        }
-        
-        h3 {
-            font-family: "ClashDisplay-Variable";
-            font-size: 2rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 1.5rem 0 1.5rem 0;
-        }
-        
-        h4 {
-            font-family: "ClashDisplay-Variable";
-            font-size: 1.75rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 1rem 0 1rem 0;
-        }
-        
-        h5 {
-            font-family: "ClashDisplay-Variable";
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 1rem 0 0.75rem 0;
-        }
-        
-        h6 {
-            font-family: "ClashDisplay-Variable";
-            font-size: 1.125rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin: 1rem 0 0.5rem 0;
-        }
-
-        // Displays
-        .displayLarge {
-            font-family: "ClashDisplay-Variable";
-            font-size: 4.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            color: var(--primary);
-            margin: 0 0 0.5rem 0;
-        }
-
-        .displayMedium {
-            font-family: "ClashDisplay-Variable";
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin: 0 0 0.5rem 0;
-        }
-
-        .displaySmall {
-            font-family: "ClashDisplay-Variable";
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin: 0 0 0.5rem 0;
-        }
-
-        // Mono
-        .mono {
-            font-family: "JetBrainsMono-Variable";
-            font-size: 0.813rem;
-            line-height: 1.2;
-        }
-
-        //Body        
-        p {
-            margin: 0.5rem 0;
-            max-width: 768px;
-        }
-
-        p.bodyLarge, span.bodyLarge, a.bodyLarge {
-            font-size: 1.125rem;
-        }
-
-        p.bodyMedium, span.bodyMedium, a.bodyMedium {
-            font-size: 1rem;
-        }
-
-        p.bodySmall, span.bodySmall, a.bodySmall {
-            font-size: 0.875rem;
-        }
-
-        p.bodyTiny, span.bodyTiny, a.bodyTiny {
-            font-size: 0.75rem;
-        }        
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            &:hover {
-                color: var(--secondary);
-                text-decoration: underline;
-            }
-        }
-
-        ul {
-            margin-left: 1rem;
-        }
-
-        // Labels
-        .label {
-            font-weight: 500;
-        }
-
-
-
-        //Containers
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--primary);
-        }
-
-        .mainContainer {
-            min-height: calc(100vh - 85px);
-            background-color: var(--surface);
-        }
-        
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 0;
-        }
-        
-        .content {
-            max-width: var(--screen);
-            flex-grow: 1;
-            padding-inline: var(--padding-h);
-        }
-
-        .grid {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        }
-
+        --fontBody: 'Satoshi-Variable';
+        --fontHeading: 'ClashDisplay-Variable';
+        --fontMono: 'JetBrainsMono-Variable';
 
         //spacing
         //resolution
@@ -294,53 +121,229 @@
             --screen: 768px;
             --padding-h: 1rem;
             --padding-v: 4.25rem;
-            h1.displayLarge, span.displayLarge {
-                font-size: 2.5rem;
-            }
-    
-            h1.displaySmall, h2.displaySmall, span.displaySmall {
-                font-size: 1.75rem;
-            }
-    
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            h3 {
-                font-size: 1.75rem;
-            }
-            
-            h4 {
-                font-size: 1.5rem;
-            }
-            
-            h5 {
-                font-size: 1.25rem;
-            }
-            
-            h6 {
-                font-size: 1.125rem;
-            }
-            .mainContainer {
-                min-height: calc(100vh - 85px - 64px);
-            }
         }
 
         @media only screen and (max-width: 480px) {
             --padding-h: 0.5rem;
             --padding-v: 4.25rem;
-            .button {
-                font-size: 1rem;
-                padding: 0.75em 1em;
-            }
         }
 
-    /*}
-    [data-theme="dark"] {}*/
+        /*}
+            [data-theme="dark"] {}*/
+}
+
+body {
+    font-family: var(--fontBody), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    font-style: normal;
+    color: var(--on-surface);
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.75px;
+}
+
+.textCenter {
+    min-width: 100%;
+    text-align: center;
+}
+
+.subtitle {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.colorVariant {
+    color: var(--on-surface-variant);
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fontHeading);
+    line-height: 1.2;
+    font-weight: 400;
+}
+h1 {
+    font-size: 3.75rem;
+    color: var(--primary);
+    margin: 3.5rem 0 0.5rem 0;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 3.5rem 0 2rem 0;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+h4 {
+    font-size: 1.75rem;
+    margin: 1rem 0 1rem 0;
+}
+
+h5 {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.75rem 0;
+}
+
+h6 {
+    font-size: 1.125rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+// Displays
+.displayLarge, .displayMedium, .displaySmall {
+    font-family: var(--fontHeading);
+    font-weight: 700;
+    line-height: 1.1;
+}
+.displayLarge {
+    font-size: 4rem;
+    color: var(--primary);
+    margin: 0 0 3rem 0;
+}
+
+.displayMedium {
+    font-size: 3rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.displaySmall {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+// Mono
+.mono {
+    font-family: var(--fontMono);
+    font-size: 0.813rem;
+    line-height: 1.2;
+}
+
+//Body        
+p, li {
+    margin: 0.5rem 0;
+    max-width: 768px;
+}
+
+p.bodyLarge, span.bodyLarge, a.bodyLarge {
+    font-size: 1.125rem;
+}
+
+p.bodyMedium, span.bodyMedium, a.bodyMedium {
+    font-size: 1rem;
+}
+
+p.bodySmall, span.bodySmall, a.bodySmall {
+    font-size: 0.875rem;
+}
+
+p.bodyTiny, span.bodyTiny, a.bodyTiny {
+    font-size: 0.75rem;
+}        
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    &:hover {
+        color: var(--secondary);
+        text-decoration: underline;
+    }
+}
+
+ul {
+    margin-left: 1rem;
+}
+
+// Labels
+.label {
+    font-weight: 500;
+}
+
+
+//Containers
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+}
+
+.mainContainer {
+    min-height: calc(100vh - 85px);
+    background-color: var(--surface);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.content {
+    max-width: var(--screen);
+    flex-grow: 1;
+    padding-inline: var(--padding-h);
+    position: relative;
+    z-index: 2;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    h1.displayLarge, span.displayLarge {
+        font-size: 2.5rem;
+    }
+
+    h1.displaySmall, h2.displaySmall, span.displaySmall {
+        font-size: 1.75rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+    
+    h4 {
+        font-size: 1.5rem;
+    }
+    
+    h5 {
+        font-size: 1.25rem;
+    }
+    
+    h6 {
+        font-size: 1.125rem;
+    }
+    .mainContainer {
+        min-height: calc(100vh - 85px - 64px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .button {
+        font-size: 1rem;
+        padding: 0.75em 1em;
+    }
 }
 
 //Projet Detail Component injection

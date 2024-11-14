@@ -1,7 +1,7 @@
 #presentation {
     min-height: calc(100vh - 96px);
     padding-top: 96px;
-    background-image: radial-gradient(circle, #f0dbde 0%, #f2e4ea, #f5edf3, #f9f6fa, #ffffff 40%);
+    background: linear-gradient(115deg, #e5fffb, #F8EDEF);
     h2 {
         margin: 0 0 0.5rem 0;
     }
@@ -28,9 +28,8 @@
         border-radius: var(--borderRadius);
         border: 1px solid var(--primary);
         &:hover {
-            color: var(--secondary);
             border: 1px solid var(--secondary);
-            .iconLucide, .outils {
+            .iconLucide, .title {
                 color: var(--secondary);
             }
         }
