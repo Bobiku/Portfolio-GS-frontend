@@ -1,10 +1,9 @@
 .aura {
-    --size: 50vw;
+    --size: 20vw;
     position: fixed;
-    z-index: 20;
     width: var(--size);
     height: var(--size);
-    background: radial-gradient(circle closest-side, #00967e30 0%, transparent 100%);
+    background: radial-gradient(circle closest-side, #00967e50 0%, transparent 100%);
     pointer-events: none; /* Empêche l'aura d'interagir avec d'autres éléments */
     transform: translate(-50%, -50%); /* Centre l'aura autour du curseur */
     transition: transform 0.1s ease-out; /* Transition fluide */
