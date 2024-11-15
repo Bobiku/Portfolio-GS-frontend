@@ -2,7 +2,7 @@
     <div class="content ">
         <h2 class="textCenter colorVariant">Ravi de vous rencontrer!</h2>
         <h1 class="displayLarge textCenter">Je m'appelle Guillaume.</h1>
-        <div class="contentHero">
+        <div class="contentHero blurEffect">
             <img src="/images/photo-de-profil.jpg" alt="Photo de profil">
             <div class="textHero">
                 <p class="bodyLarge">I’m a Frontend Developer and a UX Design based on Bordeaux, France</p>
@@ -22,70 +22,67 @@
     <div class="content">
         <h2 class="textCenter">Mon expertise</h2>
         <div class="grid">
-            <div class="blockExpertise">
+            <div class="blockExpertise blurEffect">
                 <lucide-icon [img]="Microscope" [size]="48" class="iconLucide"></lucide-icon>
                 <h3 class="title">Ux Research</h3>
                 <p class="bodyMedium description">Évaluer l’existant, modéliser les profils, les tâches, les parcours, les émotions, comprendre les usages utilisateurs, identifier des opportunités business</p>
                 <p class="bodyMedium outils">Outils : Entretiens utilisateurs, Carte d’expérience, User stories, Persona</p>
             </div>
-            <div class="blockExpertise">
+            <div class="blockExpertise blurEffect">
                 <lucide-icon [img]="DraftingCompass" [size]="48" class="iconLucide"></lucide-icon>
                 <h3 class="title">Ux Design</h3>
                 <p class="bodyMedium description">Créer de l'utilisabilité, améliorer l'ergonomie et en simplifier l'usage, concevoir des parcours utilisateus simples et élégants</p>
                 <p class="bodyMedium outils">Outils : Design thinking, Wireframing, Prototypage, Figma, Miro, Klaxoon</p>
             </div>
-            <div class="blockExpertise">
+            <div class="blockExpertise blurEffect">
                 <lucide-icon [img]="Brush" [size]="48" class="iconLucide"></lucide-icon>
                 
                 <h3 class="title">UI Design</h3>
                 <p class="bodyMedium description">Définir ou transformer un rendu graphique, créer et gérer les assets et les composants d'un Design System</p>
                 <p class="bodyMedium outils">Outils : Interaction Design, Visual Design, Prototypage, Design System, Figma, Adobe Creative Suite</p>
             </div>
-            <div class="blockExpertise">
+            <div class="blockExpertise blurEffect">
                 <lucide-icon [img]="Code" [size]="48" class="iconLucide"></lucide-icon>
                 <h3 class="title">Développement</h3>
                 <p class="bodyMedium">Concevoir des interfaces, développer des applications mobiles et desktops, en NoCode ou en Code, gérer des bases de données</p>
                 <p class="bodyMedium outils">Outils : HTML5, CSS3, Angular, NoCode Framer, Java, C#/Unity, SQL/PHP, Unity</p>
             </div>
-            <div class="blockExpertise">
+            <div class="blockExpertise blurEffect">
                 <lucide-icon [img]="CalendarRange" [size]="48" class="iconLucide"></lucide-icon>
                 <h3 class="title">Gestion de projets</h3>
                 <p class="bodyMedium description">Travailler en équipe, gérer le développement d'un projet, s'assurer des besoins du client</p>
                 <p class="bodyMedium outils">Outils : Méthodologie Agile, Jira, Confluence, Notion</p>
             </div>
         </div>
-        <a class="bodyLarge contactLink" href="https://drive.google.com/file/d/1zJxCyVSJbSuf-d8vRhjUExkuCSjpV_ZN/view" target="_blank">
-            <lucide-icon [img]="FileUser" [size]="20" class="iconLucide"></lucide-icon>
-            <span>Voir mon CV</span>
-        </a>
-    </div>
+        <app-button url="https://drive.google.com/file/d/1zJxCyVSJbSuf-d8vRhjUExkuCSjpV_ZN/view"><lucide-icon [img]="FileUser" class="iconLucide"></lucide-icon>Voir mon CV</app-button>
+        </div>
 </div>
 <div class="container" id="funfacts">
     <div class="content ">
         <h2 class="textCenter">Fun Facts</h2>
         <div class="grid">
-            <div class="funfact">
+            <div class="funfact blurEffect">
                 <img src="/images/photo-merlin.jpg" alt="Photo de Merlin">
                 <div class="funfactText">
                     <h3>#Acolyte</h3>
                 <p class="bodyMedium">Heureusement, je ne travaille jamais seul ! Mon acolyte Merlin m'aide chaque jour à peaufiner mes projets grâce à ses ronronnements, son habitude à donner des coups de patte sur l'écran et en codant aléatoirement en marchant sur le clavier ! </p>
                 </div>
             </div>
-            <div class="funfact">
+            <div class="funfact blurEffect">
                 <img src="/images/photo-sportif.jpg" alt="Photo de Merlin">
                 <div class="funfactText">
                     <h3>#Sportif</h3>
                 <p class="bodyMedium">Heureusement, je ne travaille jamais seul ! Mon acolyte Merlin m'aide chaque jour à peaufiner mes projets grâce à ses ronronnements, son habitude à donner des coups de patte sur l'écran et en codant aléatoirement en marchant sur le clavier ! </p>
                 </div>
             </div>
-            <div class="funfact">
+            <div class="funfact blurEffect">
                 <img src="/images/photo-merlin.jpg" alt="Photo de Merlin">
                 <div class="funfactText">
                     <h3>#Japon</h3>
                 <p class="bodyMedium">Heureusement, je ne travaille jamais seul ! Mon acolyte Merlin m'aide chaque jour à peaufiner mes projets grâce à ses ronronnements, son habitude à donner des coups de patte sur l'écran et en codant aléatoirement en marchant sur le clavier ! </p>
                 </div>
             </div>
-            <div class="funfact">
+            <div class="funfact blurEffect">
                 <img src="/images/photo-merlin.jpg" alt="Photo de Merlin">
                 <div class="funfactText">
                     <h3>#Hair Style</h3>
@@ -98,7 +95,7 @@
 <div class="container" id="testimonials">
     <div class="content ">
         <h2 class="textCenter">Mes recommendations</h2>
-        <div class="testimonial">
+        <div class="testimonial blurEffect">
             <div>
                 <p class="bodyMedium ">"Guillaume Savary a joué un rôle clé dans le développement d’Eiko, montrant un excellent leadership en tant que Lead Designer. Il a mené avec succès les sessions de brainstorming pour la refonte de notre charte graphique, collaborant efficacement avec plusieurs équipes pour définir une identité visuelle cohérente.</p>
                 <p class="bodyMedium">En plus de sa capacité à fédérer autour de l'identité d’Eiko, Guillaume a créé un design system solide avec MUI, ce qui a permis d'assurer une expérience utilisateur cohérente sur l'ensemble de notre plateforme. Proactif et orienté utilisateur, il a mené des entretiens utilisateurs et conçu des personas qui ont affiné notre proposition de valeur et enrichi notre approche produit.</p>
@@ -110,7 +107,7 @@
                 <span class="bodyMedium">Marc Mouchoux, Eiko</span>
             </div>
         </div>
-        <div class="testimonial">
+        <div class="testimonial blurEffect">
             <div>
                 <p class="bodyMedium ">"J’ai eu l’occasion de travailler avec Guillaume Savary lors de sa dernière année dans le cadre de projets d’UX Experience internes à notre société.</p>
                 <p class="bodyMedium">Tout au long de cette année, Guillaume a montré qu’il était une personne proactive, rigoureuse, dynamique et digne de confiance. Ses travaux (Designs, maquettes de sites web, questionnaires user-research) ont été systématiquement délivrés conformément aux plannings établis. Leur qualité a été à chaque fois unanimement remarquée et saluée par nos clients</p>

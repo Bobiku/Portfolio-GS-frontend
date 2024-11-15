@@ -1,4 +1,7 @@
-button {
+a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1em 1.5em;
     font-size: 1.125rem;
     font-weight: 600;
@@ -13,7 +16,7 @@ button {
     border-radius: var(--border-radius);
 }
 
-button::before {
+a::before {
     content: "";
     display: block;
     position: absolute;
@@ -28,6 +31,6 @@ button::before {
     border-radius: var(--border-radius);
 }
 
-button:hover::before {
+a:hover::before {
     transform: translate(16px, 16px); /* Effet de décalage au survol */
 }

@@ -1,1 +1,13 @@
-<button class="button primary" (click)="Navigate(this.link())">{{textLabel()}}</button>
+@if (isExternalUrl(url())) {
+    <a [href]="url()" target="_blank" role="button" rel="noopener noreferrer">
+        <ng-container *ngTemplateOutlet="buttonContent"></ng-container>
+    </a>
+} @else {
+    <a [routerLink]="getRouterLink().routerLink" [fragment]="getRouterLink().fragment" role="button">
+        <ng-container *ngTemplateOutlet="buttonContent"></ng-container>
+    </a>
+}
+
+<ng-template #buttonContent>
+    <ng-content></ng-content>
+</ng-template>

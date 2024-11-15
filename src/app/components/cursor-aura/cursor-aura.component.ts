@@ -30,7 +30,6 @@ export class CursorAuraComponent {
   onMouseMove(event: MouseEvent) {
     this.auraX = event.clientX;
     this.auraY = event.clientY;
-    console.log('move !')
   }
 
 }

@@ -1,6 +1,10 @@
 #presentation {
-    min-height: calc(100vh - 96px);
+    min-height: calc(100vh - 81px);
     padding-top: 96px;
+    .heroContent {
+        padding: 4rem 5rem;
+        width: fit-content;
+    }
     h2 {
         margin: 0 0 0.5rem 0;
     }

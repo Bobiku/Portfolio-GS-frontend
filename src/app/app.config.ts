@@ -10,7 +10,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withInMemoryScrolling({
         scrollPositionRestoration: 'enabled', // Revenir en haut de page à chaque navigation
-        anchorScrolling: 'enabled'            // Gérer les ancres
+        anchorScrolling: 'disabled'            // Gérer les ancres
       })
     ), {
       provide: LOCALE_ID, useValue: 'fr-FR',
