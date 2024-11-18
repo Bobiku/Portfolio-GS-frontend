@@ -24,6 +24,7 @@ nav.container {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    flex-direction: row;
     img {
         height: 64px;
     }
@@ -77,6 +78,9 @@ nav.container {
         border-top: 2px solid var(--primary);
         flex-grow: 1;
         padding: 0.5rem 0.5rem;
+        &:hover {
+            text-decoration: none;
+        }
     }
     img {
         width: 24px;
@@ -87,16 +91,16 @@ nav.container {
         color: var(--on-primary);
         font-weight: 700;
     }
-    svg {
-        fill: var(--on-primary);
+    .iconLucide {
+        color: var(--on-primary);
     }
     .active {
         border-top: 4px solid var(--neutral-100);
         span {
             color: var(--on-surface-invert);
         }
-        svg {
-            fill: var(--on-surface-invert)
+        .iconLucide {
+            color: var(--on-surface-invert)
         }
     }
 }

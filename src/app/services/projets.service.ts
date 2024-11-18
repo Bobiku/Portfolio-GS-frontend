@@ -12,7 +12,7 @@ export class ProjetsService {
             "États de paie",
             ["UX/UI Design"],
             "Refonte ergonomique et graphique de la fonctionnalité des États de paie pour Sage Business Cloud Paie.",
-            '/images/etat+de+paie+banner.png',
+            '/images/etats-de-paie/etat+de+paie+banner.png',
             `<div class="contentProjetDetail">
                 <h2>Résumé du projet</h2>
                 <p>C’est un projet pour le produit Sage Business Cloud Paie.</p>
@@ -42,7 +42,7 @@ export class ProjetsService {
                 <p>Ensuite, nous avons repris ensemble l’étude de la recherche utilisateurs pour concevoir une nouvelle interface utilisateur qui répond aux besoins recueillis. Après plusieurs ateliers d’idéations avec le business analyst, le PO et le PM, nous avons conçu un premier jet de la refonte de l’interface.</p>
                 <p>Avec le business analyst et le PM, nous avons défini un ensemble de filtres manquant, comme des plages de date plus précises ou un large choix de critères de sélection de salariés par groupe, statut, ou individuellement. Un inventaire de tous les états de paie présents dans l’application a été effectué afin d’évaluer le coût pour tous les centraliser dans cette page. Une prévisualisation de l’état sélectionné est affichée, et se met à jour en temps réel en fonction du filtrage sélectionné par l’utilisateur. Enfin, l’utilisateur peut voir une liste de tous les états à gauche. Il peut en sélectionner un seul ou plusieurs en même temps. Ils peuvent appliquer le filtrage à ces états, naviguer entre eux via des onglets, avoir une vue côte à côte pour comparer facilement les données, et les exporter dans plusieurs formats. Par la suite, j’ai transformé notre vision en un prototype haute fidélité pour le faire tester à des utilisateurs.</p>
             </div>
-            <img class="banner" src="etat+de+paie+filter.png" alt="États de paie - filtres">
+            <img class="banner" src="images/etats-de-paie/etat+de+paie+filter.png" alt="États de paie - filtres">
             <div class="contentProjetDetail">
                 <h2>Tests utilisateurs</h2>
                 <p>Ensuite, j’ai organisé une session de tests utilisateurs. La dizaine d’utilisateurs recrutés avait répondu au sondage lancé il y a quelques mois. Les tests utilisateurs avaient 2 objectifs :</p>
@@ -57,15 +57,15 @@ export class ProjetsService {
                 <p>Certains points ont été confirmés par les tests. Les utilisateurs plébiscitent la centralisation de tous les états dans un seul endroit dans l’application. Ils apprécient également la plus grande personnalisation offerte par les filtres, mais ils veulent quelque chose de simple à comprendre et à utiliser. Ils apprécient également la prévisualisation des données.</p>
                 <p>Cependant, la grande majorité des utilisateurs ont affirmé n’avoir besoin que du format PDF pour leurs états. D’autres se sont plaints du manque de cohérence entre les données visualisées dans l’application et le rendu de ceci dans Excel, rendant ce format quasiment inutilisable pour eux. De plus, deux profils utilisateurs ont également émergé. Ceux qui travaillent dans une agence et gérant de nombreux dossiers. Et ceux qui travaillent directement en entreprise. Leurs besoins de personnalisation et d’automatisation sont bien différents.</p>
                 <div class="lien">
-                    <img class="lienImage" src="icons8-pdf-48.png" alt="PDF Logo">
+                    <img class="lienImage" src="images/icons8-pdf-48.png" alt="PDF Logo">
                     <a href="https://drive.google.com/file/d/1XYoLmY0jDYmrQJloUOWEOr-Xc07NrUlz/view?usp=sharing" target="_blank">Le rapport des tests utilisateurs</a>
                 </div>
                 <div class="lien">
-                    <img class="lienImage" src="icons8-figma-48.png" alt="Figma Logo">
+                    <img class="lienImage" src="images/icons8-figma-48.png" alt="Figma Logo">
                     <a href="https://www.figma.com/proto/xS7DJxGo0xdCZsPRwH6Hp8/Guillaume-Savary-stuff?page-id=649%3A4&type=design&node-id=649-12425&viewport=9616%2C3286%2C0.83&t=QtXd7ZDhJcjItDFG-1&scaling=min-zoom&starting-point-node-id=649%3A12425&show-proto-sidebar=1&mode=design" target="_blank">Le prototype final</a>
                 </div>
             </div>
-            <img class="banner" src="etat+de+paie+banner.png" alt="États de paie - comparer deux documents">
+            <img class="banner" src="/images/etats-de-paie/etat+de+paie+banner.png" alt="États de paie - comparer deux documents">
             <div class="contentProjetDetail">
                 <h2>Fin du projet</h2>
                 <p>Le projet s’est terminé par une nouvelle itération du prototype suite à cette session de tests utilisateurs et sa présentation au product manager du produit.</p>
@@ -78,7 +78,7 @@ export class ProjetsService {
             "Aide en ligne in-Product",
             ["UX/UI Design"],
             "Création d’un nouveau parcours d’assistance innovant pour les nouveaux produits Sage Business Cloud.",
-            '/images/get+help+banner.png',
+            '/images/aide-in-product/get+help+banner.png',
             `<div class="contentProjetDetail">
             <h2>Résumé du projet</h2>
             <p>Historiquement, les produits Sage sont des produits Desktop et l’aide en ligne est sur un site web à part. Mais le nouveau produit <a href="https://fr.wikipedia.org/wiki/Software_as_a_service" target="_blank">SaaS (Software as a service)</a> sera sur un site web. La conception de ce nouveau produit est l’occasion de refonder l’expérience d’aide en ligne afin d’améliorer son efficacité et sa fluidité pour les utilisateurs.</p>
@@ -102,8 +102,8 @@ export class ProjetsService {
             <p>À la fin de l’atelier, un consensus a déterminé que le sujet à traiter en priorité, afin d’apporter le plus de valeur ajoutée aux utilisateurs, était le sujet de l’aide en ligne. C’est celui que je vais continuer de traiter dans ce cas d’étude.</p>
         </div>
         <div class="grid">
-            <img class="banner" src="get+help+whiteboard.png" alt="Aide en ligne - whiteboard">
-            <img class="banner" src="get+help+workshop.png" alt="États de paie - workshop">
+            <img class="banner" src="/images/aide-in-product/get+help+whiteboard.png" alt="Aide en ligne - whiteboard">
+            <img class="banner" src="/images/aide-in-product/get+help+workshop.png" alt="États de paie - workshop">
         </div>
         <div class="contentProjetDetail">
             <h2>La création du parcours de l’aide en ligne in-Product</h2>
@@ -115,11 +115,11 @@ export class ProjetsService {
             </ul>
             <p>Pour cela, on propose dans l’en-tête de l’application un bouton “Besoin d’aide ?”, accessible à tout moment. Il ouvre un panneau latéral se superposant à son application. Il peut retrouver des articles et des informations pré-filtrés en fonction de son contexte d’utilisation immédiat. Il peut aussi lancer un chat avec un conseiller via notre outil intégré ou envoyer un ticket et suivre sa demande. Enfin, il peut retrouver des tutoriels lui expliquant comment fonctionne une fonctionnalité ou lui présentant une évolution issue d’une précédente mise à jour.</p>
             <div class="lien">
-                <img class="lienImage" src="icons8-figma-48.png" alt="Figma Logo">
+                <img class="lienImage" src="/images/icons8-figma-48.png" alt="Figma Logo">
                 <a href="https://www.figma.com/proto/xS7DJxGo0xdCZsPRwH6Hp8/Guillaume-Savary-stuff?page-id=649%3A4&type=design&node-id=649-10153&viewport=8319%2C7300%2C0.61&t=ghxaWRW0nlkjWkF9-1&scaling=min-zoom&starting-point-node-id=649%3A10153&show-proto-sidebar=1&mode=design" target="_blank">Le prototype final</a>
             </div>
         </div>
-        <img class="banner" src="get+help+banner.png" alt="Aide en ligne - interfaces">
+        <img class="banner" src="/images/aide-in-product/get+help+banner.png" alt="Aide en ligne - interfaces">
         <div class="contentProjetDetail">
             <h2>Fin du projet</h2>
             <p>Le projet a été implémenté au sein des produits Sage Business Cloud Comptabilité et Paie français et sud-africains. Il a également été proposé à l’équipe design system de Sage. La gouvernance continue à géré l’expérience utilisateur liée aux parcours utilisateur transversaux au portfolio produits de Sage.</p>
@@ -132,7 +132,7 @@ export class ProjetsService {
             "Module bancaire",
             ["UX/UI Design"],
             "Création d’un nouveau module de gestion automatisée des transactions bancaires pour Sage Business Cloud Comptabilité.",
-            '/images/module+bancaire+banner.png',
+            '/images/module-bancaire/module+bancaire+banner.png',
             `<div class="contentProjetDetail">
             <h2>Résumé du projet</h2>
             <p>Grâce aux nouvelles possibilités offertes par les produits sur le web, les products managers de Sage Business Cloud Comptabilité ont décidé d’améliorer les expériences de plusieurs fonctions clé. Une d’elles est l’expérience de traitement des écritures issues des relevés bancaires.</p>
@@ -156,7 +156,7 @@ export class ProjetsService {
             <p>Ces entretiens utilisateurs sont une belle démonstration qu’il faut toujours tester nos designs avant de se lancer le développement. Il est toujours moins cher de corriger un prototype qu’un produit fini.</p>
         </div>
         <div class="grid">
-            <img class="banner" src="module+bancaire+onboarding.png" alt="Module bancaire - OnBoarding">
+            <img class="banner" src="/images/module-bancaire/module+bancaire+onboarding.png" alt="Module bancaire - OnBoarding">
         </div>
         <div class="contentProjetDetail">
             <h2>Deuxième itération</h2>
@@ -166,11 +166,11 @@ export class ProjetsService {
             <p>Quelques mois après la sortie du produit, le PM a souhaité développer une partie des fonctionnalités non implémentées dans le MVP. Nous avons également pris en compte les retours des utilisateurs envoyés sur notre site de suggestion d’améliorations. Enfin, une harmonisation de l’interface du module bancaire a été décidée pour garder une cohérence avec les autres pages de l’application. De nombreuses modifications d’interface ont été faites depuis la sortie du produit.</p>
             <p>Le prototype a été mis à jour et il a été envoyé à l’équipe de développement.</p>
             <div class="lien">
-                <img class="lienImage" src="icons8-figma-48.png" alt="Figma Logo">
+                <img class="lienImage" src="images/icons8-figma-48.png" alt="Figma Logo">
                 <a href="https://www.figma.com/proto/TAErtxl5EX0xDfmArwrvre/Exp%C3%A9rience-bancaire?page-id=0%3A1&type=design&node-id=201-4869&viewport=351%2C548%2C0.07&t=uPesJckghSDW3NZO-1&scaling=min-zoom&starting-point-node-id=201%3A4869&mode=design" target="_blank">Le prototype final</a>
             </div>
         </div>
-        <img class="banner" src="module+bancaire+homepage.png" alt="Aide en ligne - HomePage">
+        <img class="banner" src="/images/module-bancaire/module+bancaire+homepage.png" alt="Aide en ligne - HomePage">
         <div class="contentProjetDetail">
             <h2>Fin du projet</h2>
             <p>Ma collaboration sur ce projet s’est achevée peu avant mon départ de Sage. J’ai terminé de finaliser le prototype de la refonte de l’interface pour la version 2.</p>
@@ -178,14 +178,14 @@ export class ProjetsService {
             <p>Ce projet m’a permis de concevoir et de suivre l’évolution d’une fonctionnalité sur plusieurs années, de sa genèse à sa livraison. De plus, les nombreuses contraintes techniques du projet nous ont obligés à réfléchir et à adapter nos parcours et nos interfaces afin de convaincre les utilisateurs de la proposition de valeur de ce module bancaire.</p>
             <p>Enfin, ce projet était l’occasion de convaincre des bienfaits de la démarche UX à des collaborateurs qui n’avaient jamais travaillé dans ces conditions.</p>
         </div>
-        <img class="banner" src="module+bancaire+ope+bancaire.png" alt="Aide en ligne - Traitement des opérations bancaires">`
+        <img class="banner" src="/images/module-bancaire/module+bancaire+ope+bancaire.png" alt="Aide en ligne - Traitement des opérations bancaires">`
         ),
         new Projet(
             "defi-famille-zero-dechet",
             "Défi Famille Zéro Déchet",
             ["UX/UI Design"],
             "Création d’une application, en partenariat avec la ville de Meudon, pour aider des familles à réduire leur consommation de déchet.",
-            '/images/Eiko+banner.png',
+            '/images/defi-famille-zero-dechet/Eiko+banner.png',
             `<div class="contentProjetDetail">
                 <h2>Résumé du projet</h2>
                 <p>Eiko est une association ayant pour but de développer des outils numériques innovants pour encourager une démocratie active et une participation citoyenne engagée. Elle met en avant les initiatives locales et en valorisant chaque engagement individuel, nous visons à transformer les petits pas en grandes avancées pour notre planète.</p>
@@ -229,7 +229,7 @@ export class ProjetsService {
                 <p>Les 5 entretiens se sont passés à distance avec la personne ou le couple interrogés, avec un animateur, un secrétaire et parfois un observateur passif.</p>
                 <h3>Persona</h3>
                 <p>Les informations récoltées étaient très homogènes d’un entretien à l’autre. Nous avons créé un seul persona de l’utilisateur. Ce persona nous servira à construire les expériences de la future application.</p>
-                <img class="banner" src="eiko+persona.jpg" alt="Persona Eiko">
+                <img class="banner" src="/images/defi-famille-zero-dechet/eiko+persona.jpg" alt="Persona Eiko">
                 <h2>Prototype</h2>
                 <p>Le prototype a été développé avec Figma. Différents user stories ont été incluses pour ce MVP :</p>
                 <ul>
@@ -242,7 +242,7 @@ export class ProjetsService {
                     <li>Consulter une page paramètre pour modifier le nom de la famille, changer le mot de passe, consulter les informations légales et supprimer son compte.</li>
                 </ul>
                 <div class="lien">
-                    <img class="lienImage" src="icons8-figma-48.png" alt="Figma Logo">
+                    <img class="lienImage" src="images/icons8-figma-48.png" alt="Figma Logo">
                     <a href="https://www.figma.com/proto/xS7DJxGo0xdCZsPRwH6Hp8/Guillaume-Savary-stuff?page-id=649%3A4&type=design&node-id=663-59677&viewport=7538%2C-13588%2C0.48&t=4qfAGq9C276B67kf-1&scaling=min-zoom&starting-point-node-id=663%3A59677&show-proto-sidebar=1&mode=design" target="_blank">Le prototype final</a>
                 </div>
                 <p>Le prototype Figma a ensuite été transmis aux développeurs. L’application est développé avec React, comme une Single Page Application.</p>
@@ -280,10 +280,10 @@ export class ProjetsService {
                 <h3>Photos de l’atelier</h3>
             </div>
             <div class="grid">
-                <img class="banner" src="eiko+atelier+1.jpg" alt="Atelier de sensibilisation - photo 1">
-                <img class="banner" src="eiko+atelier+2.jpg" alt="Atelier de sensibilisation - photo 2">
-                <img class="banner" src="eiko+atelier+3.jpg" alt="Atelier de sensibilisation - photo 3">
-                <img class="banner" src="eiko+atelier+4.jpg" alt="Atelier de sensibilisation - photo 4">
+                <img class="banner" src="/images/defi-famille-zero-dechet/eiko+atelier+1.jpg" alt="Atelier de sensibilisation - photo 1">
+                <img class="banner" src="/images/defi-famille-zero-dechet/eiko+atelier+2.jpg" alt="Atelier de sensibilisation - photo 2">
+                <img class="banner" src="/images/defi-famille-zero-dechet/eiko+atelier+3.jpg" alt="Atelier de sensibilisation - photo 3">
+                <img class="banner" src="/images/defi-famille-zero-dechet/eiko+atelier+4.jpg" alt="Atelier de sensibilisation - photo 4">
             </div>
             <div class="contentProjetDetail">
                 <h2>Prochaines fonctionnalités</h2>

@@ -7,8 +7,6 @@
     padding-block: var(--padding-v);
 }
 
-
-
 #contactLinks {
     display: flex;
     justify-content: center;
@@ -20,7 +18,6 @@
         align-items: center;   
         gap: 0.5rem;
         border-bottom: 1px solid transparent;
-        font-size: 1.125rem;
         line-height: 1.5;
         font-weight: 600;
         color: var(--on-surface-invert); 
@@ -29,5 +26,13 @@
             border-bottom: 1px solid var(--paolo-veronese-green-400);
             text-decoration: none;
         }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #contactLinks {
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: center;
     }
 }

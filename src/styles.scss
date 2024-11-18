@@ -161,6 +161,7 @@ body {
     margin: 0;
     padding: 0;
     letter-spacing: 0.25px;
+    width: 100%;
 }
 
 .textCenter {
@@ -175,6 +176,11 @@ body {
 
 .colorVariant {
     color: var(--on-surface-variant);
+}
+
+.emphase {
+    font-weight: 600;
+    color: var(--primary);
 }
 
 // Headings
@@ -329,12 +335,15 @@ body {
     padding-inline: var(--padding-h);
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
     width: 100%;
 }
 
@@ -352,7 +361,8 @@ body {
         border-color: var(--blurBorderHover);
     }
 }
-
+// Icones
+//https://lucide.dev/
 .iconLucide {
     display: flex;
     align-items: baseline;
@@ -362,6 +372,7 @@ body {
 @media only screen and (max-width: 768px) {
     h1.displayLarge, span.displayLarge {
         font-size: 2.5rem;
+        margin: 0 0 1rem 0;
     }
 
     h1.displaySmall, h2.displaySmall, span.displaySmall {
@@ -393,6 +404,12 @@ body {
     }
     .mainContainer {
         min-height: calc(100vh - 85px - 64px);
+    }
+    .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(346px, 1fr));
+        width: 100%;
     }
 }
 
