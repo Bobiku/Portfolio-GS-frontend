@@ -8,10 +8,14 @@ import { Projet } from "../models/projet";
 export class ProjetsService {
     private projets: Projet[] = [
         new Projet(
+            "0",
             "etats-de-paie",
             "États de paie",
+            "Sage",
             ["UX/UI Design"],
+            "2020-2021",
             "Refonte ergonomique et graphique de la fonctionnalité des États de paie pour Sage Business Cloud Paie.",
+            "https://www.figma.com/proto/xS7DJxGo0xdCZsPRwH6Hp8/Guillaume-Savary-stuff?page-id=649%3A4&type=design&node-id=649-12425&viewport=9616%2C3286%2C0.83&t=QtXd7ZDhJcjItDFG-1&scaling=min-zoom&starting-point-node-id=649%3A12425&show-proto-sidebar=1&mode=design",
             '/images/etats-de-paie/etat+de+paie+banner.png',
             `<div class="contentProjetDetail">
                 <h2>Résumé du projet</h2>
@@ -74,10 +78,14 @@ export class ProjetsService {
             </div>`
         ),
         new Projet(
+            "1",
             "aide-en-ligne-in-product",
             "Aide en ligne in-Product",
+            "Sage",
             ["UX/UI Design"],
+            "2020-2022",
             "Création d’un nouveau parcours d’assistance innovant pour les nouveaux produits Sage Business Cloud.",
+            "https://www.figma.com/proto/xS7DJxGo0xdCZsPRwH6Hp8/Guillaume-Savary-stuff?page-id=649%3A4&type=design&node-id=649-10153&viewport=8319%2C7300%2C0.61&t=ghxaWRW0nlkjWkF9-1&scaling=min-zoom&starting-point-node-id=649%3A10153&show-proto-sidebar=1&mode=design",
             '/images/aide-in-product/get+help+banner.png',
             `<div class="contentProjetDetail">
             <h2>Résumé du projet</h2>
@@ -128,10 +136,14 @@ export class ProjetsService {
         </div>`         
         ),
         new Projet(
+            "2",
             "module-bancaire",
             "Module bancaire",
+            "Sage",
             ["UX/UI Design"],
+            "2020-2021",
             "Création d’un nouveau module de gestion automatisée des transactions bancaires pour Sage Business Cloud Comptabilité.",
+            "https://www.figma.com/proto/TAErtxl5EX0xDfmArwrvre/Exp%C3%A9rience-bancaire?page-id=0%3A1&type=design&node-id=201-4869&viewport=351%2C548%2C0.07&t=uPesJckghSDW3NZO-1&scaling=min-zoom&starting-point-node-id=201%3A4869&mode=design",
             '/images/module-bancaire/module+bancaire+banner.png',
             `<div class="contentProjetDetail">
             <h2>Résumé du projet</h2>
@@ -181,10 +193,14 @@ export class ProjetsService {
         <img class="banner" src="/images/module-bancaire/module+bancaire+ope+bancaire.png" alt="Aide en ligne - Traitement des opérations bancaires">`
         ),
         new Projet(
+            "3",
             "defi-famille-zero-dechet",
             "Défi Famille Zéro Déchet",
+            "Eiko",
             ["UX/UI Design"],
+            "2023",
             "Création d’une application, en partenariat avec la ville de Meudon, pour aider des familles à réduire leur consommation de déchet.",
+            "https://www.figma.com/proto/xS7DJxGo0xdCZsPRwH6Hp8/Guillaume-Savary-stuff?page-id=649%3A4&type=design&node-id=663-59677&viewport=7538%2C-13588%2C0.48&t=4qfAGq9C276B67kf-1&scaling=min-zoom&starting-point-node-id=663%3A59677&show-proto-sidebar=1&mode=design",
             '/images/defi-famille-zero-dechet/Eiko+banner.png',
             `<div class="contentProjetDetail">
                 <h2>Résumé du projet</h2>
@@ -309,8 +325,8 @@ export class ProjetsService {
         return [...this.projets];
     }
 
-    getFaceSnapById(projetId: string): Projet {
-        const foundProjet = this.projets.find(projet => projet.id === projetId);
+    getFaceSnapById(projetUrl: string): Projet {
+        const foundProjet = this.projets.find(projet => projet.urlProjet === projetUrl);
         if (!foundProjet) {
             throw new Error('Projet not found !');
         }

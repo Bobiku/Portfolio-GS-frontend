@@ -1,11 +1,28 @@
-<div class="container" id="projet">
+<section class="container" id="projet">
     <div class="content">
-        <div id="headerProjetDetail">
-            <h1>{{ projet.title }}</h1>
-            <p id="labels" class="bodyLarge">{{ projet.label }}</p>
-            <p id="description" class="bodyLarge">{{ projet.description }}</p>
+        <div class="headerProjetDetail headingSection">
+            <h1 class="noMargin">{{ projet.title }}</h1>
+            <p class="bodyLarge subtitle">{{ projet.description }}</p>
+            <div class="infoProject">
+                <div class="customer">
+                    <span class="bodyLarge label colorVariant">Client</span>
+                    <span class="bodyLarge emphase">{{ projet.customer }}</span>
+                </div>
+                <div class="role">
+                    <span class="bodyLarge label colorVariant">Rôle</span>
+                    <span class="bodyLarge emphase">{{ projet.role }}</span>
+                </div>
+                <div class="date">
+                    <span class="bodyLarge label colorVariant">Date</span>
+                    <span class="bodyLarge emphase">{{ projet.date }}</span>
+                </div>
+                <div class="result">
+                    <span class="bodyLarge label colorVariant">Livrable final</span>
+                    <a href="{{ projet.resultUrl }}" target="_blank" class="bodyLarge emphase">Voir le livrable <lucide-icon [img]="ExternalLink" [size]="20" class="iconLucide"></lucide-icon></a>
+                </div>
+            </div>
         </div>
         <img class="banner" [src]="projet.imageBannerUrl" [alt]="projet.imageBannerAlt">
         <div [innerHTML]="this.htmlContent"></div>
     </div>
-</div>
+</section>

@@ -9,9 +9,9 @@
 @import url('../public/fonts/jetbrains/css/jetBrainsMono.css');
 
 :root {
-    /*[data-theme="default"] {*/
-        //Colours
-        //Neutral
+    // [data-theme="default"] {
+        // Colours
+        // Neutral
         --neutral-0: #ffffff;
         --neutral-50: #F4F4F4;
         --neutral-100: #E9EAEA;
@@ -25,7 +25,7 @@
         --neutral-900: #080808;
         --neutral-950: #010101;
 
-        //Carmin
+        // Carmin
         --carmin-50: #FFE5EA;
         --carmin-100: #FFCCD5;
         --carmin-200: #FF99AA;
@@ -38,7 +38,7 @@
         --carmin-900: #330009;
         --carmin-950: #190004;
 
-        //Paolo Veronese Green
+        // Paolo Veronese Green
         --paolo-veronese-green-50: #e5fffb;
         --paolo-veronese-green-100: #bdfff4;
         --paolo-veronese-green-200: #42ffe0;
@@ -51,27 +51,29 @@
         --paolo-veronese-green-900: #005c4d;
         --paolo-veronese-green-950: #004237;
 
-        //Semantic
+        // Semantic
         --negative: #CD1107;
         --positive: #16810D;
         --info: #3866C1;
         --warning: #FF7900;
 
-        //Brand
+        // Brand
         --linkedIn: #0288d1;
         --linkedInDark: #004183;
 
-        //Border
-        //Radius
+        // Border
+        // Radius
         --border-radius: 8px;
 
         --screen: 1280px;
         --padding-h: 2.5rem;
-        --padding-v: 7rem;
+        --padding-v: 5rem;
+        --margin-v: 3rem;
 
         // Effect
-        // Blur Backdrop
-        --blur: 16px;
+        // Blur
+        --blur: 8px;
+
         // Blur Box-Shadow
         --boxShadowX: 0;
         --boxShadowY: 16px;
@@ -79,9 +81,11 @@
         --boxShadowSpread: 0;
         --boxShadowColor: #0000001A;
         --boxShadowColorHover: #00967e1A;
+
         // Blur BG
         --blurBGColor: #ffffffC0;
         --blurBGColorHover: #e5fffbC0;
+
         // Blur Border
         --blurBorder: #ffffffc0;
         --blurBorderHover: #e5fffbc0;
@@ -102,7 +106,7 @@
 
         // Primary
         --primary: var(--carmin-700);
-        --on-primary: var(--carmin-200);
+        --on-primary: var(--carmin-50);
         --primary-container: var(--carmin-50);
         --on-primary-container: var(--carmin-700);
         --primary-invert: var(--carmin-200);
@@ -118,7 +122,7 @@
 
         // Fonts
         --fontBody: 'Satoshi-Variable';
-        --fontHeading: 'ClashDisplay-Variable';
+        --fontDisplay: 'ClashDisplay-Variable';
         --fontMono: 'JetBrainsMono-Variable';
 
         //spacing
@@ -126,28 +130,32 @@
         @media only screen and (min-width: 1280px) {
             --screen: 1280px;
             --padding-h: 2.5rem;
-            --padding-v: 7rem;
+            --padding-v: 5rem;
+            --margin-v: 3rem;
         }
 
         @media only screen and (max-width: 1280px) {
             --screen: 1280px;
             --padding-h: 2.5rem;
-            --padding-v: 7rem;
+            --padding-v: 5rem;
+            --margin-v: 3rem;
         }
 
         @media only screen and (max-width: 768px) {
             --screen: 768px;
             --padding-h: 1rem;
-            --padding-v: 4.25rem;
+            --padding-v: 3rem;
+            --margin-v: 2rem;
         }
 
         @media only screen and (max-width: 480px) {
             --padding-h: 0.5rem;
-            --padding-v: 4.25rem;
+            --padding-v: 2rem;
+            --margin-v: 1rem;
         }
 
-        /*}
-            [data-theme="dark"] {}*/
+    // }
+    //     [data-theme="dark"] {}
 }
 
 body {
@@ -164,82 +172,57 @@ body {
     width: 100%;
 }
 
-.textCenter {
-    min-width: 100%;
-    text-align: center;
-}
-
-.subtitle {
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-}
-
-.colorVariant {
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    font-weight: 400;
     color: var(--on-surface-variant);
 }
-
-.emphase {
+h1 {
+    font-size: 4rem;
     font-weight: 600;
     color: var(--primary);
 }
 
-// Headings
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--fontHeading);
-    line-height: 1.2;
-    font-weight: 400;
-}
-h1 {
-    font-size: 3.75rem;
-    color: var(--primary);
-    margin: 3.5rem 0 0.5rem 0;
-}
-
 h2 {
     font-size: 3rem;
-    margin: 3.5rem 0 2rem 0;
 }
 
 h3 {
     font-size: 2rem;
-    margin: 1.5rem 0 1.5rem 0;
 }
 
 h4 {
     font-size: 1.75rem;
-    margin: 1rem 0 1rem 0;
 }
 
 h5 {
     font-size: 1.25rem;
-    margin: 1rem 0 0.75rem 0;
 }
 
 h6 {
     font-size: 1.125rem;
-    margin: 1rem 0 0.5rem 0;
 }
 
 // Displays
 .displayLarge, .displayMedium, .displaySmall {
-    font-family: var(--fontHeading);
-    font-weight: 700;
-    line-height: 1.1;
+    font-family: var(--fontDisplay);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--on-surface-variant);
+    margin: 0;
 }
 .displayLarge {
     font-size: 4rem;
     color: var(--primary);
-    margin: 0 0 3rem 0;
 }
 
 .displayMedium {
     font-size: 3rem;
-    margin: 0 0 0.5rem 0;
 }
 
 .displaySmall {
     font-size: 2rem;
-    margin: 0 0 0.5rem 0;
 }
 
 // Mono
@@ -249,10 +232,13 @@ h6 {
     line-height: 1.2;
 }
 
-//Body        
+// Body        
 p, li {
-    margin: 0.5rem 0;
     max-width: 768px;
+}
+
+li {
+    margin: 0.5rem 0;
 }
 
 p.bodyLarge, span.bodyLarge, a.bodyLarge {
@@ -290,7 +276,7 @@ ul {
 }
 
 
-//Containers
+// Containers
 body {
     margin: 0;
     padding: 0;
@@ -306,7 +292,7 @@ body {
     --angle: 0deg;
     width: 100%;
     height: 100%;
-    background: linear-gradient(var(--angle),#E1B6BD 0%, transparent 45%, transparent 55%, #E1B6BD 100%);
+    background: linear-gradient(var(--angle),#FFE5EA 0%, transparent 48%, transparent 52%, #FFE5EA 100%);
     background-attachment: fixed;
     animation: gradient 20s linear infinite;
 }
@@ -347,35 +333,71 @@ body {
     width: 100%;
 }
 
+
+// Icones
+// https://lucide.dev/
+.iconLucide {
+    display: flex;
+    align-items: baseline;
+    width: max-content;
+}
+
+// Styles
+.textCenter {
+    min-width: 100%;
+    text-align: center;
+}
+
+.subtitle {
+    font-weight: 600;
+    margin-block: 1.5rem;
+    color: var(--on-surface-variant);
+}
+
+.colorVariant {
+    color: var(--on-surface-variant);
+}
+
+.emphase {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.onPrimary {
+    color: var(--on-primary);
+}
+.noMargin {
+    margin: 0;
+}
+
+.headingSection {
+    margin-block: var(--margin-v);
+}
+
 .blurEffect {
     backdrop-filter: blur(var(--blur));
     background-color: var(--blurBGColor);
-    // box-shadow: var(--boxShadowX) var(--boxShadowY) var(--boxShadowBlur) var(--boxShadowColor);
-    border: 1px solid var(--blurBorder);
+    outline: 1px solid var(--blurBorder);
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: all .3s ease-out;
     &:hover {
         background-color: var(--blurBGColorHover);
         box-shadow: var(--boxShadowX) var(--boxShadowY) var(--boxShadowBlur) var(--boxShadowColorHover);
-        border-color: var(--blurBorderHover);
+        outline-color: var(--blurBorderHover);
     }
 }
-// Icones
-//https://lucide.dev/
-.iconLucide {
-    display: flex;
-    align-items: baseline;
-}
-
 
 @media only screen and (max-width: 768px) {
-    h1.displayLarge, span.displayLarge {
+    .displayLarge {
         font-size: 2.5rem;
-        margin: 0 0 1rem 0;
     }
 
-    h1.displaySmall, h2.displaySmall, span.displaySmall {
+    .displayMedium {
+        font-size: 2rem;
+    }
+
+    .displaySmall {
         font-size: 1.75rem;
     }
 
@@ -402,39 +424,60 @@ body {
     h6 {
         font-size: 1.125rem;
     }
+
     .mainContainer {
-        min-height: calc(100vh - 85px - 64px);
+        min-height: calc(100vh - 60px);
     }
+
     .grid {
         display: grid;
-        gap: 2rem;
+        gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(346px, 1fr));
         width: 100%;
     }
 }
 
-@media only screen and (max-width: 480px) {
-    .button {
-        font-size: 1rem;
-        padding: 0.75em 1em;
-    }
-}
 
-//Projet Detail Component injection
+// Projet Detail Component injection
 #projet {
-    .content {
-        padding-block: var(--padding-v);
+    min-height: calc(100vh - 88px);
+    padding-block: var(--padding-v);
+    padding-top: 88px;
+    .headerProjetDetail {
+        .infoProject {
+            display: flex;
+            div {
+                display: block;
+            }
+        }
+    } 
+    .infoProject {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        div {
+            flex-grow: 1;
+            span {
+                display: block;
+            }
+            a {
+                display: flex;
+                align-items: center;   
+                gap: 0.5rem;
+                border-bottom: 1px solid transparent;
+                line-height: 1.5;
+                font-weight: 600;
+                border-bottom: 2px solid var(--primary);
+                width: fit-content;
+                &:hover {
+                    color: var(--secondary);
+                    border-bottom: 2px solid var(--secondary);
+                    text-decoration: none;
+                }
+            }
+        }
+        
     }
-    #labels {
-        color: var(--neutral-600);
-        font-weight: 500;
-        font-style: oblique 5deg;
-        margin: 0 0 8px 0;
-    }
-    #description {
-        margin-bottom: 2.5rem;
-        font-weight: 500;
-    }  
     .banner {
         object-fit: cover;
         object-position: center;
@@ -457,5 +500,11 @@ body {
     }
     .lienImage {
         margin-right: 8px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #hero {
+        min-height: calc(100vh - 64px);
+        padding-top: 0;
     }
 }

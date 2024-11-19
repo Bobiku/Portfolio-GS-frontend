@@ -10,13 +10,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './projet-card.component.scss'
 })
 export class ProjetCardComponent implements OnInit{
-  projet: InputSignal<Projet> = input.required();;
+  projet: InputSignal<Projet> = input.required();
 
   projetDetailUrl!: string;
   
   constructor() {}
 
   ngOnInit(): void {
-      this.projetDetailUrl = '/projets/'+this.projet().id;
+      this.projetDetailUrl = '/projets/'+this.projet().urlProjet;
   }
 } 

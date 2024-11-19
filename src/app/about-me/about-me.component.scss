@@ -1,8 +1,9 @@
 #hero {
-    padding-top: calc(var(--padding-v) + 81px);
-    padding-bottom: var(--padding-v);
+    min-height: calc(100vh - 88px);
+    padding-block: var(--padding-v);
+    padding-top: 88px;
     h2 {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
     }
     img {
         max-width: 280px;
@@ -12,12 +13,6 @@
         border-radius: 50%;
         border: 4px solid var(--primary);
         margin-block: 2rem;
-    }
-    .contentHero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
     }
 }
 
@@ -37,25 +32,16 @@
         flex-direction: column;
         align-items: center;
     }
-    color: var(--on-surface-invert);
-    .citation {
-        // font-style: italic;
-    }
-    .author {
-        font-weight: 600;
-    }
+    // .author {
+    //     font-weight: 600;
+    // }
 }
 
 #expertise {
     .content {
-        padding-block: var(--padding-v);
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
-    }
-    .grid {
-        gap: 2rem
     }
     .blockExpertise {
         padding: 2rem 2rem;
@@ -68,15 +54,15 @@
             }
         }
     }
-    .outils {
-        color: var(--neutral-700);
-        font-weight: 600;
+    app-button {
+        margin-top: 2rem;
     }
 }
 
 #funfacts {
     .funfact {
         img {
+            display: block;
             width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
@@ -84,7 +70,7 @@
             image-rendering: auto;
         }
         .funfactText {
-            padding: 1rem 2rem;
+            padding: 0 2rem 1rem 2rem;
         }
         &:hover {
             h3 {
@@ -95,24 +81,25 @@
 }
 
 #testimonials {
-    .content {
+    .testimonials {
         display: flex;
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
         gap: 2rem;
+        width: 100%;
     }
     .testimonial {
-        padding: 1rem 1.5rem;
+        padding: 2rem 2rem;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         gap: 1rem;
-        img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 2px solid var(--primary);
-        }
+        // img {
+        //     width: 48px;
+        //     height: 48px;
+        //     border-radius: 50%;
+        //     border: 2px solid var(--primary);
+        // }
         .author {
             display: flex;
             align-items: center;
@@ -128,7 +115,7 @@
             }
         }
     }
-    .testimonial:nth-child(odd) {
+    .testimonial:nth-child(even) {
         align-self: flex-end;
     }
 }
@@ -136,7 +123,32 @@
 @media screen and (max-width: 768px) {
     #hero {
         min-height: calc(100vh - 64px);
-        padding-top: 64px;
+        padding-top: 0;
+        img {
+            max-width: 196px;
+            margin-block: 1rem;
+        }
+    }
+    #expertise {
+        .blockExpertise {
+            padding: 1rem;
+        }
+        app-button {
+            margin-top: 1rem;
+        }
+    }
+    #funfacts {
+        .funfactText {
+            padding: 0 1rem 0.5rem 1rem;
+        }
+    }
+    #testimonials {
+        .testimonials {
+            gap: 1rem;
+        }
+        .testimonial {
+            padding: 1rem 1rem;
+        }
     }
 }
 

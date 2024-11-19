@@ -1,55 +1,22 @@
 #presentation {
-    min-height: calc(100vh - 81px);
-    padding-top: 96px;
-    .heroContent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: fit-content;
-        margin: auto;
-    }
+    min-height: calc(100vh - 88px);
+    padding-block: var(--padding-v);
+    padding-top: 88px;
     h2 {
-        margin: 0 0 0.5rem 0;
+        margin-bottom: 0;
     }
     .groupButton {
-        margin-top: 1.5rem;
         gap: 1.25rem;
         display: flex;
         justify-content: center;
-    }
-}
-
-#services {
-    .content {
-        padding-block: var(--padding-v);
-    }
-    .iconLucide {
-        color: var(--primary);
-    }
-    .grid {
-        gap: 2rem
-    }
-    .blockServices {
-        padding: 2rem 2rem;
-        border-radius: var(--borderRadius);
-        border: 1px solid var(--primary);
-        &:hover {
-            border: 1px solid var(--secondary);
-            .iconLucide, .title {
-                color: var(--secondary);
-            }
-        }
-    }
-    .outils {
-        color: var(--neutral-700);
-        font-weight: 600;
+        width: max-content;
     }
 }
 
 @media screen and (max-width: 768px) {
     #presentation {
         min-height: calc(100vh - 64px);
-        padding-top: 64px;
+        padding-top: 0;
     }
 }
 
@@ -57,7 +24,6 @@
     #presentation {
         .groupButton {
             flex-direction: column;
-            margin-top: 1rem;
         }
     }
 }

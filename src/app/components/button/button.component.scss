@@ -1,6 +1,7 @@
 a {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 1em 1.5em;
     font-size: 1.125rem;
@@ -33,4 +34,11 @@ a::before {
 
 a:hover::before {
     transform: translate(16px, 16px); /* Effet de décalage au survol */
+}
+
+@media only screen and (max-width: 480px) {
+    a {
+        font-size: 1rem;
+        padding: 0.75em 1em;
+    }
 }
