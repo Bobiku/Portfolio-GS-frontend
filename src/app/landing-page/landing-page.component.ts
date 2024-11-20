@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProjetsListComponent } from "../projets-list/projets-list.component";
+import { ProjetsListComponent } from "../projets/projets-list/projets-list.component";
 import { LucideAngularModule, Microscope, Brush, Code, DraftingCompass, CalendarRange, Mouse } from 'lucide-angular';
 import { ButtonComponent } from "../components/button/button.component";
 

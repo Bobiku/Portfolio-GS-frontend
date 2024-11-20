@@ -70,6 +70,10 @@
         --padding-v: 5rem;
         --margin-v: 3rem;
 
+        // Cursor
+        --mouse-pointer: /images/cursor/mouse-pointer.svg;
+        --pointer: /images/cursor/mouse-pointer.svg;
+
         // Effect
         // Blur
         --blur: 8px;
@@ -170,6 +174,7 @@ body {
     padding: 0;
     letter-spacing: 0.25px;
     width: 100%;
+    cursor: url(/images/cursor/mouse-pointer.svg), default;
 }
 
 // Headings
@@ -260,6 +265,7 @@ p.bodyTiny, span.bodyTiny, a.bodyTiny {
 a {
     color: var(--primary);
     text-decoration: none;
+    cursor: url(/images/cursor/pointer.svg), pointer;
     &:hover {
         color: var(--secondary);
         text-decoration: underline;
@@ -350,7 +356,7 @@ body {
 
 .subtitle {
     font-weight: 600;
-    margin-block: 1.5rem;
+    margin-block: 1rem;
     color: var(--on-surface-variant);
 }
 

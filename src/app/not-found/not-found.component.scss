@@ -1,0 +1,35 @@
+#notFound {
+    min-height: calc(100vh - 88px - 433px);
+    padding-block: var(--padding-v);
+    padding-top: calc(var(--padding-v) + 88px);
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+    img {
+        object-fit: cover;
+        object-position: center;
+        image-rendering: auto;
+        margin: auto;
+        max-width: 344px;
+    }
+    .groupButton {
+        gap: 1.25rem;
+        display: flex;
+        justify-content: center;
+        width: max-content;
+    }
+}
+@media screen and (max-width: 768px) {
+    #presentation {
+        min-height: calc(100vh - 64px);
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #presentation {
+        .groupButton {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { Component, input, InputSignal, OnInit } from '@angular/core';
-import { Projet } from '../../models/projet';
+import { Projet } from '../../projets/models/projet';
 import { RouterLink } from '@angular/router';
 
 @Component({

@@ -1,22 +1,66 @@
 #presentation {
-    min-height: calc(100vh - 88px);
+    min-height: calc(100vh - 88px - (2 * var(--padding-v)));
     padding-block: var(--padding-v);
-    padding-top: 88px;
-    h2 {
-        margin-bottom: 0;
+    padding-top: calc(var(--padding-v) + 88px);
+    .content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    .sectionText {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .sectionImg {
+        display: flex;
+        justify-content: flex-end;
     }
     .groupButton {
         gap: 1.25rem;
         display: flex;
-        justify-content: center;
         width: max-content;
+    }
+    img {
+        max-width: 344px;
+        object-fit: cover;
+        object-position: center;
+        image-rendering: auto;
+        transform: scaleX(-1);
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    #presentation {
+        .content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+        .sectionText {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h1, h2 {
+                text-align: center;
+            }
+        }
+        .groupButton {
+            justify-content: center;
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
     #presentation {
-        min-height: calc(100vh - 64px);
-        padding-top: 0;
+        min-height: calc(100vh - 64px - 60px);
+        padding-top: var(--padding-v);
     }
 }
 
