@@ -26,6 +26,6 @@ export class ProjetOthersComponent {
 
   getProjet() {
     const projetId = this.route.snapshot.params['id'];
-    this.projet = this.projetsService.getFaceSnapById(projetId);
+    this.projet = this.projetsService.getProjetById(projetId);
   }
 }

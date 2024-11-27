@@ -27,7 +27,7 @@ export class ProjetDetailComponent implements OnInit {
 
   ngOnInit(): void {
       const projetId = this.route.snapshot.params['id'];
-      this.projet = this.projetsService.getFaceSnapById(projetId);
+      this.projet = this.projetsService.getProjetById(projetId);
 
       this.htmlContent = this.sanitizer.sanitize(SecurityContext.NONE, this.projet.content);
   }
