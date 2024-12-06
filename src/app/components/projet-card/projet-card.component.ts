@@ -17,6 +17,6 @@ export class ProjetCardComponent implements OnInit{
   constructor() {}
 
   ngOnInit(): void {
-      this.projetDetailUrl = '/projets/'+this.projet().urlProjet;
+      this.projetDetailUrl = '/projets/'+this.projet().id;
   }
 } 

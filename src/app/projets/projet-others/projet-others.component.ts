@@ -20,12 +20,12 @@ export class ProjetOthersComponent {
               private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.getProjet();
-    this.othersProjets = this.projetsService.getProjets();
+    // this.getProjet();
+    // this.othersProjets = this.projetsService.getProjets();
   }
 
-  getProjet() {
-    const projetId = this.route.snapshot.params['id'];
-    this.projet = this.projetsService.getProjetById(projetId);
-  }
+  // getProjet() {
+  //   const projetId = this.route.snapshot.params['id'];
+  //   this.projet = this.projetsService.getProjetById(projetId);
+  // }
 }

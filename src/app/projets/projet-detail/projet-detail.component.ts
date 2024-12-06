@@ -1,15 +1,15 @@
-import { Component, OnInit, SecurityContext } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProjetsService } from '../services/projets.service';
 import { ActivatedRoute } from '@angular/router';
 import { Projet } from '../models/projet';
-import { DomSanitizer } from '@angular/platform-browser';
-import { ProjetOthersComponent } from "../projet-others/projet-others.component";
 import { ExternalLink, LucideAngularModule } from 'lucide-angular';
+import { CommonModule } from '@angular/common';
+import { FormattedBlock } from '../models/formatted-block.interface';
 
 @Component({
   selector: 'app-projet-detail',
   standalone: true,
-  imports: [ProjetOthersComponent, LucideAngularModule],
+  imports: [LucideAngularModule, CommonModule],
   templateUrl: './projet-detail.component.html',
   styleUrl: './projet-detail.component.scss'
 })
@@ -17,18 +17,79 @@ export class ProjetDetailComponent implements OnInit {
 
   readonly ExternalLink = ExternalLink;
 
-  projet!: Projet;
-
-  htmlContent!: any;
+  projets?: Projet[];
+  projet?: Projet;
+  blocks!: FormattedBlock[];
 
   constructor(private projetsService: ProjetsService,
-              private route: ActivatedRoute,
-              private sanitizer: DomSanitizer) {}
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-      const projetId = this.route.snapshot.params['id'];
-      this.projet = this.projetsService.getProjetById(projetId);
 
-      this.htmlContent = this.sanitizer.sanitize(SecurityContext.NONE, this.projet.content);
+    const projetId = this.route.snapshot.params['id'];
+
+    this.projetsService.getProjets().subscribe({
+      next: (data) => {
+        this.getProjetById(projetId, data);
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération de la page :', err);
+      },
+    });
+
+    this.projetsService.getBlocksById(projetId).subscribe({
+      next: (data) => {
+        this.blocks = this.formatBlocksForLists(data);
+        console.log(this.blocks);
+        if (!this.blocks || this.blocks.length === 0) {
+          console.error('Aucun contenu trouvé pour cet ID :', projetId);
+        }
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération des blocs :', err);
+      }
+    });
   }
+
+  private getProjetById(projetId: string, data: any) {
+    this.projets = data;
+    this.projet = this.projets?.find((projet) => projet.id === projetId);
+    if (!this.projet) {
+      console.error('Aucun projet trouvé avec cet ID :', projetId);
+    }
+  }
+
+  private formatBlocksForLists(blocks: { type: string; content: string }[]): FormattedBlock[] {
+    const formattedBlocks: any[] = [];
+    let currentList: { type: string; items: string[] } | null = null;
+  
+    blocks.forEach((block) => {
+      if (block.type === 'bulleted_list_item' || block.type === 'numbered_list_item' || block.type === 'image') {
+        if (!currentList || currentList.type !== block.type) {
+          // Nouvelle liste
+          if (currentList) {
+            formattedBlocks.push(currentList);
+          }
+          currentList = { type: block.type, items: [] };
+        }
+        currentList.items.push(block.content);
+      } else {
+        // Si on n'est pas dans une liste, fermer la liste en cours
+        if (currentList) {
+          formattedBlocks.push(currentList);
+          currentList = null;
+        }
+        // Ajouter le bloc individuel
+        formattedBlocks.push(block);
+      }
+    });
+  
+    // Ajouter la dernière liste en cours, s'il y en a une
+    if (currentList) {
+      formattedBlocks.push(currentList);
+    }
+  
+    return formattedBlocks;
+  }  
+  
 }

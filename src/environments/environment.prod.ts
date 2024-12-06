@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    backEndUrl: "https://backend.local.savaryguillaume.fr/"
+    backEndUrl: "https://backend.local.savaryguillaume.fr"
 };  
