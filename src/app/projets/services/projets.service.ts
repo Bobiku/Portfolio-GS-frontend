@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
-import { Projet } from "../models/projet";
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of, shareReplay } from 'rxjs';
 import { environment } from '../../../environments/environment'
 
 @Injectable({
@@ -10,16 +9,46 @@ import { environment } from '../../../environments/environment'
 
 export class ProjetsService {
 
+    private baseUrl = environment.backEndUrl;
+    private cache = new Map<string, Observable<any>>();
+
     constructor(private http: HttpClient) {}
 
-    private baseUrl = environment.backEndUrl;
 
     getProjets(): Observable<any> {
-        return this.http.get(`${this.baseUrl}/api/notion/page/`);
+        const url = `${this.baseUrl}/api/notion/page/`;
+        if (this.cache.has(url)) {
+            return this.cache.get(url) as Observable<any>;
+        }
+
+        const request = this.http.get(url).pipe(
+            shareReplay(1),
+            catchError(error => {
+                this.cache.delete(url);
+                return of(error);
+            })
+        );
+
+        this.cache.set(url, request);
+        return request;
     }
 
     getBlocksById(projetId: string): Observable<any> {
-        return this.http.get(`${this.baseUrl}/api/notion/page/${projetId}`);
+        const url = `${this.baseUrl}/api/notion/page/${projetId}`;
+        if (this.cache.has(url)) {
+            return this.cache.get(url) as Observable<any>;
+        }
+
+        const request = this.http.get(url).pipe(
+            shareReplay(1),
+            catchError(error => {
+                this.cache.delete(url);
+                return of(error);
+            })
+        );
+
+        this.cache.set(url, request);
+        return request;
     }
 
 }

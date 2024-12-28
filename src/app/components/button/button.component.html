@@ -1,5 +1,5 @@
-@if (isExternalUrl(url())) {
-    <a [href]="url()" target="_blank" role="button" rel="noopener noreferrer">
+@if (isExternalUrl(url)) {
+    <a [href]="url" target="_blank" role="button" rel="noopener noreferrer">
         <ng-container *ngTemplateOutlet="buttonContent"></ng-container>
     </a>
 } @else {

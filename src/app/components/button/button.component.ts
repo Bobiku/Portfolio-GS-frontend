@@ -1,5 +1,5 @@
 import { Router, RouterModule } from '@angular/router';
-import { Component, ElementRef, HostListener, Inject, input, InputSignal } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, Input } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 
 @Component({
@@ -7,11 +7,11 @@ import { CommonModule, DOCUMENT } from '@angular/common';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+  styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
 
-  url: InputSignal<string> = input.required();
+  @Input() url!: string;
 
   constructor(
     @Inject(DOCUMENT) private document: Document
@@ -29,7 +29,7 @@ export class ButtonComponent {
 
   @HostListener('click')
   onClick() {
-    const urlParts = this.url().split('#');
+    const urlParts = this.url.split('#');
     if (urlParts.length > 1) {
       const fragment = urlParts[1];
       this.scrollToAnchor(fragment);
@@ -46,7 +46,7 @@ export class ButtonComponent {
   }
 
   getRouterLink(): any {
-    const urlParts = this.url().split('#');
+    const urlParts = this.url.split('#');
     if (urlParts.length > 1) {
       return {
         routerLink: `/${urlParts[0]}`,

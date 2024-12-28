@@ -5,25 +5,25 @@
             <h1 class="noMargin">{{ projet?.title }}</h1>
             <p class="bodyLarge subtitle">{{ projet?.description }}</p>
             <div class="infoProject">
-                <div class="customer">
+                <div class="customer" *ngIf="projet?.customer">
                     <span class="bodyLarge label colorVariant">Client</span>
                     <span class="bodyLarge emphase">{{ projet?.customer }}</span>
                 </div>
-                <div class="role">
+                <div class="role" *ngIf="projet?.roles">
                     <span class="bodyLarge label colorVariant">Rôle</span>
                     <span class="bodyLarge emphase">{{ projet?.roles }}</span>
                 </div>
-                <div class="date">
+                <div class="date" *ngIf="projet?.date">
                     <span class="bodyLarge label colorVariant">Date</span>
                     <span class="bodyLarge emphase">{{ projet?.date }}</span>
                 </div>
-                <div class="result">
+                <div class="result" *ngIf="projet?.resultUrl">
                     <span class="bodyLarge label colorVariant">Livrable final</span>
                     <a href="{{ projet?.resultUrl }}" target="_blank" class="bodyLarge emphase">Voir le livrable <lucide-icon [img]="ExternalLink" [size]="20" class="iconLucide"></lucide-icon></a>
                 </div>
             </div>
         </div>
-        <img class="banner" [src]="projet?.imageBannerUrl" [alt]="projet?.imageBannerAlt">
+        <img class="banner" *ngIf="projet?.imageBannerUrl" [src]="projet?.imageBannerUrl" [alt]="projet?.imageBannerAlt">
         <!-- Content section -->
         <div class="contentProjetDetail" *ngIf="this.blocks.length > 0; else loading">
             <ng-container *ngFor="let block of blocks">
@@ -47,15 +47,15 @@
                     <p *ngSwitchCase="'paragraph'">
                         {{ block.content }}
                     </p>
-                    <h1 *ngSwitchCase="'heading_1'">
-                        {{ block.content }}
-                    </h1>
-                    <h2 *ngSwitchCase="'heading_2'">
+                    <h2 *ngSwitchCase="'heading_1'">
                         {{ block.content }}
                     </h2>
-                    <h3 *ngSwitchCase="'heading_3'">
+                    <h3 *ngSwitchCase="'heading_2'">
                         {{ block.content }}
                     </h3>
+                    <h4 *ngSwitchCase="'heading_3'">
+                        {{ block.content }}
+                    </h4>
                     <!-- <div *ngSwitchCase="'image'" class="grid">
                         <img class="banner" src="{{block.content}}" alt="Image"/>
                     </div> -->

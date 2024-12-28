@@ -172,96 +172,107 @@ body {
     color: var(--on-surface);
     margin: 0;
     padding: 0;
-    letter-spacing: 0.25px;
     width: 100%;
     cursor: url(/images/cursor/mouse-pointer.svg), default;
+}
+
+// Typeface Scaling
+h1, .displayLarge {
+    font-size: 3.815rem;
+}
+h2, .displayMedium {
+    font-size: 3.052rem;
+}
+h3, .displaySmall {
+    font-size: 2.441rem;
+}
+h4 {
+    font-size: 1.953rem;
+}
+h5 {
+    font-size: 1.563rem;
+}
+h6, .bodyLarge {
+    font-size: 1.25rem;
+}
+p, li, .bodyMedium {
+    font-size: 1rem;
+}
+small, .bodySmall, .caption {
+    font-size: 0.8rem;
+}
+.bodyTiny {
+    font-size: 0.64rem;
 }
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
-    font-weight: 400;
-    color: var(--on-surface-variant);
+    color: var(--on-surface);
 }
 h1 {
-    font-size: 4rem;
-    font-weight: 600;
+    font-weight: 900;
+    letter-spacing: -0.025em;
     color: var(--primary);
 }
-
 h2 {
-    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
-
 h3 {
-    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
-
 h4 {
-    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
 }
-
 h5 {
-    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
 }
-
 h6 {
-    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 // Displays
 .displayLarge, .displayMedium, .displaySmall {
     font-family: var(--fontDisplay);
-    font-weight: 600;
     line-height: 1.2;
-    color: var(--on-surface-variant);
+    color: var(--on-surface);
     margin: 0;
 }
 .displayLarge {
-    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     color: var(--primary);
 }
-
 .displayMedium {
-    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
 }
-
 .displaySmall {
-    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.015em;
 }
 
-// Mono
-.mono {
-    font-family: var(--fontMono);
-    font-size: 0.813rem;
-    line-height: 1.2;
+// Body
+.bodyLarge {
+    letter-spacing: -0.01em;
 }
-
-// Body        
+.bodySmall, .bodyTiny{
+    letter-spacing: 0.015em;
+}
+.caption {
+    letter-spacing: 0.005em;
+}
 p, li {
     max-width: 768px;
 }
-
 li {
     margin: 0.5rem 0;
-}
-
-p.bodyLarge, span.bodyLarge, a.bodyLarge {
-    font-size: 1.125rem;
-}
-
-p.bodyMedium, span.bodyMedium, a.bodyMedium {
-    font-size: 1rem;
-}
-
-p.bodySmall, span.bodySmall, a.bodySmall {
-    font-size: 0.875rem;
-}
-
-p.bodyTiny, span.bodyTiny, a.bodyTiny {
-    font-size: 0.75rem;
-}        
-
+}      
 a {
     color: var(--primary);
     text-decoration: none;
@@ -272,15 +283,17 @@ a {
     }
 }
 
-ul {
-    margin-left: 1rem;
-}
-
 // Labels
 .label {
     font-weight: 500;
 }
 
+// Mono
+.mono {
+    font-family: var(--fontMono);
+    font-size: 0.813rem;
+    line-height: 1.5;
+}
 
 // Containers
 body {
@@ -395,46 +408,38 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    .displayLarge {
-        font-size: 2.5rem;
+    // Typeface Scaling
+    h1, .displayLarge {
+        font-size: 2.986rem;
     }
-
-    .displayMedium {
-        font-size: 2rem;
+    h2, .displayMedium {
+        font-size: 2.488rem;
     }
-
-    .displaySmall {
-        font-size: 1.75rem;
+    h3, .displaySmall {
+        font-size: 2.074rem;
     }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    h3 {
-        font-size: 1.75rem;
-    }
-    
     h4 {
-        font-size: 1.5rem;
+        font-size: 1.728rem;
     }
-    
     h5 {
-        font-size: 1.25rem;
+        font-size: 1.44rem;
     }
-    
-    h6 {
-        font-size: 1.125rem;
+    h6, .bodyLarge {
+        font-size: 1.2rem;
+    }
+    p, li, .bodyMedium {
+        font-size: 1rem;
+    }
+    small, .bodySmall, .caption {
+        font-size: 0.833rem;
+    }
+    .bodyTiny {
+        font-size: 0.694rem;
     }
 
     .mainContainer {
         min-height: calc(100vh - 60px);
     }
-
     .grid {
         display: grid;
         gap: 1rem;
