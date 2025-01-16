@@ -10,3 +10,10 @@
     transform: translate(-50%, -50%); /* Centre l'aura autour du curseur */
     transition: 0.2s ease-out; /* Transition fluide */
 }
+
+/* L'élément sera masqué sur les appareils tactiles */
+@media (hover: none) {
+    .aura {
+      display: none;
+    }
+}

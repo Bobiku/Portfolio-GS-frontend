@@ -5,11 +5,12 @@ import { Projet } from '../models/projet';
 import { ExternalLink, LucideAngularModule } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { FormattedBlock } from '../models/formatted-block.interface';
+import { NotFoundComponent } from "../../not-found/not-found.component";
 
 @Component({
   selector: 'app-projet-detail',
   standalone: true,
-  imports: [LucideAngularModule, CommonModule],
+  imports: [LucideAngularModule, CommonModule, NotFoundComponent],
   templateUrl: './projet-detail.component.html',
   styleUrl: './projet-detail.component.scss'
 })
@@ -19,7 +20,8 @@ export class ProjetDetailComponent implements OnInit {
 
   projets?: Projet[];
   projet?: Projet;
-  blocks!: FormattedBlock[];
+  blocks: FormattedBlock[] = [];
+  isNotFound: boolean = false;
 
   constructor(private projetsService: ProjetsService,
               private route: ActivatedRoute) {}
@@ -46,7 +48,11 @@ export class ProjetDetailComponent implements OnInit {
         }
       },
       error: (err) => {
-        console.error('Erreur lors de la récupération des blocs :', err);
+        if (err.message === 'PAGE_NOT_FOUND') {
+          this.isNotFound = true; // Afficher une page 404
+        } else {
+          console.error('Erreur lors du chargement des blocs:', err);
+        }
       }
     });
   }

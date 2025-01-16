@@ -13,4 +13,6 @@ export const routes: Routes = [
         .then(m => m.PROJETS_ROUTES) },
     { path: 'about', component: AboutMeComponent},
     { path: '**', component: NotFoundComponent }
+    // { path: '404', component: NotFoundComponent }, // Route explicite pour la page 404
+    // { path: '**', redirectTo: '/404' } // Capture toutes les autres routes et redirige vers 404
 ];
