@@ -1,0 +1,7 @@
+<div class="lightbox" *ngIf="isVisible" (click)="closeLightbox()">
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+        <img [src]="imageSrc" alt="Image agrandie" />
+        <button class="close-btn" (click)="closeLightbox()"><lucide-icon [img]="X" [size]="48" class="iconLucide"></lucide-icon></button>
+    </div>
+</div>
+  

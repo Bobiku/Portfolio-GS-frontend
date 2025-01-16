@@ -41,7 +41,7 @@
     
                         <!-- Grille d'images -->
                         <div class="grid" *ngSwitchCase="'image'">
-                            <img *ngFor="let item of block.items" class="banner" src="{{ item }}" alt="Image"/>
+                            <img *ngFor="let item of block.items" class="banner zoom" src="{{ item }}" alt="Image" (click)="openImage(item)"/>
                         </div>
                     
                         <!-- Autres types de blocs -->
@@ -75,6 +75,8 @@
             </div>
         </div>
     </section>
+
+    <app-lightbox></app-lightbox>
 
     <ng-template #loading>
         <p>Loading...</p>

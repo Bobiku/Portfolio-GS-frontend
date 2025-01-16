@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjetsService } from '../services/projets.service';
 import { ActivatedRoute } from '@angular/router';
 import { Projet } from '../models/projet';
@@ -6,11 +6,12 @@ import { ExternalLink, LucideAngularModule } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { FormattedBlock } from '../models/formatted-block.interface';
 import { NotFoundComponent } from "../../not-found/not-found.component";
+import { LightboxComponent } from "../../components/lightbox/lightbox.component";
 
 @Component({
   selector: 'app-projet-detail',
   standalone: true,
-  imports: [LucideAngularModule, CommonModule, NotFoundComponent],
+  imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent],
   templateUrl: './projet-detail.component.html',
   styleUrl: './projet-detail.component.scss'
 })
@@ -22,6 +23,8 @@ export class ProjetDetailComponent implements OnInit {
   projet?: Projet;
   blocks: FormattedBlock[] = [];
   isNotFound: boolean = false;
+
+  @ViewChild(LightboxComponent) lightbox!: LightboxComponent;
 
   constructor(private projetsService: ProjetsService,
               private route: ActivatedRoute) {}
@@ -96,6 +99,10 @@ export class ProjetDetailComponent implements OnInit {
     }
   
     return formattedBlocks;
-  }  
+  }
+
+  openImage(imageSrc: string) {
+    this.lightbox.openLightbox(imageSrc);
+  }
   
 }
