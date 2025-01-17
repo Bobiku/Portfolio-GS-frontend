@@ -1,17 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjetsService } from '../services/projets.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Projet } from '../models/projet';
 import { ExternalLink, LucideAngularModule } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { FormattedBlock } from '../models/formatted-block.interface';
 import { NotFoundComponent } from "../../not-found/not-found.component";
 import { LightboxComponent } from "../../components/lightbox/lightbox.component";
+import { ProjetOthersComponent } from "../projet-others/projet-others.component";
 
 @Component({
   selector: 'app-projet-detail',
   standalone: true,
-  imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent],
+  imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent],
   templateUrl: './projet-detail.component.html',
   styleUrl: './projet-detail.component.scss'
 })
@@ -27,12 +28,19 @@ export class ProjetDetailComponent implements OnInit {
   @ViewChild(LightboxComponent) lightbox!: LightboxComponent;
 
   constructor(private projetsService: ProjetsService,
-              private route: ActivatedRoute) {}
+              private route: ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit(): void {
 
-    const projetId = this.route.snapshot.params['id'];
+    // Écouter les changements de paramètres de route
+    this.route.params.subscribe(params => {
+      const projetId = params['id'];
+      this.loadProjectData(projetId);
+    });
+  }
 
+  private loadProjectData(projetId: string): void {
     this.projetsService.getProjets().subscribe({
       next: (data) => {
         this.getProjetById(projetId, data);
@@ -45,7 +53,7 @@ export class ProjetDetailComponent implements OnInit {
     this.projetsService.getBlocksById(projetId).subscribe({
       next: (data) => {
         this.blocks = this.formatBlocksForLists(data);
-        console.log(this.blocks);
+        // console.log(this.blocks);
         if (!this.blocks || this.blocks.length === 0) {
           console.error('Aucun contenu trouvé pour cet ID :', projetId);
         }
@@ -103,6 +111,11 @@ export class ProjetDetailComponent implements OnInit {
 
   openImage(imageSrc: string) {
     this.lightbox.openLightbox(imageSrc);
+  }
+
+  // Méthode pour naviguer vers un autre projet
+  navigateToProject(projetId: string): void {
+    this.router.navigate(['/projets/', projetId]);
   }
   
 }

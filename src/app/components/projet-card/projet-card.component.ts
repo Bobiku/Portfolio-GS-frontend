@@ -1,6 +1,6 @@
-import { Component, input, InputSignal, OnInit } from '@angular/core';
+import { Component, Input, input, InputSignal, OnInit } from '@angular/core';
 import { Projet } from '../../projets/models/projet';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-projet-card',
@@ -9,14 +9,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './projet-card.component.html',
   styleUrl: './projet-card.component.scss'
 })
-export class ProjetCardComponent implements OnInit{
-  projet: InputSignal<Projet> = input.required();
+export class ProjetCardComponent{
+  @Input() projet!: Projet;
 
-  projetDetailUrl!: string;
-  
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-      this.projetDetailUrl = '/projets/'+this.projet().id;
+  navigateToProject(projetId: string): void {
+    this.router.navigate(['/projets/', projetId]);
   }
 } 
