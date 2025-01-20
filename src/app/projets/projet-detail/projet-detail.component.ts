@@ -2,23 +2,25 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjetsService } from '../services/projets.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Projet } from '../models/projet';
-import { ExternalLink, LucideAngularModule } from 'lucide-angular';
+import { ExternalLink, CircleChevronUp, LucideAngularModule } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { FormattedBlock } from '../models/formatted-block.interface';
 import { NotFoundComponent } from "../../not-found/not-found.component";
 import { LightboxComponent } from "../../components/lightbox/lightbox.component";
 import { ProjetOthersComponent } from "../projet-others/projet-others.component";
+import { TopScrollButtonComponent } from "../../components/top-scroll-button/top-scroll-button.component";
 
 @Component({
   selector: 'app-projet-detail',
   standalone: true,
-  imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent],
+  imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent, TopScrollButtonComponent],
   templateUrl: './projet-detail.component.html',
   styleUrl: './projet-detail.component.scss'
 })
 export class ProjetDetailComponent implements OnInit {
 
   readonly ExternalLink = ExternalLink;
+  readonly CircleChevronUp = CircleChevronUp;
 
   projets?: Projet[];
   projet?: Projet;

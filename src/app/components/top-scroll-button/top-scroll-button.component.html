@@ -1,0 +1,9 @@
+<a class="topScrollButton" href="#" role="button" (click)="onClick($event)">
+        <div class="contentButton">
+                <ng-container *ngTemplateOutlet="buttonContent"></ng-container>
+        </div>  
+</a>
+
+<ng-template #buttonContent>
+        <ng-content></ng-content>
+</ng-template>

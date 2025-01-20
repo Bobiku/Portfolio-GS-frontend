@@ -1,27 +1,22 @@
-<div class="container" id="projets">
+<section class="container" id="projets-others">
     <div class="content">
         <div class="headingSection">
             <h2 class="textCenter noMargin">Découvrer d'autres projets</h2>
             <!-- <p class="bodyLarge textCenter subtitle">Sélection de quelques études de cas de projets UX.</p> -->
         </div>
         <div class="grid">
-            <!-- @for (projetItem of othersProjets; track projetItem.title) {
-                 @if (projetItem.id !== projet.id) {
-                    <app-projet-card [projet]="projetItem" />
-                }
-            } -->
             <ng-container *ngIf="previousProjet">
-                <div id="previousProjet">
-                    <span class="bodyLarge"><lucide-icon [img]="ChevronLeft" [size]="24" class="iconLucide"></lucide-icon> Projet précédent</span>
+                <div class="otherProjet" id="previousProjet">
+                    <span class="bodyLarge"><lucide-icon [img]="ChevronLeft" [size]="24" class="iconLucide"></lucide-icon>Projet précédent</span>
                     <app-projet-card [projet]="this.previousProjet"></app-projet-card>
                 </div>
             </ng-container>
             <ng-container *ngIf="nextProjet">
-                <div id="nextProjet">
-                    <span class="bodyLarge"><lucide-icon [img]="ChevronRight" [size]="24" class="iconLucide"></lucide-icon> Projet suivant</span>
+                <div class="otherProjet" id="nextProjet">
+                    <span class="bodyLarge">Projet suivant<lucide-icon [img]="ChevronRight" [size]="24" class="iconLucide"></lucide-icon></span>
                     <app-projet-card [projet]="this.nextProjet"></app-projet-card>
                 </div>
             </ng-container>
         </div>
     </div>
-</div>
+</section>

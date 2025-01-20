@@ -1,5 +1,5 @@
 <ng-container *ngIf="!isNotFound; else notFoundTemplate">
-    <section class="container" id="projet">
+    <section class="container" id="projet-detail">
         <div class="content">
             <!-- Header section -->
             <div class="headerProjetDetail headingSection">
@@ -75,10 +75,8 @@
             </div>
         </div>
     </section>
-    <section>
-        <app-projet-others></app-projet-others>
-    </section>
-
+    <app-projet-others></app-projet-others>
+    <app-top-scroll-button url="#projet-detail"><lucide-icon [img]="CircleChevronUp" [size]="32" id="topScrollButton" class="iconLucide"></lucide-icon></app-top-scroll-button>
     <app-lightbox></app-lightbox>
 
     <ng-template #loading>

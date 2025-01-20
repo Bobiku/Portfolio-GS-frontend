@@ -1,5 +1,5 @@
 import { Router, RouterModule } from '@angular/router';
-import { Component, ElementRef, HostListener, Inject, Input } from '@angular/core';
+import { Component, HostListener, Inject, Input } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 
 @Component({
@@ -14,7 +14,8 @@ export class ButtonComponent {
   @Input() url!: string;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) protected document: Document,
+    protected router: Router
   ) {}
   
   // Détecte si une URL est externe
@@ -27,12 +28,17 @@ export class ButtonComponent {
     }
   }
 
-  @HostListener('click')
-  onClick() {
+  @HostListener('click', ['$event'])
+  onClick(event: Event) {
     const urlParts = this.url.split('#');
     if (urlParts.length > 1) {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
       const fragment = urlParts[1];
-      this.scrollToAnchor(fragment);
+      this.router.navigate([], { fragment }).then(() => {
+        this.scrollToAnchor(fragment);
+      });
+    } else {
+      this.router.navigate([this.url]);
     }
   }
 
@@ -44,19 +50,4 @@ export class ButtonComponent {
       }
     }, 100);
   }
-
-  getRouterLink(): any {
-    const urlParts = this.url.split('#');
-    if (urlParts.length > 1) {
-      return {
-        routerLink: `/${urlParts[0]}`,
-        fragment: urlParts[1]
-      };
-    } else {
-      return {
-        routerLink: `/${this.url}`
-      };
-    }
-  }
-
 }

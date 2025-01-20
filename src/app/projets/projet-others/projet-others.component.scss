@@ -1,3 +1,22 @@
-.content {
+#projets-others {
+    background-color: var(--surface);
     padding-block: var(--padding-v);
+}
+.otherProjet span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#previousProjet {
+    span {
+        justify-content: flex-start;
+    }
+}
+
+
+#nextProjet {
+    span {
+        justify-content: flex-end;
+    }
 }

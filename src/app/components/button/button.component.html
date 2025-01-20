@@ -3,7 +3,7 @@
         <ng-container *ngTemplateOutlet="buttonContent"></ng-container>
     </a>
 } @else {
-    <a [routerLink]="getRouterLink().routerLink" [fragment]="getRouterLink().fragment" role="button">
+    <a href="#" role="button" (click)="onClick($event)">
         <ng-container *ngTemplateOutlet="buttonContent"></ng-container>
     </a>
 }
