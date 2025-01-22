@@ -5,18 +5,12 @@
             <!-- <p class="bodyLarge textCenter subtitle">Sélection de quelques études de cas de projets UX.</p> -->
         </div>
         <div class="grid">
-            <ng-container *ngIf="previousProjet">
-                <div class="otherProjet" id="previousProjet">
-                    <span class="bodyLarge"><lucide-icon [img]="ChevronLeft" [size]="24" class="iconLucide"></lucide-icon>Projet précédent</span>
-                    <app-projet-card [projet]="this.previousProjet"></app-projet-card>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="nextProjet">
-                <div class="otherProjet" id="nextProjet">
-                    <span class="bodyLarge">Projet suivant<lucide-icon [img]="ChevronRight" [size]="24" class="iconLucide"></lucide-icon></span>
-                    <app-projet-card [projet]="this.nextProjet"></app-projet-card>
-                </div>
-            </ng-container>
+            @if (previousProjet) {
+                <app-projet-card [projet]="this.previousProjet!" [typeProjetCard]="'previousProjet'"></app-projet-card>
+            }
+            @if (nextProjet) {
+                <app-projet-card [projet]="this.nextProjet!" [typeProjetCard]="'nextProjet'"></app-projet-card>
+            }
         </div>
     </div>
 </section>

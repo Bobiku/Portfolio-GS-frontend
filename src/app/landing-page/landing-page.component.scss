@@ -1,5 +1,4 @@
 #presentation {
-    min-height: calc(100vh - 88px - (2 * var(--padding-v)));
     padding-block: var(--padding-v);
     padding-top: calc(var(--padding-v) + 88px);
     .content {
@@ -30,6 +29,32 @@
         object-position: center;
         image-rendering: auto;
         transform: scaleX(-1);
+    }
+}
+
+#competencesCles {
+    background-color: var(--primary-container);
+    .content {
+        padding-block: var(--padding-v);
+    }
+    .logos {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        margin-top: 2.5rem;
+    }
+    .logoItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width: 80px;
+            max-height: 80px;
+            object-fit: contain;
+            object-position: center;
+            image-rendering: auto;
+        }
     }
 }
 

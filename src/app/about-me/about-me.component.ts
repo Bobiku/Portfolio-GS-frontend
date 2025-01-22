@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Brush, CalendarRange, Code, DraftingCompass, FileUser, LucideAngularModule, Microscope, Mouse } from 'lucide-angular';
+import { Brush, CalendarRange, Code, DraftingCompass, FileUser, LucideAngularModule, Microscope, Mouse, Network } from 'lucide-angular';
 import { ButtonComponent } from "../components/button/button.component";
 
 @Component({
@@ -17,4 +17,5 @@ export class AboutMeComponent {
   readonly CalendarRange = CalendarRange;
   readonly Mouse = Mouse;
   readonly FileUser = FileUser;
+  readonly Network = Network;
 }

@@ -46,13 +46,33 @@
             color: var(--primary);
         }
         &:hover {
-            .iconLucide, .title {
+            .iconLucide, .title, .emphase {
                 color: var(--secondary);
             }
         }
     }
     app-button {
         margin-top: 2rem;
+    }
+    .logos {
+        display: flex;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin-top: 2.5rem;
+    }
+    .logoItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        img {
+            max-width: 48px;
+            max-height: 48px;
+            object-fit: contain;
+            object-position: center;
+            image-rendering: auto;
+        }
     }
 }
 

@@ -47,3 +47,10 @@
         transform: translate(16px, 16px); // Effet de décalage au survol
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .topScrollButton {
+        bottom: 96px;
+        right: 40px;
+    }
+}
