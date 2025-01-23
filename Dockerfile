@@ -24,7 +24,7 @@ EXPOSE 80
 # Lancement par défaut de Nginx
 CMD ["nginx", "-g", "daemon off;"]
 
-# Build: docker buildx build --platform=linux/arm64 -t portfolio-gs .
+# Build: docker buildx build --platform=linux/arm64 -t portfolio-gs:[VERSION-plateforme] .
 # Run: docker run -d -p 8080:80 portfolio-gs
 # Tag registry: docker image tag portfolio-gs registry.local.savaryguillaume.fr/portfolio-gs:[version-plateform]
-# Registry: docker push registry.local.savaryguillaume.fr/portfolio-gs:[version.plateform]
+# Registry: docker push registry.local.savaryguillaume.fr/portfolio-gs:[version-plateform]
