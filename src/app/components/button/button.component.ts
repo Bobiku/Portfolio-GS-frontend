@@ -30,15 +30,20 @@ export class ButtonComponent {
 
   @HostListener('click', ['$event'])
   onClick(event: Event) {
-    const urlParts = this.url.split('#');
-    if (urlParts.length > 1) {
-      event.preventDefault(); // Empêche le comportement par défaut du lien
-      const fragment = urlParts[1];
-      this.router.navigate([], { fragment }).then(() => {
-        this.scrollToAnchor(fragment);
-      });
+    if (this.isExternalUrl(this.url)) {
+      event.preventDefault(); // Empêche la navigation par défaut de l'application
+      window.open(this.url, '_blank'); // Ouvre le lien dans un nouvel onglet
     } else {
-      this.router.navigate([this.url]);
+      const urlParts = this.url.split('#');
+      if (urlParts.length > 1) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+        const fragment = urlParts[1];
+        this.router.navigate([], { fragment }).then(() => {
+          this.scrollToAnchor(fragment);
+        });
+      } else {
+        this.router.navigate([this.url]);
+      }
     }
   }
 

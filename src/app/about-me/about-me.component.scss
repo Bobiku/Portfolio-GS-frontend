@@ -57,6 +57,7 @@
     .logos {
         display: flex;
         justify-content: flex-start;
+        flex-wrap: wrap;
         gap: 4rem;
         margin-top: 2.5rem;
     }
