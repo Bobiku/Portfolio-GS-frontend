@@ -1,6 +1,6 @@
 {
   "name": "portfolio-gs",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,6 +21,7 @@
     "lucide-angular": "^0.454.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    
     "zone.js": "~0.14.10"
   },
   "devDependencies": {

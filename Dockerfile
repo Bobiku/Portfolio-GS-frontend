@@ -1,5 +1,5 @@
 # Step 1: We build the angular app using the production config
-FROM --platform=linux/arm64 node:20-alpine AS build
+FROM --platform=linux/arm64 node:22-alpine AS build
 # Set the working directory
 WORKDIR /app
 # Copy the package.json and package-lock.json files
@@ -18,7 +18,7 @@ COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 # Copy the build output to replace the default nginx contents
 COPY --from=build /app/dist/portfolio-gs/browser /usr/share/nginx/html
 # Déclare la variable d'environnement
-ENV BACKEND_URL=https://backend.local.savaryguillaume.fr:3000
+# ENV BACKEND_URL=https://backend.local.savaryguillaume.fr:3000
 # Expose port 80
 EXPOSE 80
 # Lancement par défaut de Nginx
