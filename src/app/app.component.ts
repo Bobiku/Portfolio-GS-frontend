@@ -5,11 +5,10 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { CursorAuraComponent } from './components/cursor-aura/cursor-aura.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, CursorAuraComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, HeaderComponent, FooterComponent, CursorAuraComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'Portfolio-GS';

@@ -11,11 +11,10 @@ import { ProjetOthersComponent } from "../projet-others/projet-others.component"
 import { TopScrollButtonComponent } from "../../components/top-scroll-button/top-scroll-button.component";
 
 @Component({
-  selector: 'app-projet-detail',
-  standalone: true,
-  imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent, TopScrollButtonComponent],
-  templateUrl: './projet-detail.component.html',
-  styleUrl: './projet-detail.component.scss'
+    selector: 'app-projet-detail',
+    imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent, TopScrollButtonComponent],
+    templateUrl: './projet-detail.component.html',
+    styleUrl: './projet-detail.component.scss'
 })
 export class ProjetDetailComponent implements OnInit {
 

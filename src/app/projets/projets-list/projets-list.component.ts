@@ -4,11 +4,10 @@ import { Projet } from '../models/projet';
 import { ProjetsService } from '../services/projets.service';
 
 @Component({
-  selector: 'app-projets-list',
-  standalone: true,
-  imports: [ProjetCardComponent],
-  templateUrl: './projets-list.component.html',
-  styleUrl: './projets-list.component.scss'
+    selector: 'app-projets-list',
+    imports: [ProjetCardComponent],
+    templateUrl: './projets-list.component.html',
+    styleUrl: './projets-list.component.scss'
 })
 export class ProjetsListComponent implements OnInit {
 

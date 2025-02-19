@@ -4,11 +4,10 @@ import { ButtonComponent } from '../button/button.component';
 import { DOCUMENT, CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-top-scroll-button',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './top-scroll-button.component.html',
-  styleUrl: './top-scroll-button.component.scss'
+    selector: 'app-top-scroll-button',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './top-scroll-button.component.html',
+    styleUrl: './top-scroll-button.component.scss'
 })
 export class TopScrollButtonComponent extends ButtonComponent{
 

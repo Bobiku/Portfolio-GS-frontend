@@ -3,11 +3,10 @@ import { Brush, CalendarRange, Code, DraftingCompass, FileUser, LucideAngularMod
 import { ButtonComponent } from "../components/button/button.component";
 
 @Component({
-  selector: 'app-about-me',
-  standalone: true,
-  imports: [LucideAngularModule, ButtonComponent],
-  templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss'
+    selector: 'app-about-me',
+    imports: [LucideAngularModule, ButtonComponent],
+    templateUrl: './about-me.component.html',
+    styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
   readonly Brush = Brush;

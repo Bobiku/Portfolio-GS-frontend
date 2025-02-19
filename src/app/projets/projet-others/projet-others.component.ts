@@ -7,11 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LucideAngularModule, ChevronLeft, ChevronRight } from 'lucide-angular';
 
 @Component({
-  selector: 'app-projet-others',
-  standalone: true,
-  imports: [ProjetCardComponent, CommonModule, LucideAngularModule],
-  templateUrl: './projet-others.component.html',
-  styleUrl: './projet-others.component.scss'
+    selector: 'app-projet-others',
+    imports: [ProjetCardComponent, CommonModule, LucideAngularModule],
+    templateUrl: './projet-others.component.html',
+    styleUrl: './projet-others.component.scss'
 })
 export class ProjetOthersComponent implements OnInit {
 

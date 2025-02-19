@@ -4,11 +4,10 @@ import { Router } from '@angular/router';
 import { LucideAngularModule, ChevronLeft, ChevronRight } from 'lucide-angular';
 
 @Component({
-  selector: 'app-projet-card',
-  standalone: true,
-  imports: [LucideAngularModule],
-  templateUrl: './projet-card.component.html',
-  styleUrl: './projet-card.component.scss'
+    selector: 'app-projet-card',
+    imports: [LucideAngularModule],
+    templateUrl: './projet-card.component.html',
+    styleUrl: './projet-card.component.scss'
 })
 export class ProjetCardComponent{
   @Input() projet!: Projet;

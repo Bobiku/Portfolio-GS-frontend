@@ -3,11 +3,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Briefcase, House, LucideAngularModule, Send } from 'lucide-angular';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [RouterLink, RouterLinkActive, LucideAngularModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [RouterLink, RouterLinkActive, LucideAngularModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   readonly House = House;

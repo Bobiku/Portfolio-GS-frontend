@@ -3,11 +3,10 @@ import { Component, HostListener, Inject, Input } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'app-button',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+    selector: 'app-button',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
 

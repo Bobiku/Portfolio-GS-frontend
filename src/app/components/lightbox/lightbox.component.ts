@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LucideAngularModule, X } from 'lucide-angular';
 
 @Component({
-  selector: 'app-lightbox',
-  standalone: true,
-  imports: [LucideAngularModule, CommonModule],
-  templateUrl: './lightbox.component.html',
-  styleUrl: './lightbox.component.scss'
+    selector: 'app-lightbox',
+    imports: [LucideAngularModule, CommonModule],
+    templateUrl: './lightbox.component.html',
+    styleUrl: './lightbox.component.scss'
 })
 export class LightboxComponent {
   readonly X = X;
