@@ -9,10 +9,12 @@ import { NotFoundComponent } from "../../not-found/not-found.component";
 import { LightboxComponent } from "../../components/lightbox/lightbox.component";
 import { ProjetOthersComponent } from "../projet-others/projet-others.component";
 import { TopScrollButtonComponent } from "../../components/top-scroll-button/top-scroll-button.component";
+import { TextSegment } from '../models/formatted-block.interface';
+import { FormattedTextComponent } from "../../components/formatted-text/formatted-text.component";
 
 @Component({
     selector: 'app-projet-detail',
-    imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent, TopScrollButtonComponent],
+    imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent, TopScrollButtonComponent, FormattedTextComponent],
     templateUrl: './projet-detail.component.html',
     styleUrl: './projet-detail.component.scss'
 })
@@ -25,6 +27,8 @@ export class ProjetDetailComponent implements OnInit {
   projet?: Projet;
   blocks: FormattedBlock[] = [];
   isNotFound: boolean = false;
+
+
 
   @ViewChild(LightboxComponent) lightbox!: LightboxComponent;
 
@@ -77,46 +81,60 @@ export class ProjetDetailComponent implements OnInit {
     }
   }
 
-  private formatBlocksForLists(blocks: { type: string; content: string }[]): FormattedBlock[] {
-    const formattedBlocks: any[] = [];
-    let currentList: { type: string; items: string[] } | null = null;
-  
+  private formatBlocksForLists(blocks: { type: string; content: string | TextSegment[] }[]): FormattedBlock[] {
+    const formattedBlocks: FormattedBlock[] = [];
+    let currentList: { type: string; content: (string | TextSegment[])[] } | null = null;
+
     blocks.forEach((block) => {
       if (block.type === 'bulleted_list_item' || block.type === 'numbered_list_item' || block.type === 'image') {
         if (!currentList || currentList.type !== block.type) {
-          // Nouvelle liste
           if (currentList) {
             formattedBlocks.push(currentList);
           }
-          currentList = { type: block.type, items: [] };
+          currentList = { type: block.type, content: [] };
         }
-        currentList.items.push(block.content);
+        currentList.content.push(block.content);
       } else {
-        // Si on n'est pas dans une liste, fermer la liste en cours
         if (currentList) {
           formattedBlocks.push(currentList);
           currentList = null;
         }
-        // Ajouter le bloc individuel
         formattedBlocks.push(block);
       }
     });
-  
-    // Ajouter la dernière liste en cours, s'il y en a une
+
     if (currentList) {
       formattedBlocks.push(currentList);
     }
-  
+
     return formattedBlocks;
   }
 
-  openImage(imageSrc: string) {
-    this.lightbox.openLightbox(imageSrc);
+  openImage(imageSrc: string | TextSegment[] | (string | TextSegment[])[]): void {
+    if (typeof imageSrc === 'string') {
+      this.lightbox.openLightbox(imageSrc);
+    } else if (Array.isArray(imageSrc)) {
+      const firstItem = imageSrc[0];
+      if (typeof firstItem === 'string') {
+        this.lightbox.openLightbox(firstItem);
+      } else if (Array.isArray(firstItem)) {
+        this.lightbox.openLightbox(firstItem[0].plain_text);
+      } else {
+        this.lightbox.openLightbox(firstItem.plain_text);
+      }
+    }
   }
 
   // Méthode pour naviguer vers un autre projet
   navigateToProject(projetId: string): void {
     this.router.navigate(['/projets/', projetId]);
   }
-  
+
+  isArray(value: any): value is TextSegment[] {
+    return Array.isArray(value);
+  }
+
+  isIterable(value: any): value is (string | TextSegment[])[] {
+    return Array.isArray(value);
+  }
 }

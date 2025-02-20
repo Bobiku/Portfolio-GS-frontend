@@ -3,7 +3,7 @@
         <a>
             <div class="imgContainer"><img [src]="projet.imageBannerUrl" [alt]="projet.imageBannerAlt"></div>
             <div class="textContainer">
-                <span class="bodyMedium colorVariant label">{{ projet.roles }}</span>
+                <span class="bodyMedium colorVariant label">{{ projet.roles.join(', ') }}</span>
                 <span class="bodyLarge title">{{ projet.title }}</span>
                 <p class="bodyMedium description">{{ projet.description }}</p>
             </div>
@@ -11,7 +11,7 @@
     } @else if (typeProjetCard === 'previousProjet') {
         <a>
             <div class="textContainer">
-                <span class="bodyMedium colorVariant label">{{ projet.roles }}</span>
+                <span class="bodyMedium colorVariant label">{{ projet.roles.join(', ') }}</span>
                 <span class="bodyLarge title">{{ projet.title }}</span>
                 <p class="bodyMedium description">{{ projet.description }}</p>
             </div>
@@ -23,7 +23,7 @@
     } @else if (typeProjetCard === "nextProjet") {
         <a>
             <div class="textContainer">
-                <span class="bodyMedium colorVariant label">{{ projet.roles }}</span>
+                <span class="bodyMedium colorVariant label">{{ projet.roles.join(', ') }}</span>
                 <span class="bodyLarge title">{{ projet.title }}</span>
                 <p class="bodyMedium description">{{ projet.description }}</p>
             </div>
