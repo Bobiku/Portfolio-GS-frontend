@@ -32,7 +32,10 @@
                         <ul *ngSwitchCase="'bulleted_list_item'">
                             <li *ngFor="let item of isIterable(block.content) ? block.content : []">
                                 <ng-container *ngIf="isArray(item)">
-                                    <app-formatted-text *ngFor="let segment of item" [segment]="segment"></app-formatted-text>
+                                    <app-formatted-text *ngFor="let segment of item" 
+                                        [segment]="segment"
+                                        [blockType]="block.type">
+                                    </app-formatted-text>
                                 </ng-container>
                                 <ng-container *ngIf="!isArray(item)">{{ item }}</ng-container>
                             </li>
@@ -41,7 +44,10 @@
                         <ol *ngSwitchCase="'numbered_list_item'">
                             <li *ngFor="let item of isIterable(block.content) ? block.content : []">
                                 <ng-container *ngIf="isArray(item)">
-                                    <app-formatted-text *ngFor="let segment of item" [segment]="segment"></app-formatted-text>
+                                    <app-formatted-text *ngFor="let segment of item" 
+                                        [segment]="segment"
+                                        [blockType]="block.type">
+                                    </app-formatted-text>
                                 </ng-container>
                                 <ng-container *ngIf="!isArray(item)">{{ item }}</ng-container>
                             </li>
@@ -60,7 +66,10 @@
                     
                         <p *ngSwitchCase="'paragraph'">
                             <ng-container *ngIf="isArray(block.content)">
-                                <app-formatted-text *ngFor="let segment of block.content" [segment]="segment"></app-formatted-text>
+                                <app-formatted-text *ngFor="let segment of block.content" 
+                                    [segment]="segment"
+                                    [blockType]="block.type">
+                                </app-formatted-text>
                             </ng-container>
                             <ng-container *ngIf="!isArray(block.content)">{{ block.content }}</ng-container>
                         </p>
