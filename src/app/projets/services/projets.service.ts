@@ -1,9 +1,10 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, Observable, of, shareReplay, throwError, tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { CacheService } from '../../core/services/cache.service';
-import { Projet } from "../models/projet";
+import { Projet } from '../models/projet';
 import { ProjectsStore } from '../../core/store/projects/projects.store';
 
 @Injectable({

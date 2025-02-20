@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map, tap, catchError, finalize } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ProjectsState, initialState } from './projects.state';
-import { Projet } from '../../../projets/models/projet';
 
 @Injectable({
     providedIn: 'root'

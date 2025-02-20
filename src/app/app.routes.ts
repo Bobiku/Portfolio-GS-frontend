@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { ProjetsListComponent } from './projets/projets-list/projets-list.component';
-import { ProjetDetailComponent } from './projets/projet-detail/projet-detail.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 

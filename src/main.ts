@@ -5,7 +5,7 @@ import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { ProjetsService } from './app/projets/services/projets.service';
 import { environment } from './environments/environment';
-import { inject, ApplicationRef, createComponent, EnvironmentInjector } from '@angular/core';
+import { inject, ApplicationRef, EnvironmentInjector } from '@angular/core';
 
 registerLocaleData(fr.default);
 
