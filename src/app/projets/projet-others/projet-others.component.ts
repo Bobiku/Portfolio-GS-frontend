@@ -75,20 +75,22 @@ export class ProjetOthersComponent implements OnInit {
         return;
     }
 
-    const index = this.projets.findIndex((projet) => this.projet && projet.id === this.projet.id);
-    const previousIndex = index - 1;
-    const nextIndex = index + 1;
-
-    if (previousIndex >= 0) {
-        this.previousProjet = this.projets[previousIndex];
+    const currentIndex = this.projets.findIndex((projet) => this.projet && projet.id === this.projet.id);
+    
+    // Pour le projet précédent
+    if (currentIndex === 0) {
+        // Si c'est le premier projet, le précédent sera le dernier
+        this.previousProjet = this.projets[this.projets.length - 1];
     } else {
-      this.previousProjet = null; // Pas de projet précédent
+        this.previousProjet = this.projets[currentIndex - 1];
     }
 
-    if (nextIndex < this.projets.length) {
-        this.nextProjet = this.projets[nextIndex];
+    // Pour le projet suivant
+    if (currentIndex === this.projets.length - 1) {
+        // Si c'est le dernier projet, le suivant sera le premier
+        this.nextProjet = this.projets[0];
     } else {
-      this.nextProjet = null; // Pas de projet suivant
+        this.nextProjet = this.projets[currentIndex + 1];
     }
   }
 
