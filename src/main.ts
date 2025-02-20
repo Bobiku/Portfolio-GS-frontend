@@ -21,13 +21,12 @@ bootstrapApplication(AppComponent, appConfig)
 
 (window as any).clearFrontendCache = () => {
     if (environmentInjector) {
-        environmentInjector.runInContext(() => {
+        return environmentInjector.runInContext<void>(() => {
             const service = inject(ProjetsService);
-            service.clearCache();
+            return service.clearCache();
         });
-    } else {
-        console.error('Application not yet initialized');
     }
+    console.error('Application not yet initialized');
 };
 
 (window as any).clearBackendCache = async () => {

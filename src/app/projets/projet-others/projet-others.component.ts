@@ -5,6 +5,8 @@ import { Projet } from '../models/projet';
 import { ProjetsService } from '../services/projets.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LucideAngularModule, ChevronLeft, ChevronRight } from 'lucide-angular';
+import { ProjectsStore } from '../../core/store/projects/projects.store';
+import { Observable, combineLatest, filter } from 'rxjs';
 
 @Component({
     selector: 'app-projet-others',
@@ -18,42 +20,32 @@ export class ProjetOthersComponent implements OnInit {
   readonly ChevronRight = ChevronRight;
 
   projet?: Projet;
-
   projets!: Projet[];
   previousProjet!: Projet | null;
   nextProjet!: Projet | null;
 
-  constructor(private projetsService: ProjetsService,
-              private route: ActivatedRoute,
-              private router: Router) {}
+  constructor(
+    private projetsService: ProjetsService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private projectsStore: ProjectsStore
+  ) {}
 
   ngOnInit(): void {
-
-    // Écouter les changements de paramètres de route
     this.route.params.subscribe(params => {
       const projetId = params['id'];
       this.loadProjectData(projetId);
     });
-    
-
-    // Debug
-    // console.log('List of Projects:', this.projets);
-    // console.log('Previous Project:', this.previousProjet);
-    // console.log('Current Project:', this.projet);
-    // console.log('Next Project:', this.nextProjet);
   }
 
   private loadProjectData(projetId: string): void {
-  
-    // Obtenir la liste des projets et le projet actuel
     this.projetsService.getProjets().subscribe({
       next: (data) => {
-        this.getProjetById(projetId, data);
-        // console.log('List of Projects:', this.projets);
-        // console.log('Projet actuel:', this.projet);
-  
-        // Obtenir les projets précédents et suivants après avoir récupéré les projets
-        this.getPreviousAndNextProjects();
+        this.projets = data;
+        this.projet = this.projets?.find((projet) => projet.id === projetId);
+        if (this.projet) {
+          this.getPreviousAndNextProjects();
+        }
       },
       error: (err) => {
         console.error('Erreur lors de la récupération de la page :', err);
@@ -61,44 +53,24 @@ export class ProjetOthersComponent implements OnInit {
     });
   }
 
-  private getProjetById(projetId: string, data: any) {
-    this.projets = data;
-    this.projet = this.projets?.find((projet) => projet.id === projetId);
-    if (!this.projet) {
-      console.error('Aucun projet trouvé avec cet ID :', projetId);
-    }
-  }
-
   getPreviousAndNextProjects() {
     if (!this.projets || !this.projet) {
-        console.error('Les projets ou le projet actuel ne sont pas définis.');
-        return;
+      return;
     }
 
-    const currentIndex = this.projets.findIndex((projet) => this.projet && projet.id === this.projet.id);
+    const currentIndex = this.projets.findIndex((projet) => projet.id === this.projet?.id);
     
-    // Pour le projet précédent
-    if (currentIndex === 0) {
-        // Si c'est le premier projet, le précédent sera le dernier
-        this.previousProjet = this.projets[this.projets.length - 1];
-    } else {
-        this.previousProjet = this.projets[currentIndex - 1];
-    }
+    this.previousProjet = currentIndex === 0 
+      ? this.projets[this.projets.length - 1] 
+      : this.projets[currentIndex - 1];
 
-    // Pour le projet suivant
-    if (currentIndex === this.projets.length - 1) {
-        // Si c'est le dernier projet, le suivant sera le premier
-        this.nextProjet = this.projets[0];
-    } else {
-        this.nextProjet = this.projets[currentIndex + 1];
-    }
+    this.nextProjet = currentIndex === this.projets.length - 1 
+      ? this.projets[0] 
+      : this.projets[currentIndex + 1];
   }
 
-  // Méthode pour naviguer vers un autre projet
   navigateToProject(projetId: string): void {
-    this.router.navigate(['/projets/', projetId]).then(() => {
-      this.loadProjectData(projetId); // Recharger les données du projet après la navigation
-    });
+    this.router.navigate(['/projets/', projetId]);
   }
 
 }

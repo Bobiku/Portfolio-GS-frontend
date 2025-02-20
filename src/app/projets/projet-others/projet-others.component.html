@@ -2,14 +2,13 @@
     <div class="content">
         <div class="headingSection">
             <h2 class="textCenter noMargin">Découvrer d'autres projets</h2>
-            <!-- <p class="bodyLarge textCenter subtitle">Sélection de quelques études de cas de projets UX.</p> -->
         </div>
         <div class="grid">
             @if (previousProjet) {
-                <app-projet-card [projet]="this.previousProjet!" [typeProjetCard]="'previousProjet'"></app-projet-card>
+                <app-projet-card [projet]="previousProjet" [typeProjetCard]="'previousProjet'"></app-projet-card>
             }
             @if (nextProjet) {
-                <app-projet-card [projet]="this.nextProjet!" [typeProjetCard]="'nextProjet'"></app-projet-card>
+                <app-projet-card [projet]="nextProjet" [typeProjetCard]="'nextProjet'"></app-projet-card>
             }
         </div>
     </div>
