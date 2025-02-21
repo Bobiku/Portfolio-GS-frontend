@@ -1,0 +1,28 @@
+<div class="image-container" 
+     [class.error]="imageError"
+     [ngStyle]="{
+         'max-width': maxWidth,
+         'width': width ? width + 'px' : 'auto',
+         'height': height ? height + 'px' : 'auto'
+     }">
+    <div class="skeleton" [class.hidden]="imageLoaded"></div>
+    <img 
+        [src]="src"
+        [alt]="alt"
+        [ngStyle]="{
+            'object-fit': objectFit,
+            'object-position': objectPosition,
+            'transform': transform
+        }"
+        [loading]="priority ? 'eager' : 'lazy'"
+        decoding="async"
+        (load)="onImageLoad()"
+        (error)="onImageError()"
+        [class.loaded]="imageLoaded"
+    >
+    @if (imageError) {
+        <div class="error-message">
+            <span>Image non disponible</span>
+        </div>
+    }
+</div> 

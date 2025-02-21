@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { CacheService } from '../../core/services/cache.service';
@@ -22,15 +22,18 @@ export class ProjetsService {
     ) {}
 
     getProjets(): Observable<Projet[]> {
-        // Vérifier d'abord le store
-        const currentState = this.projectsStore.projects$;
-        
         return this.cacheService.cacheRequest(
             `${this.baseUrl}/api/notion/page/`,
-            this.http.get<Projet[]>(`${this.baseUrl}/api/notion/page/`),
-            3600000
+            this.http.get<Projet[]>(`${this.baseUrl}/api/notion/page/`)
         ).pipe(
-            tap(projects => this.projectsStore.setState({ projects }))
+            tap(projects => this.projectsStore.setState({ projects })),
+            catchError(error => {
+                console.error('Error fetching projects:', error);
+                this.projectsStore.setState({ 
+                    error: 'Impossible de charger les projets. Veuillez réessayer plus tard.'
+                });
+                return throwError(() => error);
+            })
         );
     }
 

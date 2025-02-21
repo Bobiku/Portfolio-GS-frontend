@@ -11,7 +11,17 @@
             </div>
         </div>
         <div class="sectionImg">
-            <img src="/images/landingHeroImg.png" alt="Illustration de moi">
+            <app-optimized-image 
+                src="/images/landingHeroImg.png"
+                alt="Illustration de moi"
+                [priority]="true"
+                [width]="400"
+                [height]="400"
+                maxWidth="344px"
+                objectFit="cover"
+                objectPosition="center"
+                transform="scaleX(-1)"
+            ></app-optimized-image>
         </div>
     </div>
 </section>

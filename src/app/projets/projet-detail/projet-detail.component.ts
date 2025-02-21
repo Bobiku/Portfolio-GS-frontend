@@ -11,10 +11,11 @@ import { ProjetOthersComponent } from "../projet-others/projet-others.component"
 import { TopScrollButtonComponent } from "../../components/top-scroll-button/top-scroll-button.component";
 import { TextSegment } from '../models/formatted-block.interface';
 import { FormattedTextComponent } from "../../components/formatted-text/formatted-text.component";
+import { OptimizedImageComponent } from "../../shared/components/optimized-image/optimized-image.component";
 
 @Component({
     selector: 'app-projet-detail',
-    imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent, TopScrollButtonComponent, FormattedTextComponent],
+    imports: [LucideAngularModule, CommonModule, NotFoundComponent, LightboxComponent, ProjetOthersComponent, TopScrollButtonComponent, FormattedTextComponent, OptimizedImageComponent],
     templateUrl: './projet-detail.component.html',
     styleUrl: './projet-detail.component.scss'
 })
