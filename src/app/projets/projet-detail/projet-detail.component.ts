@@ -29,8 +29,6 @@ export class ProjetDetailComponent implements OnInit {
   blocks: FormattedBlock[] = [];
   isNotFound: boolean = false;
 
-
-
   @ViewChild(LightboxComponent) lightbox!: LightboxComponent;
 
   constructor(private projetsService: ProjetsService,

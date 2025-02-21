@@ -1,9 +1,7 @@
 <div class="image-container" 
      [class.error]="imageError"
      [ngStyle]="{
-         'max-width': maxWidth,
-         'width': width ? width + 'px' : 'auto',
-         'height': height ? height + 'px' : 'auto'
+         'max-width': maxWidth
      }">
     <div class="skeleton" [class.hidden]="imageLoaded"></div>
     <img 

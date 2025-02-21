@@ -7,60 +7,28 @@
     background-color: var(--primary-container);
     position: relative;
     transition: background-color 300ms;
+    
     a {
         color: var(--on-surface);
         text-decoration: none;
     }
+    
     .imgContainer {
         position: relative;
-        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
-        background-size: 200% 100%;
-        animation: 1.5s shine linear infinite;
-        min-height: 300px;
         overflow: hidden;
-        
-        .skeleton {
-            position: absolute;
-            top: 0;
-            left: 0;
+        aspect-ratio: 16/9;
+
+        .projet-image {
+            display: block;
             width: 100%;
             height: 100%;
-            background: inherit;
-            transition: opacity 0.3s ease-out;
-            
-            &.hidden {
-                opacity: 0;
+
+            ::ng-deep img {
+                transition: transform 0.3s ease-in-out;
             }
-        }
-        
-        img {
-            opacity: 0;
-            transition: all 0.3s ease-in;
-            object-fit: cover;
-            object-position: center;
-            width: 100%;
-            height: 100%;
-            
-            &.loaded {
-                opacity: 1;
-            }
-        }
-        
-        .error-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
-        
-        &.error {
-            background: #f8d7da;
         }
     }
+    
     .textContainer {
         padding: 1rem 1.5rem;
         display: flex;
@@ -72,38 +40,43 @@
         margin-right: 0.5rem;
         transition: color 300ms;
     }
+    
     .label {
         color: var(--on-surface-variant);
     }
+    
     .bottomCard {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         padding: 1.5rem 1rem;
         background-color: var(--primary);
-        .lucideIcon, span {
+        
+        .iconLucide, span {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             color: var(--on-surface-invert);
         }
     }
+    
     #nextProjet {
         justify-content: flex-end;
     }
+    
     &:hover {
         background-color: var(--secondary-container);
-        a {
-            text-decoration: none;
-        }
-        img {
+        
+        .projet-image ::ng-deep img {
             transform: scale(1.1);
         }
+        
         .title {
             color: var(--secondary);
         }
-    }   
+    }
 }
+
 .projet::before {
     content: "";
     display: block;
@@ -118,6 +91,7 @@
     transform: translate(0, 0);
     transition: transform 300ms;
 }
+
 .projet:hover::before {
     transform: translate(16px, 16px);
 }
@@ -125,6 +99,34 @@
 @keyframes shine {
     to {
         background-position-x: -200%;
+    }
+}
+
+.projet-card {
+    .image-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        
+        .projet-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            
+            ::ng-deep img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+
+    &:hover {
+        .projet-image ::ng-deep img {
+            transform: scale(1.1);
+        }
     }
 }
 

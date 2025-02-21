@@ -1,26 +1,13 @@
 <div class="projet" (click)="navigateToProject(projet.id)">
     @if (typeProjetCard === 'generic') {
         <a>
-            <div class="imgContainer" [class.error]="imageError">
-                <div class="skeleton" [class.hidden]="imageLoaded"></div>
-                <img 
-                    [src]="getOptimizedImageUrl().src"
-                    [srcset]="getOptimizedImageUrl().srcset"
-                    sizes="(max-width: 768px) 300px,
-                           (max-width: 1200px) 600px,
-                           900px"
-                    [alt]="projet.imageBannerAlt"
-                    loading="lazy"
-                    decoding="async"
-                    (load)="onImageLoad()"
-                    (error)="onImageError()"
-                    [class.loaded]="imageLoaded"
-                >
-                @if (imageError) {
-                    <div class="error-message">
-                        <span>Image non disponible</span>
-                    </div>
-                }
+            <div class="imgContainer">
+                <app-optimized-image 
+                    [src]="projet.imageBannerUrl"
+                    [alt]="projet.imageBannerAlt || 'Image du projet'"
+                    class="projet-image"
+                    [priority]="true"
+                ></app-optimized-image>
             </div>
             <div class="textContainer">
                 <span class="bodyMedium colorVariant label">{{ projet.roles.join(', ') }}</span>
@@ -35,26 +22,12 @@
                 <span class="bodyLarge title">{{ projet.title }}</span>
                 <p class="bodyMedium description">{{ projet.description }}</p>
             </div>
-            <div class="imgContainer" [class.error]="imageError">
-                <div class="skeleton" [class.hidden]="imageLoaded"></div>
-                <img 
-                    [src]="getOptimizedImageUrl().src"
-                    [srcset]="getOptimizedImageUrl().srcset"
-                    sizes="(max-width: 768px) 300px,
-                           (max-width: 1200px) 600px,
-                           900px"
-                    [alt]="projet.imageBannerAlt"
-                    loading="lazy"
-                    decoding="async"
-                    (load)="onImageLoad()"
-                    (error)="onImageError()"
-                    [class.loaded]="imageLoaded"
-                >
-                @if (imageError) {
-                    <div class="error-message">
-                        <span>Image non disponible</span>
-                    </div>
-                }
+            <div class="imgContainer">
+                <app-optimized-image 
+                    [src]="projet.imageBannerUrl"
+                    [alt]="projet.imageBannerAlt || 'Image du projet'"
+                    class="projet-image"
+                ></app-optimized-image>
             </div>
             <div class="bottomCard" id="previousProjet">
                 <span class="bodyLarge label"><lucide-icon [img]="ChevronLeft" [size]="24" class="iconLucide"></lucide-icon>Projet précédent</span>
@@ -67,32 +40,17 @@
                 <span class="bodyLarge title">{{ projet.title }}</span>
                 <p class="bodyMedium description">{{ projet.description }}</p>
             </div>
-            <div class="imgContainer" [class.error]="imageError">
-                <div class="skeleton" [class.hidden]="imageLoaded"></div>
-                <img 
-                    [src]="getOptimizedImageUrl().src"
-                    [srcset]="getOptimizedImageUrl().srcset"
-                    sizes="(max-width: 768px) 300px,
-                           (max-width: 1200px) 600px,
-                           900px"
-                    [alt]="projet.imageBannerAlt"
-                    loading="lazy"
-                    decoding="async"
-                    (load)="onImageLoad()"
-                    (error)="onImageError()"
-                    [class.loaded]="imageLoaded"
-                >
-                @if (imageError) {
-                    <div class="error-message">
-                        <span>Image non disponible</span>
-                    </div>
-                }
+            <div class="imgContainer">
+                <app-optimized-image 
+                    [src]="projet.imageBannerUrl"
+                    [alt]="projet.imageBannerAlt || 'Image du projet'"
+                    class="projet-image"
+                ></app-optimized-image>
             </div>
             <div class="bottomCard" id="nextProjet">
                 <span class="bodyLarge label">Projet Suivant<lucide-icon [img]="ChevronRight" [size]="24" class="iconLucide"></lucide-icon></span>
             </div>
         </a>
     }
-        
 </div>
 

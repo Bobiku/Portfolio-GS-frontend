@@ -1,6 +1,9 @@
 .image-container {
     position: relative;
     display: inline-block;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     
     .skeleton {
         position: absolute;
@@ -23,7 +26,11 @@
         opacity: 0;
         transition: opacity 0.3s ease-in;
         display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
         z-index: 2;
+        max-width: 100%;
         
         &.loaded {
             opacity: 1;

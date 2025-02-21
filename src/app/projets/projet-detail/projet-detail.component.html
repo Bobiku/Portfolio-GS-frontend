@@ -24,7 +24,14 @@
                     </div>
                 </div>
             </div>
-            <img class="banner" *ngIf="projet?.imageBannerUrl" [src]="projet?.imageBannerUrl" [alt]="projet?.imageBannerAlt">
+            <div class="banner" *ngIf="projet?.imageBannerUrl">
+                <app-optimized-image 
+                    [src]="projet!.imageBannerUrl"
+                    [alt]="projet?.imageBannerAlt || 'Image du projet'"
+                    class="banner-image"
+                    [priority]="true"
+                ></app-optimized-image>
+            </div>
             <!-- Content section -->
             <div class="contentProjetDetail" *ngIf="this.blocks.length > 0; else loading">
                 <ng-container *ngFor="let block of blocks">
@@ -52,14 +59,25 @@
                                 <ng-container *ngIf="!isArray(item)">{{ item }}</ng-container>
                             </li>
                         </ol>
-    
+
                         <div class="grid" *ngSwitchCase="'image'">
                             <ng-container *ngFor="let item of isIterable(block.content) ? block.content : []">
                                 <ng-container *ngIf="isArray(item)">
-                                    <img *ngFor="let img of item" class="banner zoom" [src]="img.plain_text" alt="Image" (click)="openImage(img.plain_text)"/>
+                                    <app-optimized-image 
+                                        *ngFor="let img of item"
+                                        [src]="img.plain_text"
+                                        [alt]="'Image'"
+                                        class="banner zoom"
+                                        (click)="openImage(img.plain_text)"
+                                    ></app-optimized-image>
                                 </ng-container>
                                 <ng-container *ngIf="!isArray(item)">
-                                    <img class="banner zoom" [src]="item" alt="Image" (click)="openImage(item)"/>
+                                    <app-optimized-image 
+                                        class="banner zoom"
+                                        [src]="item"
+                                        [alt]="'Image'"
+                                        (click)="openImage(item)"
+                                    ></app-optimized-image>
                                 </ng-container>
                             </ng-container>
                         </div>
