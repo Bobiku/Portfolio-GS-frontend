@@ -2,14 +2,13 @@
     min-height: calc(100vh - 88px - (2 * var(--padding-v)));
     padding-block: var(--padding-v);
     padding-top: calc(var(--padding-v) + 88px);
-    img {
-        max-width: 280px;
-        object-fit: cover;
-        object-position: center;
-        image-rendering: auto;
-        border-radius: 50%;
-        border: 16px solid var(--primary);
-        margin-block: 2rem;
+    .profile-photo {
+        display: block;
+        margin: 2rem auto;
+        
+        @media screen and (max-width: 768px) {
+            margin: 1rem auto;
+        }
     }
 }
 
@@ -79,13 +78,21 @@
 
 #funfacts {
     .funfact {
-        img {
+        .funfact-image {
             display: block;
             width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            object-position: center;
-            image-rendering: auto;
+            
+            ::ng-deep .image-container {
+                aspect-ratio: 16/9;
+                width: 100%;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
         }
         .funfactText {
             padding: 0 2rem 1rem 2rem;

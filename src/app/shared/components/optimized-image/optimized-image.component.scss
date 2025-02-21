@@ -21,7 +21,7 @@
     img {
         position: relative;
         opacity: 0;
-        transition: all 0.3s ease-in;
+        transition: opacity 0.3s ease-in;
         display: block;
         z-index: 2;
         
