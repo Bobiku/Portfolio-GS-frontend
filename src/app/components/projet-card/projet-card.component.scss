@@ -1,4 +1,4 @@
-.projet {
+a.projet {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -7,11 +7,8 @@
     background-color: var(--primary-container);
     position: relative;
     transition: background-color 300ms;
-    
-    a {
-        color: var(--on-surface);
-        text-decoration: none;
-    }
+    color: var(--on-surface);
+    text-decoration: none;
     
     .imgContainer {
         position: relative;

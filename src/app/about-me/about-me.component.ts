@@ -3,6 +3,8 @@ import { Brush, CalendarRange, Code, DraftingCompass, FileUser, LucideAngularMod
 import { ButtonComponent } from "../components/button/button.component";
 import { OptimizedImageComponent } from "../shared/components/optimized-image/optimized-image.component";
 import { ProfileImageDirective } from "../shared/directives/profile-image.directive";
+import { Projet } from '../projets/models/projet';
+import { MetaService } from '../shared/services/meta.service';
 
 @Component({
     selector: 'app-about-me',
@@ -24,4 +26,21 @@ export class AboutMeComponent {
   readonly Mouse = Mouse;
   readonly FileUser = FileUser;
   readonly Network = Network;
+
+  projet?: Projet;
+
+    constructor(private metaService: MetaService) {}
+
+    ngOnInit(): void {
+        // Récupérez votre projet ici
+        this.setMetaTags();
+    }
+
+    setMetaTags() {
+      const metaTags = {
+          title: "Portfolio Guillaume Savary - À propos de moi",
+          description: "Venez découvrir mon parcours et mes compétences",
+      };
+      this.metaService.setMetaTags(metaTags);
+    }
 }

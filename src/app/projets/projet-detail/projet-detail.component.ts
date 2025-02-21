@@ -12,6 +12,7 @@ import { TopScrollButtonComponent } from "../../components/top-scroll-button/top
 import { TextSegment } from '../models/formatted-block.interface';
 import { FormattedTextComponent } from "../../components/formatted-text/formatted-text.component";
 import { OptimizedImageComponent } from "../../shared/components/optimized-image/optimized-image.component";
+import { MetaService } from '../../shared/services/meta.service';
 
 @Component({
     selector: 'app-projet-detail',
@@ -33,16 +34,28 @@ export class ProjetDetailComponent implements OnInit {
 
   constructor(private projetsService: ProjetsService,
               private route: ActivatedRoute,
-              private router: Router) {}
+              private router: Router,
+              private metaService: MetaService) {}
 
   ngOnInit(): void {
-
     // Écouter les changements de paramètres de route
     this.route.params.subscribe(params => {
       const projetId = params['id'];
       this.loadProjectData(projetId);
+      this.setMetaTags();
     });
   }
+
+  setMetaTags() {
+    if (this.projet) {
+        const metaTags = {
+            title: this.projet.title,
+            description: this.projet.description,
+            image: this.projet.imageBannerUrl
+        };
+        this.metaService.setMetaTags(metaTags);
+    }
+}
 
   private loadProjectData(projetId: string): void {
     this.projetsService.getProjets().subscribe({

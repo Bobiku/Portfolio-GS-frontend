@@ -67,6 +67,7 @@
                                         *ngFor="let img of item"
                                         [src]="img.plain_text"
                                         [alt]="'Image'"
+                                        [priority]="false"
                                         class="banner zoom"
                                         (click)="openImage(img.plain_text)"
                                     ></app-optimized-image>
@@ -76,6 +77,7 @@
                                         class="banner zoom"
                                         [src]="item"
                                         [alt]="'Image'"
+                                        [priority]="false"
                                         (click)="openImage(item)"
                                     ></app-optimized-image>
                                 </ng-container>

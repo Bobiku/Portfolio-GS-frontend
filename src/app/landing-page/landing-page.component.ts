@@ -16,5 +16,5 @@ import { HeroImageDirective } from "../shared/directives/hero-image.directive";
     styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-
+    
 }
