@@ -1,4 +1,4 @@
-<a class="projet" (click)="navigateToProject(projet.id)">
+<a class="projet" [routerLink]="['/projets', projet.id]">
     @if (typeProjetCard === 'generic') {
         <div class="imgContainer">
             <app-optimized-image 
