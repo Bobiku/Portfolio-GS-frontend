@@ -1,0 +1,43 @@
+8: 
+  content: Array(2)
+    0: {plain_text: 'Observer les comportements et ressentis', annotations: {…}, href: null}
+    1: {plain_text: ' des utilisateurs en situation réelle.', annotations: {…}, href: null}
+      length: 2
+    [[Prototype]]: Array(0)
+    type: "bulleted_list_item"
+  [[Prototype]]: Object
+9: 
+  content: Array(2)
+    0: {plain_text: 'Détecter les points de friction UX', annotations: {…}, href: null}
+    1: {plain_text: ' pour fluidifier l’usage.', annotations: {…}, href: null}
+      length: 2
+    [[Prototype]]: Array(0)
+    type: "bulleted_list_item"
+  [[Prototype]]: Object
+10: 
+  content: Array(4)
+    0: {plain_text: 'Collecter des données quantitatives et qualitatives', annotations: {…}, href: null}
+    1: {plain_text: ' via le questionnaire ', annotations: {…}, href: null}
+    2: {plain_text: 'AttrakDiff', annotations: {…}, href: null}
+    3: {plain_text: ' afin de mesurer l’impact de l’expérience utilisateur.', annotations: {…}, href: null}
+      length: 4
+    [[Prototype]]: Array(0)
+    type: "bulleted_list_item"
+  [[Prototype]]: Object
+
+
+
+8: 
+  content: Array(8)
+    0: {plain_text: 'Observer les comportements et ressentis', annotations: {…}, href: null}
+    1: {plain_text: ' des utilisateurs en situation réelle.', annotations: {…}, href: null}
+    2: {plain_text: 'Détecter les points de friction UX', annotations: {…}, href: null}
+    3: {plain_text: ' pour fluidifier l’usage.', annotations: {…}, href: null}
+    4: {plain_text: 'Collecter des données quantitatives et qualitatives', annotations: {…}, href: null}
+    5: {plain_text: ' via le questionnaire ', annotations: {…}, href: null}
+    6: {plain_text: 'AttrakDiff', annotations: {…}, href: null}
+    7: {plain_text: ' afin de mesurer l’impact de l’expérience utilisateur.', annotations: {…}, href: null}
+      length: 8
+    [[Prototype]]: Array(0)
+    type: "bulleted_list_item"
+  [[Prototype]]: Object

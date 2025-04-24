@@ -1,3 +1,5 @@
+import { ImageBlock } from "./formatted-block.interface";
+
 export class Projet {
     
     imageBannerAlt: string;
@@ -10,8 +12,8 @@ export class Projet {
         public date: string,
         public roles: string[],
         public resultUrl: string,
-        public imageBannerUrl: string,
-        /*public content: string*/) {
-            this.imageBannerAlt = this.title+' image';
+        public imageBannerUrl: ImageBlock) 
+        {
+            this.imageBannerAlt = 'Bannière du projet '+this.title;
         }
 }

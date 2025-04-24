@@ -26,7 +26,7 @@
             </div>
             <div class="banner" *ngIf="projet?.imageBannerUrl">
                 <app-optimized-image 
-                    [src]="projet!.imageBannerUrl"
+                    [src]="getImageUrl(projet!.imageBannerUrl, '1280')"
                     [alt]="projet?.imageBannerAlt || 'Image du projet'"
                     class="banner-image"
                     [priority]="true"
@@ -34,52 +34,74 @@
             </div>
             <!-- Content section -->
             <div class="contentProjetDetail" *ngIf="this.blocks.length > 0; else loading">
-                <ng-container *ngFor="let block of blocks">
+                <ng-container *ngFor="let block of blocks; let i = index">
                     <ng-container [ngSwitch]="block.type">
-                        <ul *ngSwitchCase="'bulleted_list_item'">
-                            <li *ngFor="let item of isIterable(block.content) ? block.content : []">
-                                <ng-container *ngIf="isArray(item)">
-                                    <app-formatted-text *ngFor="let segment of item" 
+
+                        <!-- Ouvrir une balise ul pour les bulleted_list_item -->
+                        <ul *ngIf="block.type === 'bulleted_list_item' && (i === 0 || blocks[i - 1].type !== 'bulleted_list_item')" >
+                            <li *ngFor="let item of block.content">
+                                <ng-container *ngIf="isArray(block.content)">
+                                    <app-formatted-text *ngFor="let segment of block.content" 
                                         [segment]="segment"
                                         [blockType]="block.type">
                                     </app-formatted-text>
                                 </ng-container>
-                                <ng-container *ngIf="!isArray(item)">{{ item }}</ng-container>
                             </li>
+                        <!-- Fermer la balise ul/ol si le type change -->
+                        <ng-container *ngIf="(i > 0 && blocks[i - 1].type !== block.type) || i === blocks.length - 1">
+                            <ng-container *ngIf="blocks[i - 1].type === 'bulleted_list_item'">
+                                </ul>
+                            </ng-container>
+                        </ng-container>
+
+                        <!-- <ul *ngSwitchCase="'bulleted_list_item'">
+                            <ng-container *ngIf="isArray(block.content)">
+                                <li *ngFor="let item of isIterable(block.content) ? block.content : []">
+                                    <ng-container *ngIf="isArray(item)">
+                                        <app-formatted-text *ngFor="let segment of item" 
+                                            [segment]="segment"
+                                            [blockType]="block.type">
+                                        </app-formatted-text>
+                                    </ng-container>
+                                </li>
+                            </ng-container>
                         </ul>
                     
                         <ol *ngSwitchCase="'numbered_list_item'">
-                            <li *ngFor="let item of isIterable(block.content) ? block.content : []">
-                                <ng-container *ngIf="isArray(item)">
-                                    <app-formatted-text *ngFor="let segment of item" 
-                                        [segment]="segment"
-                                        [blockType]="block.type">
-                                    </app-formatted-text>
-                                </ng-container>
-                                <ng-container *ngIf="!isArray(item)">{{ item }}</ng-container>
-                            </li>
-                        </ol>
+                            <ng-container *ngIf="isArray(block.content)">
+                                <li *ngFor="let item of isIterable(block.content) ? block.content : []">
+                                    <ng-container *ngIf="isArray(item)">
+                                        <app-formatted-text *ngFor="let segment of item" 
+                                            [segment]="segment"
+                                            [blockType]="block.type">
+                                        </app-formatted-text>
+                                    </ng-container>
+                                </li>
+                            </ng-container>
+                        </ol> -->
 
                         <div class="grid" *ngSwitchCase="'image'">
-                            <ng-container *ngFor="let item of isIterable(block.content) ? block.content : []">
-                                <ng-container *ngIf="isArray(item)">
-                                    <app-optimized-image 
-                                        *ngFor="let img of item"
-                                        [src]="img.plain_text"
-                                        [alt]="'Image'"
-                                        [priority]="false"
-                                        class="banner zoom"
-                                        (click)="openImage(img.plain_text)"
-                                    ></app-optimized-image>
-                                </ng-container>
-                                <ng-container *ngIf="!isArray(item)">
-                                    <app-optimized-image 
-                                        class="banner zoom"
-                                        [src]="item"
-                                        [alt]="'Image'"
-                                        [priority]="false"
-                                        (click)="openImage(item)"
-                                    ></app-optimized-image>
+                            <ng-container *ngIf="isArray(block.content)">
+                                <ng-container *ngFor="let item of isIterable(block.content) ? block.content : []">
+                                    <ng-container *ngIf="isArray(item)">
+                                        <!-- <app-optimized-image 
+                                            *ngFor="let img of item"
+                                            [src]="getImageUrl(img, '1280')"
+                                            [alt]="'Image'"
+                                            [priority]="false"
+                                            class="banner zoom"
+                                            (click)="openImage(item)"
+                                        ></app-optimized-image> -->
+                                    </ng-container>
+                                    <ng-container *ngIf="!isArray(item)">
+                                        <!-- <app-optimized-image 
+                                            class="banner zoom"
+                                            [src]="getImageUrl(img, '1280')"
+                                            [alt]="'Image'"
+                                            [priority]="false"
+                                            (click)="openImage(item)"
+                                        ></app-optimized-image> -->
+                                    </ng-container>
                                 </ng-container>
                             </ng-container>
                         </div>
@@ -91,38 +113,32 @@
                                     [blockType]="block.type">
                                 </app-formatted-text>
                             </ng-container>
-                            <ng-container *ngIf="!isArray(block.content)">{{ block.content }}</ng-container>
                         </p>
                         <h2 *ngSwitchCase="'heading_1'">
                             <ng-container *ngIf="isArray(block.content)">
                                 <app-formatted-text *ngFor="let segment of block.content" [segment]="segment"></app-formatted-text>
                             </ng-container>
-                            <ng-container *ngIf="!isArray(block.content)">{{ block.content }}</ng-container>
                         </h2>
                         <h3 *ngSwitchCase="'heading_2'">
                             <ng-container *ngIf="isArray(block.content)">
                                 <app-formatted-text *ngFor="let segment of block.content" [segment]="segment"></app-formatted-text>
                             </ng-container>
-                            <ng-container *ngIf="!isArray(block.content)">{{ block.content }}</ng-container>
                         </h3>
                         <h4 *ngSwitchCase="'heading_3'">
                             <ng-container *ngIf="isArray(block.content)">
                                 <app-formatted-text *ngFor="let segment of block.content" [segment]="segment"></app-formatted-text>
                             </ng-container>
-                            <ng-container *ngIf="!isArray(block.content)">{{ block.content }}</ng-container>
                         </h4>
                         <hr *ngSwitchCase="'divider'"/>
                         <blockquote *ngSwitchCase="'quote'">
                             <ng-container *ngIf="isArray(block.content)">
                                 <app-formatted-text *ngFor="let segment of block.content" [segment]="segment"></app-formatted-text>
                             </ng-container>
-                            <ng-container *ngIf="!isArray(block.content)">{{ block.content }}</ng-container>
                         </blockquote>
                         <pre *ngSwitchCase="'code'"><code>
                             <ng-container *ngIf="isArray(block.content)">
                                 <app-formatted-text *ngFor="let segment of block.content" [segment]="segment"></app-formatted-text>
-                            </ng-container>
-                            <ng-container *ngIf="!isArray(block.content)">{{ block.content }}</ng-container>
+                            </ng-container> 
                         </code></pre>
                         <div *ngSwitchDefault>
                             Unsupported block type: {{ block.type }}

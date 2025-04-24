@@ -17,4 +17,8 @@ export class ProjetCardComponent {
 
     readonly ChevronLeft = ChevronLeft;
     readonly ChevronRight = ChevronRight;
+
+    getImageUrl(size: string): string {
+        return this.projet.imageBannerUrl[size] || this.projet.imageBannerUrl['original'];
+    }
 } 

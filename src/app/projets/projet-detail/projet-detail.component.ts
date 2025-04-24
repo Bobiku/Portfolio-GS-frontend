@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Projet } from '../models/projet';
 import { ExternalLink, CircleChevronUp, LucideAngularModule } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
-import { FormattedBlock } from '../models/formatted-block.interface';
+import { FormattedBlock, FormattedContent, ImageBlock } from '../models/formatted-block.interface';
 import { NotFoundComponent } from "../../not-found/not-found.component";
 import { LightboxComponent } from "../../components/lightbox/lightbox.component";
 import { ProjetOthersComponent } from "../projet-others/projet-others.component";
@@ -51,7 +51,7 @@ export class ProjetDetailComponent implements OnInit {
         const metaTags = {
             title: this.projet.title,
             description: this.projet.description,
-            image: this.projet.imageBannerUrl
+            image: this.projet.imageBannerUrl['480']
         };
         this.metaService.setMetaTags(metaTags);
     }
@@ -69,8 +69,10 @@ export class ProjetDetailComponent implements OnInit {
 
     this.projetsService.getBlocksById(projetId).subscribe({
       next: (data) => {
-        this.blocks = this.formatBlocksForLists(data);
-        // console.log(this.blocks);
+        this.blocks = data;
+        // this.blocks = this.formatBlocksForLists(data);
+        console.log(data);
+        console.log(this.blocks);
         if (!this.blocks || this.blocks.length === 0) {
           console.error('Aucun contenu trouvé pour cet ID :', projetId);
         }
@@ -93,47 +95,41 @@ export class ProjetDetailComponent implements OnInit {
     }
   }
 
-  private formatBlocksForLists(blocks: { type: string; content: string | TextSegment[] }[]): FormattedBlock[] {
-    const formattedBlocks: FormattedBlock[] = [];
-    let currentList: { type: string; content: (string | TextSegment[])[] } | null = null;
+  // private formatBlocksForLists(blocks: FormattedBlock[]): FormattedBlock[] {
+  //   const formattedBlocks: FormattedBlock[] = [];
+  //   let currentList: { content: TextSegment[] }[] = [];
 
-    blocks.forEach((block) => {
-      if (block.type === 'bulleted_list_item' || block.type === 'numbered_list_item' || block.type === 'image') {
-        if (!currentList || currentList.type !== block.type) {
-          if (currentList) {
-            formattedBlocks.push(currentList);
-          }
-          currentList = { type: block.type, content: [] };
-        }
-        currentList.content.push(block.content);
-      } else {
-        if (currentList) {
-          formattedBlocks.push(currentList);
-          currentList = null;
-        }
-        formattedBlocks.push(block);
-      }
-    });
+  //   blocks.forEach((block) => {
+  //       if (block.type === 'bulleted_list_item') {
+  //           if (Array.isArray(block.content)) {
+  //               currentList.push({ content: block.content as TextSegment[] });
+  //           }
+  //       } else {
+  //           if (currentList.length > 0) {
+  //               formattedBlocks.push({ type: 'bullet', li: currentList });
+  //               currentList = [];
+  //           }
+  //           formattedBlocks.push(block as FormattedBlock);
+  //       }
+  //   });
 
-    if (currentList) {
-      formattedBlocks.push(currentList);
-    }
+  //   if (currentList.length > 0) {
+  //       formattedBlocks.push({ type: 'bullet', li: currentList });
+  //   }
 
-    return formattedBlocks;
-  }
+  //   return formattedBlocks;
+  // }
 
-  openImage(imageSrc: string | TextSegment[] | (string | TextSegment[])[]): void {
-    if (typeof imageSrc === 'string') {
-      this.lightbox.openLightbox(imageSrc);
-    } else if (Array.isArray(imageSrc)) {
+  openImage(imageSrc: FormattedContent): void {
+    if (Array.isArray(imageSrc)) {
       const firstItem = imageSrc[0];
       if (typeof firstItem === 'string') {
         this.lightbox.openLightbox(firstItem);
-      } else if (Array.isArray(firstItem)) {
-        this.lightbox.openLightbox(firstItem[0].plain_text);
-      } else {
+      } else if (firstItem && typeof firstItem === 'object' && 'plain_text' in firstItem) {
         this.lightbox.openLightbox(firstItem.plain_text);
       }
+    } else if (typeof imageSrc === 'string') {
+      this.lightbox.openLightbox(imageSrc);
     }
   }
 
@@ -146,7 +142,11 @@ export class ProjetDetailComponent implements OnInit {
     return Array.isArray(value);
   }
 
-  isIterable(value: any): value is (string | TextSegment[])[] {
+  isIterable(value: any): value is (FormattedContent)[] {
     return Array.isArray(value);
+  }
+
+  getImageUrl(url: ImageBlock, size: string): string {
+    return url[size] || url['original'];
   }
 }

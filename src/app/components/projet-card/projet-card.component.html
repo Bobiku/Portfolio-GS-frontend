@@ -2,8 +2,8 @@
     @if (typeProjetCard === 'generic') {
         <div class="imgContainer">
             <app-optimized-image 
-                [src]="projet.imageBannerUrl"
-                [alt]="projet.imageBannerAlt || 'Image du projet'"
+                [src]="getImageUrl('768')"
+                [alt]="projet.imageBannerAlt || 'Bannière du projet'"
                 class="projet-image"
                 [priority]="false"
             ></app-optimized-image>
@@ -21,8 +21,8 @@
         </div>
         <div class="imgContainer">
             <app-optimized-image 
-                [src]="projet.imageBannerUrl"
-                [alt]="projet.imageBannerAlt || 'Image du projet'"
+                [src]="getImageUrl('768')"
+                [alt]="projet.imageBannerAlt || 'Bannière du projet'"
                 class="projet-image"
             ></app-optimized-image>
         </div>
@@ -37,8 +37,8 @@
         </div>
         <div class="imgContainer">
             <app-optimized-image 
-                [src]="projet.imageBannerUrl"
-                [alt]="projet.imageBannerAlt || 'Image du projet'"
+                [src]="getImageUrl('768')"
+                [alt]="projet.imageBannerAlt || 'Bannière du projet'"
                 class="projet-image"
             ></app-optimized-image>
         </div>

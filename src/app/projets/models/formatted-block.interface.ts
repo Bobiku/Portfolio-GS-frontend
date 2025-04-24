@@ -1,4 +1,4 @@
-interface Annotation {
+export interface Annotation {
     bold: boolean;
     italic: boolean;
     strikethrough: boolean;
@@ -9,16 +9,17 @@ interface Annotation {
 
 export interface TextSegment {
     plain_text: string;
-    annotations: {
-        bold?: boolean;
-        italic?: boolean;
-        underline?: boolean;
-        strikethrough?: boolean;
-    };
+    annotations: Annotation;
     href: string | null;
+}
+
+export interface ImageBlock {
+    [key: string]: string;
 }
 
 export interface FormattedBlock {
     type: string;
-    content: string | TextSegment[] | (string | TextSegment[])[];
+    content: FormattedContent;
 }
+
+export type FormattedContent = TextSegment[] | ImageBlock;

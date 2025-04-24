@@ -1,5 +1,5 @@
 # Step 1: We build the angular app using the production config
-FROM --platform=linux/arm64 node:22-alpine AS build
+FROM --platform=linux/arm64 node:23-alpine AS build
 # Set the working directory
 WORKDIR /app
 # Copy the package.json and package-lock.json files
@@ -9,7 +9,7 @@ RUN npm ci
 # Copy all files
 COPY . .
 #Build the application
-RUN npm run build --configuration=production
+RUN npm run build --configuration=production --base-href=/
 
 # Step 2: We use the nginx image to serve the application
 FROM --platform=linux/arm64 nginx:latest
