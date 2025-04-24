@@ -1,5 +1,5 @@
 # Step 1: We build the angular app using the production config
-FROM --platform=linux/arm64 node:22-alpine AS build
+FROM --platform=linux/arm64 node:23-alpine AS build
 # Set the working directory
 WORKDIR /app
 # Copy the package.json and package-lock.json files
